@@ -1,0 +1,88 @@
+Crontab
+[ec2-user@ip-172-31-25-170 ~]$ crontab -l > linuxExercises/crontab.Paul.module13
+[ec2-user@ip-172-31-25-170 ~]$ cat linuxExercises/crontab.Paul.module13
+0 6 * * 1-5 ~/fixGenerator.sh
+0 18 * * 5 ~/fixGenerator.sh
+*/30 9-15 * * 1,3,5 ~/fixGenerator.sh
+0 */2 * * * ~/fixGenerator.sh
+0 12 4 5 * ~/fixGenerator.sh
+25 6 1 * * ~/fixGenerator.sh
+*/20 10-13 * * 2 ~/fixGenerator.sh
+0 * 1 */2 * ~/fixGenerator.sh
+0 6,8 * * 0,6 ~/fixGenerator.sh
+
+
+Working with Files
+[ec2-user@ip-172-31-25-170 ~]$ touch linuxExercises/module13.Paul.answers
+[ec2-user@ip-172-31-25-170 ~]$ echo "Hello today is a nice day" > seq1.txt
+[ec2-user@ip-172-31-25-170 ~]$ echo "Hi, nice meeting you" > seq2.txt
+[ec2-user@ip-172-31-25-170 ~]$ echo "I love the night, it is so quiet" > seq3.txt
+[ec2-user@ip-172-31-25-170 ~]$ ls -l seq*.txt > list.txt
+[ec2-user@ip-172-31-25-170 ~]$ cat seq*txt > total.txt
+[ec2-user@ip-172-31-25-170 ~]$ ls | wc -l
+8
+[ec2-user@ip-172-31-25-170 ~]$ ls
+fixGenerator.sh  linuxExercises  list.txt  seq1.txt  seq2.txt  seq3.txt  testingArea  total.txt
+
+
+
+Working with Text
+[ec2-user@ip-172-31-25-170 ~]$ vim LOTR.txt
+[ec2-user@ip-172-31-25-170 ~]$ echo $(grep -i hobbit LOTR.txt)
+It came to the creature Gollum, who took it deep into the tunnels of the Misty Mountains. And there it consumed him. The ring gave to Gollum unnatural long life. For five hundred years it poisoned his mind, and in the gloom of Gollum’s cave, it waited. Darkness crept back into the forests of the world. Rumor grew of a shadow in the East, whispers of a nameless fear, and the Ring of Power perceived its time had come. It abandoned Gollum, but then something happened that the Ring did not intend. It was picked up by the most unlikely creature imaginable: a hobbit, Bilbo Baggins, of the Shire. For the time will soon come when hobbits will shape the fortunes of all.
+[ec2-user@ip-172-31-25-170 ~]$ grep -i hobbit LOTR.txt
+It came to the creature Gollum, who took it deep into the tunnels of the Misty Mountains. And there it consumed him. The ring gave to Gollum unnatural long life. For five hundred years it poisoned his mind, and in the gloom of Gollum’s cave, it waited. Darkness crept back into the forests of the world. Rumor grew of a shadow in the East, whispers of a nameless fear, and the Ring of Power perceived its time had come. It abandoned Gollum, but then something happened that the Ring did not intend. It was picked up by the most unlikely creature imaginable: a hobbit, Bilbo Baggins, of the Shire.
+For the time will soon come when hobbits will shape the fortunes of all.
+[ec2-user@ip-172-31-25-170 ~]$ history -c
+[ec2-user@ip-172-31-25-170 ~]$ vim LOTR.txt
+[ec2-user@ip-172-31-25-170 ~]$ grep -i hobbit LOTR.txt
+It came to the creature Gollum, who took it deep into the tunnels of the Misty Mountains. And there it consumed him. The ring gave to Gollum unnatural long life. For five hundred years it poisoned his mind, and in the gloom of Gollum’s cave, it waited. Darkness crept back into the forests of the world. Rumor grew of a shadow in the East, whispers of a nameless fear, and the Ring of Power perceived its time had come. It abandoned Gollum, but then something happened that the Ring did not intend. It was picked up by the most unlikely creature imaginable: a hobbit, Bilbo Baggins, of the Shire.
+For the time will soon come when hobbits will shape the fortunes of all.
+[ec2-user@ip-172-31-25-170 ~]$ head -n 8 LOTR.txt > LOTRtxt; tail -n 3 >> LOTRtxt
+^Z
+[1]+  Stopped                 tail -n 3 >> LOTRtxt
+[ec2-user@ip-172-31-25-170 ~]$ head -n 8 LOTR.txt > LOTRtxt; tail -n 3 LOTR.txt >> LOTRtxt
+[ec2-user@ip-172-31-25-170 ~]$ vim LOTRtxt
+[ec2-user@ip-172-31-25-170 ~]$ sed "s/Gollum/Thanos/g" > LOTRMarvel.txt
+^C
+[ec2-user@ip-172-31-25-170 ~]$ sed "s/Gollum/Thanos/g" LOTR.txt > LOTRMarvel.txt
+[ec2-user@ip-172-31-25-170 ~]$ diff -c LOTR.txt LOTRMarvel.txt
+*** LOTR.txt    2022-05-15 18:03:38.911299933 +0000
+--- LOTRMarvel.txt      2022-05-15 18:07:58.251447388 +0000
+***************
+*** 28,33 ****
+
+  And some things that should not have been forgotten were lost. History became legend. Legend became myth. And for two and a half thousand years, the ring passed out of all knowledge. Until, when chance came, it ensnared another bearer.
+
+! It came to the creature Gollum, who took it deep into the tunnels of the Misty Mountains. And there it consumed him. The ring gave to Gollum unnatural long life. For five hundred years it poisoned his mind, and in the gloom of Gollum’s cave, it waited. Darkness crept back into the forests of the world. Rumor grew of a shadow in the East, whispers of a nameless fear, and the Ring of Power perceived its time had come. It abandoned Gollum, but then something happened that the Ring did not intend. It was picked up by the most unlikely creature imaginable: a hobbit, Bilbo Baggins, of the Shire.
+
+  For the time will soon come when hobbits will shape the fortunes of all.
+--- 28,33 ----
+
+  And some things that should not have been forgotten were lost. History became legend. Legend became myth. And for two and a half thousand years, the ring passed out of all knowledge. Until, when chance came, it ensnared another bearer.
+
+! It came to the creature Thanos, who took it deep into the tunnels of the Misty Mountains. And there it consumed him. The ring gave to Thanos unnatural long life. For five hundred years it poisoned his mind, and in the gloom of Thanos’s cave, it waited. Darkness crept back into the forests of the world. Rumor grew of a shadow in the East, whispers of a nameless fear, and the Ring of Power perceived its time had come. It abandoned Thanos, but then something happened that the Ring did not intend. It was picked up by the most unlikely creature imaginable: a hobbit, Bilbo Baggins, of the Shire.
+
+  For the time will soon come when hobbits will shape the fortunes of all.
+[ec2-user@ip-172-31-25-170 ~]$ chmod og=rx,u=rwx LOTR.txt
+[ec2-user@ip-172-31-25-170 ~]$ wc -w LOTR.txt
+473 LOTR.txt
+[ec2-user@ip-172-31-25-170 ~]$ mv LOTR.txt LordOfTheRings.txt
+[ec2-user@ip-172-31-25-170 ~]$ tar -czvf LOTR.tar.gz LordOfTheRings.txt LOTRtxt LOTRMarvel.txt
+LordOfTheRings.txt
+LOTRtxt
+LOTRMarvel.txt
+[ec2-user@ip-172-31-25-170 ~]$ history
+    1  vim LOTR.txt
+    2  grep -i hobbit LOTR.txt
+    3  head -n 8 LOTR.txt > LOTRtxt; tail -n 3 >> LOTRtxt
+    4  head -n 8 LOTR.txt > LOTRtxt; tail -n 3 LOTR.txt >> LOTRtxt
+    5  vim LOTRtxt
+    6  sed "s/Gollum/Thanos/g" > LOTRMarvel.txt
+    7  sed "s/Gollum/Thanos/g" LOTR.txt > LOTRMarvel.txt
+    8  diff -c LOTR.txt LOTRMarvel.txt
+    9  chmod og=rx,u=rwx LOTR.txt
+   10  wc -w LOTR.txt
+   11  mv LOTR.txt LordOfTheRings.txt
+   12  tar -czvf LOTR.tar.gz LordOfTheRings.txt LOTRtxt LOTRMarvel.txt
+   13  history

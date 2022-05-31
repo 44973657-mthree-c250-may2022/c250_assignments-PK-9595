@@ -1,0 +1,502 @@
+[ec2-user@ip-172-31-25-170 ~]$ ps -ef
+UID        PID  PPID  C STIME TTY          TIME CMD
+root         1     0  0 May10 ?        00:00:14 /usr/lib/systemd/systemd --switched-root --system --deser
+root         2     0  0 May10 ?        00:00:00 [kthreadd]
+root         3     2  0 May10 ?        00:00:00 [rcu_gp]
+root         4     2  0 May10 ?        00:00:00 [rcu_par_gp]
+root         6     2  0 May10 ?        00:00:00 [kworker/0:0H-ev]
+root         9     2  0 May10 ?        00:00:00 [mm_percpu_wq]
+root        10     2  0 May10 ?        00:00:00 [rcu_tasks_rude_]
+root        11     2  0 May10 ?        00:00:00 [rcu_tasks_trace]
+root        12     2  0 May10 ?        00:00:00 [ksoftirqd/0]
+root        13     2  0 May10 ?        00:00:01 [rcu_sched]
+root        14     2  0 May10 ?        00:00:01 [migration/0]
+root        15     2  0 May10 ?        00:00:00 [cpuhp/0]
+root        17     2  0 May10 ?        00:00:00 [kdevtmpfs]
+root        18     2  0 May10 ?        00:00:00 [netns]
+root        21     2  0 May10 ?        00:00:00 [kauditd]
+root       261     2  0 May10 ?        00:00:00 [khungtaskd]
+root       262     2  0 May10 ?        00:00:00 [oom_reaper]
+root       263     2  0 May10 ?        00:00:00 [writeback]
+root       265     2  0 May10 ?        00:00:06 [kcompactd0]
+root       266     2  0 May10 ?        00:00:00 [ksmd]
+root       267     2  0 May10 ?        00:00:00 [khugepaged]
+root       322     2  0 May10 ?        00:00:00 [kintegrityd]
+root       324     2  0 May10 ?        00:00:00 [kblockd]
+root       325     2  0 May10 ?        00:00:00 [blkcg_punt_bio]
+root       676     2  0 May10 ?        00:00:00 [xen-balloon]
+root       682     2  0 May10 ?        00:00:00 [tpm_dev_wq]
+root       688     2  0 May10 ?        00:00:00 [md]
+root       691     2  0 May10 ?        00:00:00 [edac-poller]
+root       696     2  0 May10 ?        00:00:00 [watchdogd]
+root       793     2  0 May10 ?        00:00:01 [kworker/0:1H-xf]
+root       845     2  0 May10 ?        00:00:00 [kswapd0]
+root       847     2  0 May10 ?        00:00:00 [xfsalloc]
+root       848     2  0 May10 ?        00:00:00 [xfs_mru_cache]
+root       851     2  0 May10 ?        00:00:00 [kthrotld]
+root       862     2  0 May10 ?        00:00:00 [xenbus]
+root       863     2  0 May10 ?        00:00:00 [xenwatch]
+root       899     2  0 May10 ?        00:00:00 [nvme-wq]
+root       901     2  0 May10 ?        00:00:00 [nvme-reset-wq]
+root       903     2  0 May10 ?        00:00:00 [nvme-delete-wq]
+root       937     2  0 May10 ?        00:00:00 [ipv6_addrconf]
+root       946     2  0 May10 ?        00:00:00 [kstrp]
+root       955     2  0 May10 ?        00:00:00 [zswap-shrink]
+root       962     2  0 May10 ?        00:00:00 [kworker/u31:0]
+root      1639     2  0 May10 ?        00:00:00 [ata_sff]
+root      1644     2  0 May10 ?        00:00:00 [scsi_eh_0]
+root      1654     2  0 May10 ?        00:00:00 [scsi_tmf_0]
+root      1658     2  0 May10 ?        00:00:00 [scsi_eh_1]
+root      1660     2  0 May10 ?        00:00:00 [scsi_tmf_1]
+root      1671     2  0 May10 ?        00:00:00 [xfs-buf/xvda1]
+root      1672     2  0 May10 ?        00:00:00 [xfs-conv/xvda1]
+root      1673     2  0 May10 ?        00:00:00 [xfs-cil/xvda1]
+root      1674     2  0 May10 ?        00:00:00 [xfs-reclaim/xvd]
+root      1675     2  0 May10 ?        00:00:00 [xfs-eofblocks/x]
+root      1676     2  0 May10 ?        00:00:00 [xfs-log/xvda1]
+root      1677     2  0 May10 ?        00:00:35 [xfsaild/xvda1]
+root      1736     1  0 May10 ?        00:00:03 /usr/lib/systemd/systemd-journald
+root      1891     1  0 May10 ?        00:00:00 /usr/sbin/lvmetad -f
+root      2297     2  0 May10 ?        00:00:00 [ena]
+root      2307     1  0 May10 ?        00:00:00 /usr/lib/systemd/systemd-udevd
+root      2442     2  0 May10 ?        00:00:00 [cryptd]
+root      2535     2  0 May10 ?        00:00:00 [rpciod]
+root      2536     2  0 May10 ?        00:00:00 [xprtiod]
+root      2539     1  0 May10 ?        00:00:00 /sbin/auditd
+dbus      2563     1  0 May10 ?        00:00:05 /usr/bin/dbus-daemon --system --address=systemd: --nofork
+rpc       2564     1  0 May10 ?        00:00:00 /sbin/rpcbind -w
+libstor+  2568     1  0 May10 ?        00:00:00 /usr/bin/lsmd -d
+root      2573     1  0 May10 ?        00:00:03 /usr/lib/systemd/systemd-logind
+rngd      2581     1  0 May10 ?        00:00:00 /sbin/rngd -f --fill-watermark=0 --exclude=jitter
+root      2582     1  0 May10 ?        00:00:00 /usr/sbin/gssproxy -D
+chrony    2609     1  0 May10 ?        00:00:03 /usr/sbin/chronyd
+root      2812     1  0 May10 ?        00:00:00 /sbin/dhclient -q -lf /var/lib/dhclient/dhclient--eth0.le
+root      2859     1  0 May10 ?        00:00:00 /sbin/dhclient -6 -nw -lf /var/lib/dhclient/dhclient6--et
+root      2905     1  0 May10 ?        00:00:12 /usr/sbin/httpd -DFOREGROUND
+apache    2939  2905  0 May10 ?        00:00:32 /usr/sbin/httpd -DFOREGROUND
+apache    2940  2905  0 May10 ?        00:00:32 /usr/sbin/httpd -DFOREGROUND
+apache    2941  2905  0 May10 ?        00:00:32 /usr/sbin/httpd -DFOREGROUND
+apache    2942  2905  0 May10 ?        00:00:33 /usr/sbin/httpd -DFOREGROUND
+apache    2943  2905  0 May10 ?        00:00:32 /usr/sbin/httpd -DFOREGROUND
+root      3049     1  0 May10 ?        00:00:00 /usr/libexec/postfix/master -w
+postfix   3051  3049  0 May10 ?        00:00:00 qmgr -l -t unix -u
+root      3086     1  0 May10 ?        00:00:14 /usr/sbin/rsyslogd -n
+root      3088     1  0 May10 ?        00:00:07 /usr/bin/amazon-ssm-agent
+root      3096     1  0 May10 ?        00:00:00 /usr/sbin/sshd -D
+root      3111     1  0 May10 ?        00:00:00 /usr/sbin/atd -f
+root      3113     1  0 May10 ?        00:00:00 /usr/sbin/crond -n
+root      3173     1  0 May10 tty1     00:00:00 /sbin/agetty --noclear tty1 linux
+root      3174     1  0 May10 ttyS0    00:00:00 /sbin/agetty --keep-baud 115200,38400,9600 ttyS0 vt220
+root      3233  3088  0 May10 ?        00:00:07 /usr/bin/ssm-agent-worker
+root      3250     1  0 May10 ?        00:00:00 /usr/sbin/acpid
+apache    3499  2905  0 May10 ?        00:00:32 /usr/sbin/httpd -DFOREGROUND
+apache    4924  2905  0 May10 ?        00:00:30 /usr/sbin/httpd -DFOREGROUND
+apache    5178  2905  0 May10 ?        00:00:29 /usr/sbin/httpd -DFOREGROUND
+postfix  13822  3049  0 17:45 ?        00:00:00 pickup -l -t unix -u
+root     13844  3096  0 17:45 ?        00:00:00 sshd: ec2-user [priv]
+ec2-user 13865 13844  0 17:45 ?        00:00:00 sshd: ec2-user@pts/0
+ec2-user 13867 13865  0 17:45 pts/0    00:00:00 -bash
+root     13926     2  0 17:46 ?        00:00:00 [kworker/u30:1-e]
+root     16499     2  0 May11 ?        00:00:00 [kworker/u30:0-e]
+root     18305  3096  0 18:13 ?        00:00:00 sshd: ec2-user [priv]
+ec2-user 18324 18305  0 18:13 ?        00:00:00 sshd: ec2-user@pts/1
+ec2-user 18326 18324  0 18:13 pts/1    00:00:00 -bash
+root     18562     2  0 18:17 ?        00:00:00 [kworker/0:1-eve]
+root     18885     2  0 18:23 ?        00:00:00 [kworker/0:2-eve]
+root     19234     2  0 18:30 ?        00:00:00 [kworker/0:0-cgr]
+ec2-user 19343 18326  0 18:31 pts/1    00:00:00 ps -ef
+[ec2-user@ip-172-31-25-170 ~]$ ps -ef | grep $USER
+root     13844  3096  0 17:45 ?        00:00:00 sshd: ec2-user [priv]
+ec2-user 13865 13844  0 17:45 ?        00:00:00 sshd: ec2-user@pts/0
+ec2-user 13867 13865  0 17:45 pts/0    00:00:00 -bash
+root     18305  3096  0 18:13 ?        00:00:00 sshd: ec2-user [priv]
+ec2-user 18324 18305  0 18:13 ?        00:00:00 sshd: ec2-user@pts/1
+ec2-user 18326 18324  0 18:13 pts/1    00:00:00 -bash
+ec2-user 19404 18326  0 18:32 pts/1    00:00:00 ps -ef
+ec2-user 19405 18326  0 18:32 pts/1    00:00:00 grep --color=auto ec2-user
+[ec2-user@ip-172-31-25-170 ~]$ ps -ef | grep -v $USER
+UID        PID  PPID  C STIME TTY          TIME CMD
+root         1     0  0 May10 ?        00:00:14 /usr/lib/systemd/systemd --switched-root --system --deserialize 21
+root         2     0  0 May10 ?        00:00:00 [kthreadd]
+root         3     2  0 May10 ?        00:00:00 [rcu_gp]
+root         4     2  0 May10 ?        00:00:00 [rcu_par_gp]
+root         6     2  0 May10 ?        00:00:00 [kworker/0:0H-ev]
+root         9     2  0 May10 ?        00:00:00 [mm_percpu_wq]
+root        10     2  0 May10 ?        00:00:00 [rcu_tasks_rude_]
+root        11     2  0 May10 ?        00:00:00 [rcu_tasks_trace]
+root        12     2  0 May10 ?        00:00:00 [ksoftirqd/0]
+root        13     2  0 May10 ?        00:00:01 [rcu_sched]
+root        14     2  0 May10 ?        00:00:01 [migration/0]
+root        15     2  0 May10 ?        00:00:00 [cpuhp/0]
+root        17     2  0 May10 ?        00:00:00 [kdevtmpfs]
+root        18     2  0 May10 ?        00:00:00 [netns]
+root        21     2  0 May10 ?        00:00:00 [kauditd]
+root       261     2  0 May10 ?        00:00:00 [khungtaskd]
+root       262     2  0 May10 ?        00:00:00 [oom_reaper]
+root       263     2  0 May10 ?        00:00:00 [writeback]
+root       265     2  0 May10 ?        00:00:06 [kcompactd0]
+root       266     2  0 May10 ?        00:00:00 [ksmd]
+root       267     2  0 May10 ?        00:00:00 [khugepaged]
+root       322     2  0 May10 ?        00:00:00 [kintegrityd]
+root       324     2  0 May10 ?        00:00:00 [kblockd]
+root       325     2  0 May10 ?        00:00:00 [blkcg_punt_bio]
+root       676     2  0 May10 ?        00:00:00 [xen-balloon]
+root       682     2  0 May10 ?        00:00:00 [tpm_dev_wq]
+root       688     2  0 May10 ?        00:00:00 [md]
+root       691     2  0 May10 ?        00:00:00 [edac-poller]
+root       696     2  0 May10 ?        00:00:00 [watchdogd]
+root       793     2  0 May10 ?        00:00:01 [kworker/0:1H-kb]
+root       845     2  0 May10 ?        00:00:00 [kswapd0]
+root       847     2  0 May10 ?        00:00:00 [xfsalloc]
+root       848     2  0 May10 ?        00:00:00 [xfs_mru_cache]
+root       851     2  0 May10 ?        00:00:00 [kthrotld]
+root       862     2  0 May10 ?        00:00:00 [xenbus]
+root       863     2  0 May10 ?        00:00:00 [xenwatch]
+root       899     2  0 May10 ?        00:00:00 [nvme-wq]
+root       901     2  0 May10 ?        00:00:00 [nvme-reset-wq]
+root       903     2  0 May10 ?        00:00:00 [nvme-delete-wq]
+root       937     2  0 May10 ?        00:00:00 [ipv6_addrconf]
+root       946     2  0 May10 ?        00:00:00 [kstrp]
+root       955     2  0 May10 ?        00:00:00 [zswap-shrink]
+root       962     2  0 May10 ?        00:00:00 [kworker/u31:0]
+root      1639     2  0 May10 ?        00:00:00 [ata_sff]
+root      1644     2  0 May10 ?        00:00:00 [scsi_eh_0]
+root      1654     2  0 May10 ?        00:00:00 [scsi_tmf_0]
+root      1658     2  0 May10 ?        00:00:00 [scsi_eh_1]
+root      1660     2  0 May10 ?        00:00:00 [scsi_tmf_1]
+root      1671     2  0 May10 ?        00:00:00 [xfs-buf/xvda1]
+root      1672     2  0 May10 ?        00:00:00 [xfs-conv/xvda1]
+root      1673     2  0 May10 ?        00:00:00 [xfs-cil/xvda1]
+root      1674     2  0 May10 ?        00:00:00 [xfs-reclaim/xvd]
+root      1675     2  0 May10 ?        00:00:00 [xfs-eofblocks/x]
+root      1676     2  0 May10 ?        00:00:00 [xfs-log/xvda1]
+root      1677     2  0 May10 ?        00:00:35 [xfsaild/xvda1]
+root      1736     1  0 May10 ?        00:00:03 /usr/lib/systemd/systemd-journald
+root      1891     1  0 May10 ?        00:00:00 /usr/sbin/lvmetad -f
+root      2297     2  0 May10 ?        00:00:00 [ena]
+root      2307     1  0 May10 ?        00:00:00 /usr/lib/systemd/systemd-udevd
+root      2442     2  0 May10 ?        00:00:00 [cryptd]
+root      2535     2  0 May10 ?        00:00:00 [rpciod]
+root      2536     2  0 May10 ?        00:00:00 [xprtiod]
+root      2539     1  0 May10 ?        00:00:00 /sbin/auditd
+dbus      2563     1  0 May10 ?        00:00:05 /usr/bin/dbus-daemon --system --address=systemd: --nofork --nopidfile --systemd-activation
+rpc       2564     1  0 May10 ?        00:00:00 /sbin/rpcbind -w
+libstor+  2568     1  0 May10 ?        00:00:00 /usr/bin/lsmd -d
+root      2573     1  0 May10 ?        00:00:03 /usr/lib/systemd/systemd-logind
+rngd      2581     1  0 May10 ?        00:00:00 /sbin/rngd -f --fill-watermark=0 --exclude=jitter
+root      2582     1  0 May10 ?        00:00:00 /usr/sbin/gssproxy -D
+chrony    2609     1  0 May10 ?        00:00:03 /usr/sbin/chronyd
+root      2812     1  0 May10 ?        00:00:00 /sbin/dhclient -q -lf /var/lib/dhclient/dhclient--eth0.lease -pf /var/run/dhclient-eth0.pid -H ip-172-31-25-170 eth0
+root      2859     1  0 May10 ?        00:00:00 /sbin/dhclient -6 -nw -lf /var/lib/dhclient/dhclient6--eth0.lease -pf /var/run/dhclient6-eth0.pid eth0 -H ip-172-31-25-170
+root      2905     1  0 May10 ?        00:00:12 /usr/sbin/httpd -DFOREGROUND
+apache    2939  2905  0 May10 ?        00:00:32 /usr/sbin/httpd -DFOREGROUND
+apache    2940  2905  0 May10 ?        00:00:32 /usr/sbin/httpd -DFOREGROUND
+apache    2941  2905  0 May10 ?        00:00:32 /usr/sbin/httpd -DFOREGROUND
+apache    2942  2905  0 May10 ?        00:00:33 /usr/sbin/httpd -DFOREGROUND
+apache    2943  2905  0 May10 ?        00:00:32 /usr/sbin/httpd -DFOREGROUND
+root      3049     1  0 May10 ?        00:00:00 /usr/libexec/postfix/master -w
+postfix   3051  3049  0 May10 ?        00:00:00 qmgr -l -t unix -u
+root      3086     1  0 May10 ?        00:00:14 /usr/sbin/rsyslogd -n
+root      3088     1  0 May10 ?        00:00:07 /usr/bin/amazon-ssm-agent
+root      3096     1  0 May10 ?        00:00:00 /usr/sbin/sshd -D
+root      3111     1  0 May10 ?        00:00:00 /usr/sbin/atd -f
+root      3113     1  0 May10 ?        00:00:00 /usr/sbin/crond -n
+root      3173     1  0 May10 tty1     00:00:00 /sbin/agetty --noclear tty1 linux
+root      3174     1  0 May10 ttyS0    00:00:00 /sbin/agetty --keep-baud 115200,38400,9600 ttyS0 vt220
+root      3233  3088  0 May10 ?        00:00:07 /usr/bin/ssm-agent-worker
+root      3250     1  0 May10 ?        00:00:00 /usr/sbin/acpid
+apache    3499  2905  0 May10 ?        00:00:32 /usr/sbin/httpd -DFOREGROUND
+apache    4924  2905  0 May10 ?        00:00:30 /usr/sbin/httpd -DFOREGROUND
+apache    5178  2905  0 May10 ?        00:00:29 /usr/sbin/httpd -DFOREGROUND
+postfix  13822  3049  0 17:45 ?        00:00:00 pickup -l -t unix -u
+root     13926     2  0 17:46 ?        00:00:00 [kworker/u30:1-e]
+root     16499     2  0 May11 ?        00:00:00 [kworker/u30:0-e]
+root     18562     2  0 18:17 ?        00:00:00 [kworker/0:1-eve]
+root     18885     2  0 18:23 ?        00:00:00 [kworker/0:2-eve]
+root     19234     2  0 18:30 ?        00:00:00 [kworker/0:0-cgr]
+[ec2-user@ip-172-31-25-170 ~]$ ps -f $$
+UID        PID  PPID  C STIME TTY      STAT   TIME CMD
+ec2-user 18326 18324  0 18:13 pts/1    Ss     0:00 -bash
+[ec2-user@ip-172-31-25-170 ~]$ pstree -shapu $$
+systemd,1 --switched-root --system --deserialize 21
+  └─sshd,3096 -D
+      └─sshd,18305
+          └─sshd,18324,ec2-user
+              └─bash,18326
+                  └─pstree,19456 -shapu 18326
+[ec2-user@ip-172-31-25-170 ~]$ ps -eo user,pid,cmd
+USER       PID CMD
+root         1 /usr/lib/systemd/systemd --switched-root --system --deserialize 21
+root         2 [kthreadd]
+root         3 [rcu_gp]
+root         4 [rcu_par_gp]
+root         6 [kworker/0:0H-ev]
+root         9 [mm_percpu_wq]
+root        10 [rcu_tasks_rude_]
+root        11 [rcu_tasks_trace]
+root        12 [ksoftirqd/0]
+root        13 [rcu_sched]
+root        14 [migration/0]
+root        15 [cpuhp/0]
+root        17 [kdevtmpfs]
+root        18 [netns]
+root        21 [kauditd]
+root       261 [khungtaskd]
+root       262 [oom_reaper]
+root       263 [writeback]
+root       265 [kcompactd0]
+root       266 [ksmd]
+root       267 [khugepaged]
+root       322 [kintegrityd]
+root       324 [kblockd]
+root       325 [blkcg_punt_bio]
+root       676 [xen-balloon]
+root       682 [tpm_dev_wq]
+root       688 [md]
+root       691 [edac-poller]
+root       696 [watchdogd]
+root       793 [kworker/0:1H-kb]
+root       845 [kswapd0]
+root       847 [xfsalloc]
+root       848 [xfs_mru_cache]
+root       851 [kthrotld]
+root       862 [xenbus]
+root       863 [xenwatch]
+root       899 [nvme-wq]
+root       901 [nvme-reset-wq]
+root       903 [nvme-delete-wq]
+root       937 [ipv6_addrconf]
+root       946 [kstrp]
+root       955 [zswap-shrink]
+root       962 [kworker/u31:0]
+root      1639 [ata_sff]
+root      1644 [scsi_eh_0]
+root      1654 [scsi_tmf_0]
+root      1658 [scsi_eh_1]
+root      1660 [scsi_tmf_1]
+root      1671 [xfs-buf/xvda1]
+root      1672 [xfs-conv/xvda1]
+root      1673 [xfs-cil/xvda1]
+root      1674 [xfs-reclaim/xvd]
+root      1675 [xfs-eofblocks/x]
+root      1676 [xfs-log/xvda1]
+root      1677 [xfsaild/xvda1]
+root      1736 /usr/lib/systemd/systemd-journald
+root      1891 /usr/sbin/lvmetad -f
+root      2297 [ena]
+root      2307 /usr/lib/systemd/systemd-udevd
+root      2442 [cryptd]
+root      2535 [rpciod]
+root      2536 [xprtiod]
+root      2539 /sbin/auditd
+dbus      2563 /usr/bin/dbus-daemon --system --address=systemd: --nofork --nopidfile --systemd-activation
+rpc       2564 /sbin/rpcbind -w
+libstor+  2568 /usr/bin/lsmd -d
+root      2573 /usr/lib/systemd/systemd-logind
+rngd      2581 /sbin/rngd -f --fill-watermark=0 --exclude=jitter
+root      2582 /usr/sbin/gssproxy -D
+chrony    2609 /usr/sbin/chronyd
+root      2812 /sbin/dhclient -q -lf /var/lib/dhclient/dhclient--eth0.lease -pf /var/run/dhclient-eth0.pi
+root      2859 /sbin/dhclient -6 -nw -lf /var/lib/dhclient/dhclient6--eth0.lease -pf /var/run/dhclient6-e
+root      2905 /usr/sbin/httpd -DFOREGROUND
+apache    2939 /usr/sbin/httpd -DFOREGROUND
+apache    2940 /usr/sbin/httpd -DFOREGROUND
+apache    2941 /usr/sbin/httpd -DFOREGROUND
+apache    2942 /usr/sbin/httpd -DFOREGROUND
+apache    2943 /usr/sbin/httpd -DFOREGROUND
+root      3049 /usr/libexec/postfix/master -w
+postfix   3051 qmgr -l -t unix -u
+root      3086 /usr/sbin/rsyslogd -n
+root      3088 /usr/bin/amazon-ssm-agent
+root      3096 /usr/sbin/sshd -D
+root      3111 /usr/sbin/atd -f
+root      3113 /usr/sbin/crond -n
+root      3173 /sbin/agetty --noclear tty1 linux
+root      3174 /sbin/agetty --keep-baud 115200,38400,9600 ttyS0 vt220
+root      3233 /usr/bin/ssm-agent-worker
+root      3250 /usr/sbin/acpid
+apache    3499 /usr/sbin/httpd -DFOREGROUND
+apache    4924 /usr/sbin/httpd -DFOREGROUND
+apache    5178 /usr/sbin/httpd -DFOREGROUND
+postfix  13822 pickup -l -t unix -u
+root     13844 sshd: ec2-user [priv]
+ec2-user 13865 sshd: ec2-user@pts/0
+ec2-user 13867 -bash
+root     13926 [kworker/u30:1-e]
+root     16499 [kworker/u30:0-e]
+root     18305 sshd: ec2-user [priv]
+ec2-user 18324 sshd: ec2-user@pts/1
+ec2-user 18326 -bash
+root     18562 [kworker/0:1-eve]
+root     18885 [kworker/0:2-eve]
+root     19234 [kworker/0:0-cgr]
+ec2-user 19470 ps -eo user,pid,cmd
+[ec2-user@ip-172-31-25-170 ~]$ ps -eo pid > list
+[ec2-user@ip-172-31-25-170 ~]$ sleep 300 &
+[1] 19512
+[ec2-user@ip-172-31-25-170 ~]$ ps -eo pid,cmd | grep "sleep 300"
+19512 sleep 300
+19528 grep --color=auto sleep 300
+[ec2-user@ip-172-31-25-170 ~]$ kill 19512
+[ec2-user@ip-172-31-25-170 ~]$ top
+top - 18:35:02 up 2 days, 11:12,  2 users,  load average: 0.00, 0.00, 0.00
+Tasks: 104 total,   1 running,  62 sleeping,   0 stopped,   0 zombie
+%Cpu(s):  0.3 us,  0.0 sy,  0.0 ni, 99.7 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+KiB Mem :   987700 total,   350320 free,   135948 used,   501432 buff/cache
+KiB Swap:        0 total,        0 free,        0 used.   675728 avail Mem
+
+  PID USER      PR  NI    VIRT    RES    SHR S %CPU %MEM     TIME+ COMMAND
+ 2942 apache    20   0  534300   7172   4692 S  0.3  0.7   0:33.77 httpd
+    1 root      20   0  115420   5464   3872 S  0.0  0.6   0:14.54 systemd
+    2 root      20   0       0      0      0 S  0.0  0.0   0:00.04 kthreadd
+    3 root       0 -20       0      0      0 I  0.0  0.0   0:00.00 rcu_gp
+    4 root       0 -20       0      0      0 I  0.0  0.0   0:00.00 rcu_par_gp
+    6 root       0 -20       0      0      0 I  0.0  0.0   0:00.00 kworker/0:0H-ev
+    9 root       0 -20       0      0      0 I  0.0  0.0   0:00.00 mm_percpu_wq
+   10 root      20   0       0      0      0 S  0.0  0.0   0:00.00 rcu_tasks_rude_
+   11 root      20   0       0      0      0 S  0.0  0.0   0:00.00 rcu_tasks_trace
+   12 root      20   0       0      0      0 S  0.0  0.0   0:00.45 ksoftirqd/0
+   13 root      20   0       0      0      0 I  0.0  0.0   0:01.07 rcu_sched
+   14 root      rt   0       0      0      0 S  0.0  0.0   0:01.06 migration/0
+   15 root      20   0       0      0      0 S  0.0  0.0   0:00.00 cpuhp/0
+   17 root      20   0       0      0      0 S  0.0  0.0   0:00.00 kdevtmpfs
+   18 root       0 -20       0      0      0 I  0.0  0.0   0:00.00 netns
+   21 root      20   0       0      0      0 S  0.0  0.0   0:00.10 kauditd
+  261 root      20   0       0      0      0 S  0.0  0.0   0:00.08 khungtaskd
+  262 root      20   0       0      0      0 S  0.0  0.0   0:00.00 oom_reaper
+  263 root       0 -20       0      0      0 I  0.0  0.0   0:00.00 writeback
+  265 root      20   0       0      0      0 S  0.0  0.0   0:06.63 kcompactd0
+  266 root      25   5       0      0      0 S  0.0  0.0   0:00.00 ksmd
+  267 root      39  19       0      0      0 S  0.0  0.0   0:00.00 khugepaged
+  322 root       0 -20       0      0      0 I  0.0  0.0   0:00.00 kintegrityd
+  324 root       0 -20       0      0      0 I  0.0  0.0   0:00.00 kblockd
+[1]+  Terminated              sleep 300
+[ec2-user@ip-172-31-25-170 ~]$ top -u root
+top - 18:35:16 up 2 days, 11:12,  2 users,  load average: 0.00, 0.00, 0.00
+Tasks: 104 total,   4 running,  61 sleeping,   0 stopped,   0 zombie
+%Cpu(s):  0.0 us,  0.3 sy,  0.0 ni, 99.7 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+KiB Mem :   987700 total,   350320 free,   135948 used,   501432 buff/cache
+KiB Swap:        0 total,        0 free,        0 used.   675728 avail Mem
+
+  PID USER      PR  NI    VIRT    RES    SHR S %CPU %MEM     TIME+ COMMAND
+    1 root      20   0  115420   5464   3872 S  0.0  0.6   0:14.54 systemd
+    2 root      20   0       0      0      0 S  0.0  0.0   0:00.04 kthreadd
+    3 root       0 -20       0      0      0 I  0.0  0.0   0:00.00 rcu_gp
+    4 root       0 -20       0      0      0 I  0.0  0.0   0:00.00 rcu_par_gp
+    6 root       0 -20       0      0      0 I  0.0  0.0   0:00.00 kworker/0:0H-ev
+    9 root       0 -20       0      0      0 I  0.0  0.0   0:00.00 mm_percpu_wq
+   10 root      20   0       0      0      0 S  0.0  0.0   0:00.00 rcu_tasks_rude_
+   11 root      20   0       0      0      0 S  0.0  0.0   0:00.00 rcu_tasks_trace
+   12 root      20   0       0      0      0 S  0.0  0.0   0:00.45 ksoftirqd/0
+   13 root      20   0       0      0      0 R  0.0  0.0   0:01.07 rcu_sched
+   14 root      rt   0       0      0      0 S  0.0  0.0   0:01.06 migration/0
+   15 root      20   0       0      0      0 S  0.0  0.0   0:00.00 cpuhp/0
+   17 root      20   0       0      0      0 S  0.0  0.0   0:00.00 kdevtmpfs
+   18 root       0 -20       0      0      0 I  0.0  0.0   0:00.00 netns
+   21 root      20   0       0      0      0 S  0.0  0.0   0:00.10 kauditd
+  261 root      20   0       0      0      0 S  0.0  0.0   0:00.08 khungtaskd
+  262 root      20   0       0      0      0 S  0.0  0.0   0:00.00 oom_reaper
+  263 root       0 -20       0      0      0 I  0.0  0.0   0:00.00 writeback
+  265 root      20   0       0      0      0 S  0.0  0.0   0:06.63 kcompactd0
+  266 root      25   5       0      0      0 S  0.0  0.0   0:00.00 ksmd
+  267 root      39  19       0      0      0 S  0.0  0.0   0:00.00 khugepaged
+  322 root       0 -20       0      0      0 I  0.0  0.0   0:00.00 kintegrityd
+  324 root       0 -20       0      0      0 I  0.0  0.0   0:00.00 kblockd
+  325 root       0 -20       0      0      0 I  0.0  0.0   0:00.00 blkcg_punt_bio
+[ec2-user@ip-172-31-25-170 ~]$ ping yahoo.com
+PING yahoo.com (74.6.231.20) 56(84) bytes of data.
+64 bytes from media-router-fp73.prod.media.vip.ne1.yahoo.com (74.6.231.20): icmp_seq=1 ttl=38 time=33.5 ms
+64 bytes from media-router-fp73.prod.media.vip.ne1.yahoo.com (74.6.231.20): icmp_seq=2 ttl=38 time=33.3 ms
+64 bytes from media-router-fp73.prod.media.vip.ne1.yahoo.com (74.6.231.20): icmp_seq=3 ttl=38 time=33.4 ms
+64 bytes from media-router-fp73.prod.media.vip.ne1.yahoo.com (74.6.231.20): icmp_seq=4 ttl=38 time=33.4 ms
+64 bytes from media-router-fp73.prod.media.vip.ne1.yahoo.com (74.6.231.20): icmp_seq=5 ttl=38 time=33.5 ms
+64 bytes from media-router-fp73.prod.media.vip.ne1.yahoo.com (74.6.231.20): icmp_seq=6 ttl=38 time=33.4 ms
+64 bytes from media-router-fp73.prod.media.vip.ne1.yahoo.com (74.6.231.20): icmp_seq=7 ttl=38 time=33.4 ms
+64 bytes from media-router-fp73.prod.media.vip.ne1.yahoo.com (74.6.231.20): icmp_seq=8 ttl=38 time=33.6 ms
+64 bytes from media-router-fp73.prod.media.vip.ne1.yahoo.com (74.6.231.20): icmp_seq=9 ttl=38 time=33.3 ms
+64 bytes from media-router-fp73.prod.media.vip.ne1.yahoo.com (74.6.231.20): icmp_seq=10 ttl=38 time=34.1 ms
+^C
+--- yahoo.com ping statistics ---
+10 packets transmitted, 10 received, 0% packet loss, time 9014ms
+rtt min/avg/max/mdev = 33.325/33.546/34.186/0.268 ms
+[ec2-user@ip-172-31-25-170 ~]$ traceroute yahoo.com > route
+[ec2-user@ip-172-31-25-170 ~]$ less route
+[ec2-user@ip-172-31-25-170 ~]$ ln -s route route
+ln: failed to create symbolic link ‘route’: File exists
+[ec2-user@ip-172-31-25-170 ~]$ ln -s route route2
+[ec2-user@ip-172-31-25-170 ~]$ netstat -a > output
+[ec2-user@ip-172-31-25-170 ~]$ mkdir network
+mkdir: cannot create directory ‘network’: File exists
+[ec2-user@ip-172-31-25-170 ~]$ mv route output network
+[ec2-user@ip-172-31-25-170 ~]$ ifconfig -a
+eth0: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 9001
+        inet 172.31.25.170  netmask 255.255.240.0  broadcast 172.31.31.255
+        inet6 fe80::883:bbff:feb2:d553  prefixlen 64  scopeid 0x20<link>
+        ether 0a:83:bb:b2:d5:53  txqueuelen 1000  (Ethernet)
+        RX packets 124222  bytes 53259702 (50.7 MiB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 94151  bytes 14092094 (13.4 MiB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
+        inet 127.0.0.1  netmask 255.0.0.0
+        inet6 ::1  prefixlen 128  scopeid 0x10<host>
+        loop  txqueuelen 1000  (Local Loopback)
+        RX packets 436  bytes 36624 (35.7 KiB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 436  bytes 36624 (35.7 KiB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+[ec2-user@ip-172-31-25-170 ~]$ history > linuxExercises/Paul.130522.module6
+
+HISTORY
+    1  clear
+    2  jobs
+    3  ps -eo pid,cmd | grep "sleep 300"
+    4  kill 18522
+    5  top
+    6  top -u root
+    7  ping yahoo.com
+    8  ping
+    9  traceroute yahoo.com > yahoo.route
+   10  less yahoo.route
+   11  vim yahoo.route
+   12  ln -s yahoo.com route
+   13  netstat -a > output
+   14  mkdir network
+   15  mv route output network
+   16  ifconfig -a
+   17  history > Paul.130522.module6
+   18  ls
+   19  cd network
+   20  ls
+   21  ll
+   22  cd ..
+   23  mkdir linuxExercises
+   24  mv Paul* linuxExercises
+   25  cd linuxExercises/
+   26  ls
+   27  cd ~
+   28  ls
+   29  ps -ef
+   30  echo $USER
+   31  ps -ef | grep $USER
+   32  ps -ef | grep -v $USER
+   33  ps -f $$
+   34  pstree -shapu $$
+   35  ps -eo user,pid,cmd
+   36  ps -eo pid > list
+   37  sleep 300 &
+   38  ps -eo pid,cmd | grep "sleep 300"
+   39  kill 19512
+   40  top
+   41  top -u root
+   42  ping yahoo.com
+   43  traceroute yahoo.com > route
+   44  less route
+   45  ln -s route route
+   46  ln -s route route2
+   47  netstat -a > output
+   48  mkdir network
+   49  mv route output network
+   50  ifconfig -a
+   51  history > linuxExercises/Paul.130522.module6

@@ -1,0 +1,485 @@
+[ec2-user@ip-172-31-25-170 ~]$ cd ~
+[ec2-user@ip-172-31-25-170 ~]$ vim fixGenerator.sh
+[ec2-user@ip-172-31-25-170 ~]$ chmod 744 fixGenerator.sh
+[ec2-user@ip-172-31-25-170 ~]$ ./fixGenerator.sh &
+[1] 13893
+[ec2-user@ip-172-31-25-170 ~]$ cat fixGenerator.sh
+#!/bin/bash
+
+#############################################
+# v1.1 of script by Su Morton
+# date 6/5/2020
+#############################################
+
+#writing a script to generate a fix log
+
+# First step is to generate the logon messages
+
+TODAY=`date "+%Y-%m-%d"`
+
+# open the log file
+LOGFILENAME="fixlog"`date "+%Y%m%d%H%M%S"`".log"
+
+touch $LOGFILENAME
+
+# Need to setup some of the variables we will need
+
+CLIENT="MTHREE"
+BROKER="MS"
+
+HEARTBEAT=""
+HEARTBEATRESPONSE=""
+
+CLIENTSEQNUMBER=1
+BROKERSEQNUMBER=1
+
+CURRENTTIME=`date "+%Y-%m-%d-%T"`
+
+# initial login messages on the session
+
+INITIALLOGON="8=FIX4.4; 35=A; 34=$CLIENTSEQNUMBER; 49=$CLIENT; 56=$BROKER; 52=$CURRENTTIME; 108=30; 10=0015;"
+INITIALLOGONACK="8=FIX4.4; 35=A; 34=$BROKERSEQNUMBER; 49=$BROKER; 56=$CLIENT; 52=$CURRENTTIME; 108=30; 10=0016;"
+
+echo $INITIALLOGON >> $LOGFILENAME
+echo $INITIALLOGONACK >> $LOGFILENAME
+
+# now we will put some heartbeat messages in the log before trading starts - we will make the number of heart beat messages configurable
+# To be authentic the sleep variable should be set to 30 in here
+
+TOTALHEARTBEATS=50
+
+until [ $CLIENTSEQNUMBER -gt $TOTALHEARTBEATS ]
+do
+        let "CLIENTSEQNUMBER++"
+        let "BROKERSEQNUMBER++"
+        CURRENTTIME=`date "+%Y-%m-%d-%T"`
+
+
+        INITIALHEARTBEAT="8=FIX4.4; 35=0; 34=$CLIENTSEQNUMBER; 49=$CLIENT; 56=$BROKER; 52=$CURRENTTIME; 108=30; 10=0015;"
+        INITIALHEARTBEATACK="8=FIX4.4; 35=0; 34=$BROKERSEQNUMBER; 49=$BROKER; 56=$CLIENT; 52=$CURRENTTIME; 108=30; 10=0015;"
+        sleep 2
+
+        echo $INITIALHEARTBEAT >> $LOGFILENAME
+        echo $INITIALHEARTBEATACK >> $LOGFILENAME
+
+done
+
+#now we will look to setup some trading messages
+
+Stocks=('AAPL' 'MSFT' 'AMZN' 'FB' 'GOOG' 'GOOGL' 'INTC' 'PEP' 'NFLX' 'CSCO' 'AMGN' 'PYPL' 'TSLA' 'TXN' 'AVGO' 'GILD' 'SBUX' 'QCOM' 'TMUS' 'MDLZ' 'BAC' 'DDD' 'MMM' 'WBAI' 'WUBA' 'EGHT' 'AHC' 'AOS' 'ATEN' 'AIR' 'AAN' 'ABB' 'ABT' 'ABBV' 'ANF' 'ABM' 'AAPL' 'PEP' )
+Prices=('1276.37' '59.89' '133.47' '430.62' '42.05' '289.20' '339.13' '36.21' '306.71' '233.73' '116.62' '723.61' '503.77' '112.46' '262.99' '82.91' '75.71' '75.47' '90.74' '52.26' '22.03' '8.01' '146.98' '4.10' '51.41' '17.03' '1.40' '40.38' '6.45' '16.31' '25.68' '17.42' '94.04' '83.60' '9.10' '31.64' '284.65' '45.43' )
+
+
+CURRENTSTOCK=""
+CURRENTPRICE=""
+ORDERID=""
+QTY=""
+TOTALNEWORDERS=`echo "${#Stocks[@]}"`
+i=0
+until [ $i -gt $TOTALNEWORDERS ]
+do
+        CURRENTSTOCK="`echo ${Stocks[$i]}`"
+        CURRENTTIME=`date "+%Y-%m-%d-%T"`
+        QTY="";
+        SIDE=1;
+        CURRENTPRICE="`echo ${Prices[$i]}`"
+        ORDERID="algo"`date "+%Y%m%d%H%M%S"`
+        SIDE="`echo $((1 + RANDOM % 2))`"
+        QTY="`echo $(($RANDOM + 10))`"
+
+        let "CLIENTSEQNUMBER++"
+
+        NEWORDER="8=FIX4.4; 35=D; 34=$CLIENTSEQNUMBER; 49=$CLIENT; 56=$BROKER;  52=$CURRENTTIME; 55=$CURRENTSTOCK; 40=2; 38=$QTY; 21=2; 11=$ORDERID; 60=$CURRENTTIME; 54=$SIDE; 44=$CURRENTPRICE; 10=0252;"
+
+        echo $NEWORDER >> $LOGFILENAME
+
+#set up the qty variables so we can acknowledge the message
+        LASTTRDQTY=0
+        LASTTRDVOL=0
+        EXECID="exec"`date "+%Y%m%d%H%M%S"`
+        CUMQTY=0
+        let "BROKERSEQNUMBER++"
+
+        NEWORDERACK="8=FIX4.4; 35=8; 34=$BROKERSEQNUMBER; 49=$BROKER; 56=$CLIENT; 52=$CURRENTTIME; 55=$CURRENTSTOCK; 40=2; 11=$ORDERID; 31=$CURRENTPRICE; 150=0; 39=0; 54=$SIDE; 44=$CURRENTPRICE; 32=$LASTTRDVOL; 17=$EXECID; 38=$QTY; 60=$CURRENTTIME; 6=$LASTTRDQTY; 14=$CUMQTY; 37=$ORDERID; 10=200;"
+
+        echo $NEWORDERACK >> $LOGFILENAME
+
+        #need to setup the partial fills
+        NUMBEROFFILLS=1
+        NUMBEROFFILLS="`echo $((1 + RANDOM % 5))`"
+        x=0
+
+        LASTTRDQTY="`echo $(($QTY / $NUMBEROFFILLS))`"
+        QTYREMAINING=0
+        QTYREMAINING="`echo $(($QTY - $LASTTRDQTY))`"
+        NUMBEROFPARTIALFILLS="`echo $(($NUMBEROFFILLS - 1))`"
+        FILLTEST=0
+
+        until [ $x -eq $NUMBEROFPARTIALFILLS ]
+        do
+
+                #now to chose if to fill or cancel
+
+                CANCELTEST="`echo $((1 + RANDOM % 2))`"
+                FILLTEST=0
+
+                if [ $CANCELTEST -eq 1 ]
+                then
+                        EXECID="exec"`date "+%Y%m%d%H%M%S"`
+                        CURRENTTIME=`date "+%Y-%m-%d-%T"`
+                        CUMQTY="`echo $(($CUMQTY + $LASTTRDQTY))`"
+                        let "BROKERSEQNUMBER++"
+
+                        PARTIALFILL="8=FIX4.4; 35=8; 34=$BROKERSEQNUMBER; 49=$BROKER; 56=$CLIENT; 52=$CURRENTTIME; 55=$CURRENTSTOCK; 40=2; 11=$ORDERID; 31=$CURRENTPRICE; 150=1; 39=1; 54=$SIDE; 44=$CURRENTPRICE; 32=$LASTTRDQTY; 17=$EXECID; 38=$QTY; 60=$CURRENTTIME; 6=$CURRENTPRICE; 14=$CUMQTY; 37=$ORDERID; 10=240;"
+
+                        echo $PARTIALFILL >> $LOGFILENAME
+
+                        ((x=x+1))
+
+                        QTYREMAINING="`echo $(($QTYREMAINING - $LASTTRDQTY))`"
+                        FILLTEST=0
+                        sleep 1
+
+                else
+
+                        CURRENTTIME=`date "+%Y-%m-%d-%T"`
+                        CANCELORDERID="C_"`echo $ORDERID`
+                        CANCELREQUEST="8=FIX4.4; 35=F; 34=$CLIENTSEQNUMBER; 49=$CLIENT; 56=$BROKER;  52=$CURRENTTIME; 41=$ORDERID; 55=$CURRENTSTOCK; 38=$QTY; 11=$CANCELORDERID; 60=$CURRENTTIME; 10=060;  "
+                        echo $CANCELREQUEST >> $LOGFILENAME
+                        let "CLIENTSEQNUMBER++"
+
+                        EXECID="exec"`date "+%Y%m%d%H%M%S"`
+                        CURRENTTIME=`date "+%Y-%m-%d-%T"`
+
+
+                        PENDINGCANCEL="8=FIX4.4; 35=8; 34=$BROKERSEQNUMBER; 49=$BROKER; 56=$CLIENT; 52=$CURRENTTIME; 55=$CURRENTSTOCK; 11=$CANCELORDERID; 31=0; 150=6; 39=6; 54=$SIDE; 44=$CURRENTPRICE; 17=$EXECID; 32=0; 41=$ORDERID; 38=$QTY; 60=$CURRENTTIME; 6=0.0; 14=$CUMQTY; 37=$ORDERID; 10=252; "
+                        echo $PENDINGCANCEL >> $LOGFILENAME
+                        let "BROKERSEQNUMBER++"
+
+
+                        EXECID="exec"`date "+%Y%m%d%H%M%S"`
+                        CURRENTTIME=`date "+%Y-%m-%d-%T"`
+
+                        CANCELACK="8=FIX4.4; 35=8; 34=$BROKERSEQNUMBER; 49=$BROKER; 56=$CLIENT; 52=$CURRENTTIME; 151=$QTYREMAINING; 55=$CURRENTSTOCK; 11=$CANCELORDERID; 31=0; 150=4; 39=4; 54=$SIDE; 17=$EXECID; 32=0;  41=$ORDERID; 38=$QTY; 60=$CURRENTTIME;  6=0.0; 14=$CUMQTY; 37=$ORDERID; 10=252;"
+
+                        echo $CANCELACK >> $LOGFILENAME
+                        let "BROKERSEQNUMBER++"
+                        FILLTEST=1;
+                        x=$NUMBEROFPARTIALFILLS
+                        sleep 1
+
+                fi
+
+        done
+        #if qty remaining is not = 0 then you need to do one more fill
+
+        ((i=i+1))
+        sleep 1
+
+        #Now we need to send out the fully filled message if we need it
+        if [ $FILLTEST -eq 0 ]
+        then
+                EXECID="exec"`date "+%Y%m%d%H%M%S"`
+                CURRENTTIME=`date "+%Y-%m-%d-%T"`
+
+                QTYREMAINING="`echo $(($QTY - $CUMQTY))`"
+                let "BROKERSEQNUMBER++"
+
+                FULLYFILLED="8=FIX4.4; 35=8; 34=$BROKERSEQNUMBER; 49=$BROKER; 56=$CLIENT; 52=$CURRENTTIME; 55=$CURRENTSTOCK; 40=2; 11=$ORDERID; 31=$CURRENTPRICE; 150=2; 39=2; 54=$SIDE; 44=$CURRENTPRICE; 32=$QTYREMAINING; 17=$EXECID; 38=$QTY; 60=$CURRENTTIME; 6=$CURRENTPRICE; 14=$QTY; 37=$ORDERID; 10=246;"
+
+                echo $FULLYFILLED >> $LOGFILENAME
+        fi
+
+
+done
+[ec2-user@ip-172-31-25-170 ~]$ cat -n fix
+fixGenerator.sh           fixlog20220511165331.log
+[ec2-user@ip-172-31-25-170 ~]$ cat -n fixGenerator.sh
+     1  #!/bin/bash
+     2
+     3  #############################################
+     4  # v1.1 of script by Su Morton
+     5  # date 6/5/2020
+     6  #############################################
+     7
+     8  #writing a script to generate a fix log
+     9
+    10  # First step is to generate the logon messages
+    11
+    12  TODAY=`date "+%Y-%m-%d"`
+    13
+    14  # open the log file
+    15  LOGFILENAME="fixlog"`date "+%Y%m%d%H%M%S"`".log"
+    16
+    17  touch $LOGFILENAME
+    18
+    19  # Need to setup some of the variables we will need
+    20
+    21  CLIENT="MTHREE"
+    22  BROKER="MS"
+    23
+    24  HEARTBEAT=""
+    25  HEARTBEATRESPONSE=""
+    26
+    27  CLIENTSEQNUMBER=1
+    28  BROKERSEQNUMBER=1
+    29
+    30  CURRENTTIME=`date "+%Y-%m-%d-%T"`
+    31
+    32  # initial login messages on the session
+    33
+    34  INITIALLOGON="8=FIX4.4; 35=A; 34=$CLIENTSEQNUMBER; 49=$CLIENT; 56=$BROKER; 52=$CURRENTTIME; 108=30; 10=0015;"
+    35  INITIALLOGONACK="8=FIX4.4; 35=A; 34=$BROKERSEQNUMBER; 49=$BROKER; 56=$CLIENT; 52=$CURRENTTIME; 108=30; 10=0016;"
+    36
+    37  echo $INITIALLOGON >> $LOGFILENAME
+    38  echo $INITIALLOGONACK >> $LOGFILENAME
+    39
+    40  # now we will put some heartbeat messages in the log before trading starts - we will make the number of heart beat messages configurable
+    41  # To be authentic the sleep variable should be set to 30 in here
+    42
+    43  TOTALHEARTBEATS=50
+    44
+    45  until [ $CLIENTSEQNUMBER -gt $TOTALHEARTBEATS ]
+    46  do
+    47          let "CLIENTSEQNUMBER++"
+    48          let "BROKERSEQNUMBER++"
+    49          CURRENTTIME=`date "+%Y-%m-%d-%T"`
+    50
+    51
+    52          INITIALHEARTBEAT="8=FIX4.4; 35=0; 34=$CLIENTSEQNUMBER; 49=$CLIENT; 56=$BROKER; 52=$CURRENTTIME; 108=30; 10=0015;"
+    53          INITIALHEARTBEATACK="8=FIX4.4; 35=0; 34=$BROKERSEQNUMBER; 49=$BROKER; 56=$CLIENT; 52=$CURRENTTIME; 108=30; 10=0015;"
+    54          sleep 2
+    55
+    56          echo $INITIALHEARTBEAT >> $LOGFILENAME
+    57          echo $INITIALHEARTBEATACK >> $LOGFILENAME
+    58
+    59  done
+    60
+    61  #now we will look to setup some trading messages
+    62
+    63  Stocks=('AAPL' 'MSFT' 'AMZN' 'FB' 'GOOG' 'GOOGL' 'INTC' 'PEP' 'NFLX' 'CSCO' 'AMGN' 'PYPL' 'TSLA' 'TXN' 'AVGO' 'GILD' 'SBUX' 'QCOM' 'TMUS' 'MDLZ' 'BAC' 'DDD' 'MMM' 'WBAI' 'WUBA' 'EGHT' 'AHC' 'AOS' 'ATEN' 'AIR' 'AAN' 'ABB' 'ABT' 'ABBV' 'ANF' 'ABM' 'AAPL' 'PEP' )
+    64  Prices=('1276.37' '59.89' '133.47' '430.62' '42.05' '289.20' '339.13' '36.21' '306.71' '233.73' '116.62' '723.61' '503.77' '112.46' '262.99' '82.91' '75.71' '75.47' '90.74' '52.26' '22.03' '8.01' '146.98' '4.10' '51.41' '17.03' '1.40' '40.38' '6.45' '16.31' '25.68' '17.42' '94.04' '83.60' '9.10' '31.64' '284.65' '45.43' )
+    65
+    66
+    67  CURRENTSTOCK=""
+    68  CURRENTPRICE=""
+    69  ORDERID=""
+    70  QTY=""
+    71  TOTALNEWORDERS=`echo "${#Stocks[@]}"`
+    72  i=0
+    73  until [ $i -gt $TOTALNEWORDERS ]
+    74  do
+    75          CURRENTSTOCK="`echo ${Stocks[$i]}`"
+    76          CURRENTTIME=`date "+%Y-%m-%d-%T"`
+    77          QTY="";
+    78          SIDE=1;
+    79          CURRENTPRICE="`echo ${Prices[$i]}`"
+    80          ORDERID="algo"`date "+%Y%m%d%H%M%S"`
+    81          SIDE="`echo $((1 + RANDOM % 2))`"
+    82          QTY="`echo $(($RANDOM + 10))`"
+    83
+    84          let "CLIENTSEQNUMBER++"
+    85
+    86          NEWORDER="8=FIX4.4; 35=D; 34=$CLIENTSEQNUMBER; 49=$CLIENT; 56=$BROKER;  52=$CURRENTTIME; 55=$CURRENTSTOCK; 40=2; 38=$QTY; 21=2; 11=$ORDERID; 60=$CURRENTTIME; 54=$SIDE; 44=$CURRENTPRICE; 10=0252;"
+    87
+    88          echo $NEWORDER >> $LOGFILENAME
+    89
+    90  #set up the qty variables so we can acknowledge the message
+    91          LASTTRDQTY=0
+    92          LASTTRDVOL=0
+    93          EXECID="exec"`date "+%Y%m%d%H%M%S"`
+    94          CUMQTY=0
+    95          let "BROKERSEQNUMBER++"
+    96
+    97          NEWORDERACK="8=FIX4.4; 35=8; 34=$BROKERSEQNUMBER; 49=$BROKER; 56=$CLIENT; 52=$CURRENTTIME; 55=$CURRENTSTOCK; 40=2; 11=$ORDERID; 31=$CURRENTPRICE; 150=0; 39=0; 54=$SIDE; 44=$CURRENTPRICE; 32=$LASTTRDVOL; 17=$EXECID; 38=$QTY; 60=$CURRENTTIME; 6=$LASTTRDQTY; 14=$CUMQTY; 37=$ORDERID; 10=200;"
+    98
+    99          echo $NEWORDERACK >> $LOGFILENAME
+   100
+   101          #need to setup the partial fills
+   102          NUMBEROFFILLS=1
+   103          NUMBEROFFILLS="`echo $((1 + RANDOM % 5))`"
+   104          x=0
+   105
+   106          LASTTRDQTY="`echo $(($QTY / $NUMBEROFFILLS))`"
+   107          QTYREMAINING=0
+   108          QTYREMAINING="`echo $(($QTY - $LASTTRDQTY))`"
+   109          NUMBEROFPARTIALFILLS="`echo $(($NUMBEROFFILLS - 1))`"
+   110          FILLTEST=0
+   111
+   112          until [ $x -eq $NUMBEROFPARTIALFILLS ]
+   113          do
+   114
+   115                  #now to chose if to fill or cancel
+   116
+   117                  CANCELTEST="`echo $((1 + RANDOM % 2))`"
+   118                  FILLTEST=0
+   119
+   120                  if [ $CANCELTEST -eq 1 ]
+   121                  then
+   122                          EXECID="exec"`date "+%Y%m%d%H%M%S"`
+   123                          CURRENTTIME=`date "+%Y-%m-%d-%T"`
+   124                          CUMQTY="`echo $(($CUMQTY + $LASTTRDQTY))`"
+   125                          let "BROKERSEQNUMBER++"
+   126
+   127                          PARTIALFILL="8=FIX4.4; 35=8; 34=$BROKERSEQNUMBER; 49=$BROKER; 56=$CLIENT; 52=$CURRENTTIME; 55=$CURRENTSTOCK; 40=2; 11=$ORDERID; 31=$CURRENTPRICE; 150=1; 39=1; 54=$SIDE; 44=$CURRENTPRICE; 32=$LASTTRDQTY; 17=$EXECID; 38=$QTY; 60=$CURRENTTIME; 6=$CURRENTPRICE; 14=$CUMQTY; 37=$ORDERID; 10=240;"
+   128
+   129                          echo $PARTIALFILL >> $LOGFILENAME
+   130
+   131                          ((x=x+1))
+   132
+   133                          QTYREMAINING="`echo $(($QTYREMAINING - $LASTTRDQTY))`"
+   134                          FILLTEST=0
+   135                          sleep 1
+   136
+   137                  else
+   138
+   139                          CURRENTTIME=`date "+%Y-%m-%d-%T"`
+   140                          CANCELORDERID="C_"`echo $ORDERID`
+   141                          CANCELREQUEST="8=FIX4.4; 35=F; 34=$CLIENTSEQNUMBER; 49=$CLIENT; 56=$BROKER;  52=$CURRENTTIME; 41=$ORDERID; 55=$CURRENTSTOCK; 38=$QTY; 11=$CANCELORDERID; 60=$CURRENTTIME; 10=060;  "
+   142                          echo $CANCELREQUEST >> $LOGFILENAME
+   143                          let "CLIENTSEQNUMBER++"
+   144
+   145                          EXECID="exec"`date "+%Y%m%d%H%M%S"`
+   146                          CURRENTTIME=`date "+%Y-%m-%d-%T"`
+   147
+   148
+   149                          PENDINGCANCEL="8=FIX4.4; 35=8; 34=$BROKERSEQNUMBER; 49=$BROKER; 56=$CLIENT; 52=$CURRENTTIME; 55=$CURRENTSTOCK; 11=$CANCELORDERID; 31=0; 150=6; 39=6; 54=$SIDE; 44=$CURRENTPRICE; 17=$EXECID; 32=0; 41=$ORDERID; 38=$QTY; 60=$CURRENTTIME; 6=0.0; 14=$CUMQTY; 37=$ORDERID; 10=252; "
+   150                          echo $PENDINGCANCEL >> $LOGFILENAME
+   151                          let "BROKERSEQNUMBER++"
+   152
+   153
+   154                          EXECID="exec"`date "+%Y%m%d%H%M%S"`
+   155                          CURRENTTIME=`date "+%Y-%m-%d-%T"`
+   156
+   157                          CANCELACK="8=FIX4.4; 35=8; 34=$BROKERSEQNUMBER; 49=$BROKER; 56=$CLIENT; 52=$CURRENTTIME; 151=$QTYREMAINING; 55=$CURRENTSTOCK; 11=$CANCELORDERID; 31=0; 150=4; 39=4; 54=$SIDE; 17=$EXECID; 32=0;  41=$ORDERID; 38=$QTY; 60=$CURRENTTIME;  6=0.0; 14=$CUMQTY; 37=$ORDERID; 10=252;"
+   158
+   159                          echo $CANCELACK >> $LOGFILENAME
+   160                          let "BROKERSEQNUMBER++"
+   161                          FILLTEST=1;
+   162                          x=$NUMBEROFPARTIALFILLS
+   163                          sleep 1
+   164
+   165                  fi
+   166
+   167          done
+   168          #if qty remaining is not = 0 then you need to do one more fill
+   169
+   170          ((i=i+1))
+   171          sleep 1
+   172
+   173          #Now we need to send out the fully filled message if we need it
+   174          if [ $FILLTEST -eq 0 ]
+   175          then
+   176                  EXECID="exec"`date "+%Y%m%d%H%M%S"`
+   177                  CURRENTTIME=`date "+%Y-%m-%d-%T"`
+   178
+   179                  QTYREMAINING="`echo $(($QTY - $CUMQTY))`"
+   180                  let "BROKERSEQNUMBER++"
+   181
+   182                  FULLYFILLED="8=FIX4.4; 35=8; 34=$BROKERSEQNUMBER; 49=$BROKER; 56=$CLIENT; 52=$CURRENTTIME; 55=$CURRENTSTOCK; 40=2; 11=$ORDERID; 31=$CURRENTPRICE; 150=2; 39=2; 54=$SIDE; 44=$CURRENTPRICE; 32=$QTYREMAINING; 17=$EXECID; 38=$QTY; 60=$CURRENTTIME; 6=$CURRENTPRICE; 14=$QTY; 37=$ORDERID; 10=246;"
+   183
+   184                  echo $FULLYFILLED >> $LOGFILENAME
+   185          fi
+   186
+   187
+   188  done
+[ec2-user@ip-172-31-25-170 ~]$ cat fix
+fixGenerator.sh           fixlog20220511165331.log
+[ec2-user@ip-172-31-25-170 ~]$ cat fixlog20220511165331.log > newlog.log
+[ec2-user@ip-172-31-25-170 ~]$ mkdir logs
+[ec2-user@ip-172-31-25-170 ~]$ mv newlog.log logs/newlog.log
+[ec2-user@ip-172-31-25-170 ~]$ cat fixlog20220511165331.log >> logs/newlog.log
+[ec2-user@ip-172-31-25-170 ~]$ ln -s ~/logs/newlog.log logs/Daily
+[ec2-user@ip-172-31-25-170 ~]$ cd ~
+[1]+  Done                    ./fixGenerator.sh
+[ec2-user@ip-172-31-25-170 ~]$ cat fix
+fixGenerator.sh           fixlog20220511165331.log
+[ec2-user@ip-172-31-25-170 ~]$ cat fix
+fixGenerator.sh           fixlog20220511165331.log
+[ec2-user@ip-172-31-25-170 ~]$ cat fixlog20220511165331.log | less
+[ec2-user@ip-172-31-25-170 ~]$ cat fixlog20220511165331.log | grep 35=D > logs/newOrders.log
+[ec2-user@ip-172-31-25-170 ~]$ cp logs/new
+newlog.log     newOrders.log
+[ec2-user@ip-172-31-25-170 ~]$ cp logs/newOrders.log newOrders.log
+[ec2-user@ip-172-31-25-170 ~]$ tail newOrders.log -n 1
+8=FIX4.4; 35=D; 34=116; 49=MTHREE; 56=MS; 52=2022-05-11-16:56:51; 55=; 40=2; 38=31014; 21=2; 11=algo20220511165651; 60=2022-05-11-16:56:51; 54=1; 44=; 10=0252;
+[ec2-user@ip-172-31-25-170 ~]$ cat -n newOrders.log |tail -n 1
+    39  8=FIX4.4; 35=D; 34=116; 49=MTHREE; 56=MS; 52=2022-05-11-16:56:51; 55=; 40=2; 38=31014; 21=2; 11=algo20220511165651; 60=2022-05-11-16:56:51; 54=1; 44=; 10=0252;
+[ec2-user@ip-172-31-25-170 ~]$ ls
+fixGenerator.sh           logs           Paul.100522.module2  Paul.110522.module4
+fixlog20220511165331.log  newOrders.log  Paul.110522.module3  scripts
+[ec2-user@ip-172-31-25-170 ~]$ cat fixlog20220511165331.log | grep 54=1 > logs/buyMessages.log
+[ec2-user@ip-172-31-25-170 ~]$ cat -n logs/buyMessages.log | tail -n 1
+    91  8=FIX4.4; 35=8; 34=191; 49=MS; 56=MTHREE; 52=2022-05-11-16:56:51; 151=23261; 55=; 11=C_algo20220511165651; 31=0; 150=4; 39=4; 54=1; 17=exec20220511165651; 32=0; 41=algo20220511165651; 38=31014; 60=2022-05-11-16:56:51; 6=0.0; 14=0; 37=algo20220511165651; 10=252;
+[ec2-user@ip-172-31-25-170 ~]$ cat logs/buyMessages.log | grep 35=D | cat -n |tail -n 1
+    17  8=FIX4.4; 35=D; 34=116; 49=MTHREE; 56=MS; 52=2022-05-11-16:56:51; 55=; 40=2; 38=31014; 21=2; 11=algo20220511165651; 60=2022-05-11-16:56:51; 54=1; 44=; 10=0252;
+[ec2-user@ip-172-31-25-170 ~]$ cat fixlog20220511165331.log | grep -v 35=D > logs/noNewOrders.log
+[ec2-user@ip-172-31-25-170 ~]$ cat -n logs/noNewOrders.log | tail -n 1
+   270  8=FIX4.4; 35=8; 34=191; 49=MS; 56=MTHREE; 52=2022-05-11-16:56:51; 151=23261; 55=; 11=C_algo20220511165651; 31=0; 150=4; 39=4; 54=1; 17=exec20220511165651; 32=0; 41=algo20220511165651; 38=31014; 60=2022-05-11-16:56:51; 6=0.0; 14=0; 37=algo20220511165651; 10=252;
+[ec2-user@ip-172-31-25-170 ~]$ tail -n 5 logs/noNewOrders.log
+8=FIX4.4; 35=8; 34=188; 49=MS; 56=MTHREE; 52=2022-05-11-16:56:49; 151=7244; 55=PEP; 11=C_algo20220511165649; 31=0; 150=4; 39=4; 54=2; 17=exec20220511165649; 32=0; 41=algo20220511165649; 38=9054; 60=2022-05-11-16:56:49; 6=0.0; 14=0; 37=algo20220511165649; 10=252;
+8=FIX4.4; 35=8; 34=190; 49=MS; 56=MTHREE; 52=2022-05-11-16:56:51; 55=; 40=2; 11=algo20220511165651; 31=; 150=0; 39=0; 54=1; 44=; 32=0; 17=exec20220511165651; 38=31014; 60=2022-05-11-16:56:51; 6=0; 14=0; 37=algo20220511165651; 10=200;
+8=FIX4.4; 35=F; 34=116; 49=MTHREE; 56=MS; 52=2022-05-11-16:56:51; 41=algo20220511165651; 55=; 38=31014; 11=C_algo20220511165651; 60=2022-05-11-16:56:51; 10=060;
+8=FIX4.4; 35=8; 34=190; 49=MS; 56=MTHREE; 52=2022-05-11-16:56:51; 55=; 11=C_algo20220511165651; 31=0; 150=6; 39=6; 54=1; 44=; 17=exec20220511165651; 32=0; 41=algo20220511165651; 38=31014; 60=2022-05-11-16:56:51; 6=0.0; 14=0; 37=algo20220511165651; 10=252;
+8=FIX4.4; 35=8; 34=191; 49=MS; 56=MTHREE; 52=2022-05-11-16:56:51; 151=23261; 55=; 11=C_algo20220511165651; 31=0; 150=4; 39=4; 54=1; 17=exec20220511165651; 32=0; 41=algo20220511165651; 38=31014; 60=2022-05-11-16:56:51; 6=0.0; 14=0; 37=algo20220511165651; 10=252;
+[ec2-user@ip-172-31-25-170 ~]$ cat fixlog20220511165331.log | grep -i apple | head -n 2
+[ec2-user@ip-172-31-25-170 ~]$ cat fixlog20220511165331.log | grep -i apple
+[ec2-user@ip-172-31-25-170 ~]$ cat fixlog20220511165331.log | grep -i appl | head -n 2
+[ec2-user@ip-172-31-25-170 ~]$ cat fixlog20220511165331.log | grep -i aapl | head -n 2
+8=FIX4.4; 35=D; 34=52; 49=MTHREE; 56=MS; 52=2022-05-11-16:55:11; 55=AAPL; 40=2; 38=4401; 21=2; 11=algo20220511165511; 60=2022-05-11-16:55:11; 54=1; 44=1276.37; 10=0252;
+8=FIX4.4; 35=8; 34=52; 49=MS; 56=MTHREE; 52=2022-05-11-16:55:11; 55=AAPL; 40=2; 11=algo20220511165511; 31=1276.37; 150=0; 39=0; 54=1; 44=1276.37; 32=0; 17=exec20220511165511; 38=4401; 60=2022-05-11-16:55:11; 6=0; 14=0; 37=algo20220511165511; 10=200;
+[ec2-user@ip-172-31-25-170 ~]$ ln -s fixGenerator.sh fix
+[ec2-user@ip-172-31-25-170 ~]$ tail -f fixlog20220511165331.log | grep 35=D
+8=FIX4.4; 35=D; 34=114; 49=MTHREE; 56=MS; 52=2022-05-11-16:56:49; 55=PEP; 40=2; 38=9054; 21=2; 11=algo20220511165649; 60=2022-05-11-16:56:49; 54=2; 44=45.43; 10=0252;
+8=FIX4.4; 35=D; 34=116; 49=MTHREE; 56=MS; 52=2022-05-11-16:56:51; 55=; 40=2; 38=31014; 21=2; 11=algo20220511165651; 60=2022-05-11-16:56:51; 54=1; 44=; 10=0252;
+^C
+[ec2-user@ip-172-31-25-170 ~]$ mkdir superLogs
+[ec2-user@ip-172-31-25-170 ~]$ cp -r logs superLogs
+[ec2-user@ip-172-31-25-170 ~]$ grep -c FB fixlog20220511165331.log
+5
+[ec2-user@ip-172-31-25-170 ~]$ wc -w fixlog20220511165331.log
+4827 fixlog20220511165331.log
+[ec2-user@ip-172-31-25-170 ~]$ grep 35=D | grep NFLX | cat -n | tail -n 1
+^C
+[ec2-user@ip-172-31-25-170 ~]$ grep 35=D fixlog20220511165331.log | grep NFLX | cat -n | tail -n 1
+     1  8=FIX4.4; 35=D; 34=66; 49=MTHREE; 56=MS; 52=2022-05-11-16:55:34; 55=NFLX; 40=2; 38=19204; 21=2; 11=algo20220511165534; 60=2022-05-11-16:55:34; 54=2; 44=306.71; 10=0252;
+[ec2-user@ip-172-31-25-170 ~]$ history > Paul.120522.module5
+
+HISTORY
+    1  cd ~
+    2  vim fixGenerator.sh
+    3  chmod 744 fixGenerator.sh
+    4  ./fixGenerator.sh &
+    5  cat fixGenerator.sh
+    6  cat -n fixGenerator.sh
+    7  cat fixlog20220511165331.log > newlog.log
+    8  mkdir logs
+    9  mv newlog.log logs/newlog.log
+   10  cat fixlog20220511165331.log >> logs/newlog.log
+   11  ln -s ~/logs/newlog.log logs/Daily
+   12  cd ~
+   13  cat fixlog20220511165331.log | less
+   14  cat fixlog20220511165331.log | grep 35=D > logs/newOrders.log
+   15  cp logs/newOrders.log newOrders.log
+   16  tail newOrders.log -n 1
+   17  cat -n newOrders.log |tail -n 1
+   18  ls
+   19  cat fixlog20220511165331.log | grep 54=1 > logs/buyMessages.log
+   20  cat -n logs/buyMessages.log | tail -n 1
+   21  cat logs/buyMessages.log | grep 35=D | cat -n |tail -n 1
+   22  cat fixlog20220511165331.log | grep -v 35=D > logs/noNewOrders.log
+   23  cat -n logs/noNewOrders.log | tail -n 1
+   24  tail -n 5 logs/noNewOrders.log
+   25  cat fixlog20220511165331.log | grep -i apple | head -n 2
+   26  cat fixlog20220511165331.log | grep -i apple
+   27  cat fixlog20220511165331.log | grep -i appl | head -n 2
+   28  cat fixlog20220511165331.log | grep -i aapl | head -n 2
+   29  ln -s fixGenerator.sh fix
+   30  tail -f fixlog20220511165331.log | grep 35=D
+   31  mkdir superLogs
+   32  cp -r logs superLogs
+   33  grep -c FB fixlog20220511165331.log
+   34  wc -w fixlog20220511165331.log
+   35  grep 35=D | grep NFLX | cat -n | tail -n 1
+   36  grep 35=D fixlog20220511165331.log | grep NFLX | cat -n | tail -n 1
+   37  history > Paul.120522.module5

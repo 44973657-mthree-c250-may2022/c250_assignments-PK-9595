@@ -1,0 +1,103 @@
+[ec2-user@ip-172-31-25-170 ~]$ pwd
+/home/ec2-user
+[ec2-user@ip-172-31-25-170 ~]$ cd /var/log
+[ec2-user@ip-172-31-25-170 log]$ cd ..
+[ec2-user@ip-172-31-25-170 var]$ pwd
+/var
+[ec2-user@ip-172-31-25-170 var]$ ls
+account  cache  empty  gopher    lib    lock  mail  opt       run    tmp  yp
+adm      db     games  kerberos  local  log   nis   preserve  spool  www
+[ec2-user@ip-172-31-25-170 var]$ ls -l
+total 8
+drwxr-xr-x  2 root root   19 Apr 28 19:54 account
+drwxr-xr-x  2 root root    6 Apr  9  2019 adm
+drwxr-xr-x  8 root root   90 May 13 06:34 cache
+drwxr-xr-x  3 root root   18 Apr 28 19:54 db
+drwxr-xr-x  3 root root   18 Apr 28 19:54 empty
+drwxr-xr-x  2 root root    6 Apr  9  2019 games
+drwxr-xr-x  2 root root    6 Apr  9  2019 gopher
+drwxr-xr-x  3 root root   18 Apr 28 19:54 kerberos
+drwxr-xr-x 34 root root 4096 May 13 06:34 lib
+drwxr-xr-x  2 root root    6 Apr  9  2019 local
+lrwxrwxrwx  1 root root   11 Apr 28 19:53 lock -> ../run/lock
+drwxr-xr-x  9 root root 4096 May 14 03:45 log
+lrwxrwxrwx  1 root root   10 Apr 28 19:53 mail -> spool/mail
+drwxr-xr-x  2 root root    6 Apr  9  2019 nis
+drwxr-xr-x  2 root root    6 Apr  9  2019 opt
+drwxr-xr-x  2 root root    6 Apr  9  2019 preserve
+lrwxrwxrwx  1 root root    6 Apr 28 19:53 run -> ../run
+drwxr-xr-x  9 root root   97 Apr 28 19:54 spool
+drwxrwxrwt  5 root root  207 May 13 06:34 tmp
+drwxr-xr-x  4 root root   33 May 10 07:07 www
+drwxr-xr-x  2 root root    6 Apr  9  2019 yp
+[ec2-user@ip-172-31-25-170 var]$ ls -ltr
+total 8
+drwxr-xr-x  2 root root    6 Apr  9  2019 yp
+drwxr-xr-x  2 root root    6 Apr  9  2019 preserve
+drwxr-xr-x  2 root root    6 Apr  9  2019 opt
+drwxr-xr-x  2 root root    6 Apr  9  2019 nis
+drwxr-xr-x  2 root root    6 Apr  9  2019 local
+drwxr-xr-x  2 root root    6 Apr  9  2019 gopher
+drwxr-xr-x  2 root root    6 Apr  9  2019 games
+drwxr-xr-x  2 root root    6 Apr  9  2019 adm
+lrwxrwxrwx  1 root root    6 Apr 28 19:53 run -> ../run
+lrwxrwxrwx  1 root root   11 Apr 28 19:53 lock -> ../run/lock
+lrwxrwxrwx  1 root root   10 Apr 28 19:53 mail -> spool/mail
+drwxr-xr-x  3 root root   18 Apr 28 19:54 kerberos
+drwxr-xr-x  3 root root   18 Apr 28 19:54 db
+drwxr-xr-x  3 root root   18 Apr 28 19:54 empty
+drwxr-xr-x  2 root root   19 Apr 28 19:54 account
+drwxr-xr-x  9 root root   97 Apr 28 19:54 spool
+drwxr-xr-x  4 root root   33 May 10 07:07 www
+drwxr-xr-x 34 root root 4096 May 13 06:34 lib
+drwxr-xr-x  8 root root   90 May 13 06:34 cache
+drwxrwxrwt  5 root root  207 May 13 06:34 tmp
+drwxr-xr-x  9 root root 4096 May 14 03:45 log
+[ec2-user@ip-172-31-25-170 var]$ cd /
+[ec2-user@ip-172-31-25-170 /]$ cd ~
+[ec2-user@ip-172-31-25-170 ~]$ cd ..
+[ec2-user@ip-172-31-25-170 home]$ man ls
+[ec2-user@ip-172-31-25-170 home]$ cd /var
+[ec2-user@ip-172-31-25-170 var]$ ls -Srl
+total 8
+drwxr-xr-x  2 root root    6 Apr  9  2019 yp
+lrwxrwxrwx  1 root root    6 Apr 28 19:53 run -> ../run
+drwxr-xr-x  2 root root    6 Apr  9  2019 preserve
+drwxr-xr-x  2 root root    6 Apr  9  2019 opt
+drwxr-xr-x  2 root root    6 Apr  9  2019 nis
+drwxr-xr-x  2 root root    6 Apr  9  2019 local
+drwxr-xr-x  2 root root    6 Apr  9  2019 gopher
+drwxr-xr-x  2 root root    6 Apr  9  2019 games
+drwxr-xr-x  2 root root    6 Apr  9  2019 adm
+lrwxrwxrwx  1 root root   10 Apr 28 19:53 mail -> spool/mail
+lrwxrwxrwx  1 root root   11 Apr 28 19:53 lock -> ../run/lock
+drwxr-xr-x  3 root root   18 Apr 28 19:54 kerberos
+drwxr-xr-x  3 root root   18 Apr 28 19:54 empty
+drwxr-xr-x  3 root root   18 Apr 28 19:54 db
+drwxr-xr-x  2 root root   19 Apr 28 19:54 account
+drwxr-xr-x  4 root root   33 May 10 07:07 www
+drwxr-xr-x  8 root root   90 May 13 06:34 cache
+drwxr-xr-x  9 root root   97 Apr 28 19:54 spool
+drwxrwxrwt  5 root root  207 May 13 06:34 tmp
+drwxr-xr-x  9 root root 4096 May 14 03:45 log
+drwxr-xr-x 34 root root 4096 May 13 06:34 lib
+[ec2-user@ip-172-31-25-170 var]$ uname -am
+Linux ip-172-31-25-170.ec2.internal 5.10.109-104.500.amzn2.x86_64 #1 SMP Wed Apr 13 20:31:43 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux
+[ec2-user@ip-172-31-25-170 var]$ history > ~/paul.100522.module2
+
+HISTORY
+    1  pwd
+    2  cd /var/log
+    3  cd ..
+    4  pwd
+    5  ls
+    6  ls -l
+    7  ls -ltr
+    8  cd /
+    9  cd ~
+   10  cd ..
+   11  man ls
+   12  cd /var
+   13  ls -Srl
+   14  uname -am
+   15  history > ~/paul.100522.module2

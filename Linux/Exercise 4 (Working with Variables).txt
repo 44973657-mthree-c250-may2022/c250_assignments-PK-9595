@@ -1,0 +1,102 @@
+[ec2-user@ip-172-31-25-170 ~]$ STOCK=AAPL
+[ec2-user@ip-172-31-25-170 ~]$ echo $STOCK
+AAPL
+[ec2-user@ip-172-31-25-170 ~]$ STOCK=${STOCK}_US
+[ec2-user@ip-172-31-25-170 ~]$ PRICE=290.84
+[ec2-user@ip-172-31-25-170 ~]$ echo "The current price of ${STOCK} is ${PRICE}"
+The current price of AAPL_US is 290.84
+[ec2-user@ip-172-31-25-170 ~]$ WHOAMI=$USER
+[ec2-user@ip-172-31-25-170 ~]$ SERVERTYPE=$(uname)
+[ec2-user@ip-172-31-25-170 ~]$ echo $SERVERTYPE
+Linux
+[ec2-user@ip-172-31-25-170 ~]$ CMD="uname -i"
+[ec2-user@ip-172-31-25-170 ~]$ echo $CMD
+uname -i
+[ec2-user@ip-172-31-25-170 ~]$ echo $($CMD)
+x86_64
+[ec2-user@ip-172-31-25-170 ~]$ cd ~
+[ec2-user@ip-172-31-25-170 ~]$ mkdir scripts
+[ec2-user@ip-172-31-25-170 ~]$ echo $PATH
+/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/home/ec2-user/.local/bin:/home/ec2-user/bin
+[ec2-user@ip-172-31-25-170 ~]$ PATH=${PATH}:~/scripts
+[ec2-user@ip-172-31-25-170 ~]$ echo $PATH | grep scripts
+/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/home/ec2-user/.local/bin:/home/ec2-user/bin:/home/ec2-user/scripts
+[ec2-user@ip-172-31-25-170 ~]$ ls
+Algo1  Paul.100522.module2  Paul.110522.module3  scripts
+[ec2-user@ip-172-31-25-170 ~]$ rmdir Algo1
+[ec2-user@ip-172-31-25-170 ~]$ mkdir Payment1
+[ec2-user@ip-172-31-25-170 ~]$ mkdir Payment1/logs Payment1/configuration Payment1/scripts
+[ec2-user@ip-172-31-25-170 ~]$ touch Payment1/scripts/start.sh
+[ec2-user@ip-172-31-25-170 ~]$ touch Payment1/configuration/instance.properties
+[ec2-user@ip-172-31-25-170 ~]$ chmod u=rwx,og=r Payment1/configuration/instance.properties
+[ec2-user@ip-172-31-25-170 ~]$ chmod ug=rwx,o=x Payment1/scripts/start.sh
+[ec2-user@ip-172-31-25-170 ~]$ man cat > cat.output
+[ec2-user@ip-172-31-25-170 ~]$ chmod uo=r,g=rwx cat.output
+[ec2-user@ip-172-31-25-170 ~]$ cd ~
+[ec2-user@ip-172-31-25-170 ~]$ pwd
+/home/ec2-user
+[ec2-user@ip-172-31-25-170 ~]$ echo $HOME
+/home/ec2-user
+[ec2-user@ip-172-31-25-170 ~]$ ls -l Payment1/scripts/start.sh
+-rwxrwx--x 1 ec2-user ec2-user 0 May 11 16:11 Payment1/scripts/start.sh
+[ec2-user@ip-172-31-25-170 ~]$ ls -l Payment1/configuration/instance.properties
+-rwxr--r-- 1 ec2-user ec2-user 0 May 11 16:12 Payment1/configuration/instance.properties
+[ec2-user@ip-172-31-25-170 ~]$ ls -l
+total 12
+-r--rwxr-- 1 ec2-user ec2-user 2160 May 11 16:24 cat.output
+-rw-r--r-- 1 root     root      227 May 10 07:44 Paul.100522.module2
+-rw-rw-r-- 1 ec2-user ec2-user  797 May 11 05:11 Paul.110522.module3
+drwxrwxr-x 5 ec2-user ec2-user   54 May 11 16:11 Payment1
+drwxrwxr-x 2 ec2-user ec2-user    6 May 11 16:09 scripts
+[ec2-user@ip-172-31-25-170 ~]$ rm -rf Payment1
+[ec2-user@ip-172-31-25-170 ~]$ rm -i cat.output
+rm: remove write-protected regular file ‘cat.output’? y
+[ec2-user@ip-172-31-25-170 ~]$ mkdir temp
+[ec2-user@ip-172-31-25-170 ~]$ MYTEMP=~/temp
+[ec2-user@ip-172-31-25-170 ~]$ echo $MYTEMP
+/home/ec2-user/temp
+[ec2-user@ip-172-31-25-170 ~]$ MYTEMP=
+[ec2-user@ip-172-31-25-170 ~]$ rmdir temp
+[ec2-user@ip-172-31-25-170 ~]$ history > Paul.110522.module4
+
+HISTORY
+   1  STOCK=AAPL
+   2  echo $STOCK
+   3  STOCK=${STOCK}_US
+   4  PRICE=290.84
+   5  echo "The current price of ${STOCK} is ${PRICE}"
+   6  WHOAMI=$USER
+   7  SERVERTYPE=$(uname)
+   8  echo $SERVERTYPE
+   9  CMD="uname -i"
+  10  echo $CMD
+  11  echo $($CMD)
+  12  cd ~
+  13  mkdir scripts
+  14  echo $PATH
+  15  PATH=${PATH}:~/scripts
+  16  echo $PATH | grep scripts
+  17  ls
+  18  rmdir Algo1
+  19  mkdir Payment1
+  20  mkdir Payment1/logs Payment1/configuration Payment1/scripts
+  21  touch Payment1/scripts/start.sh
+  22  touch Payment1/configuration/instance.properties
+  23  chmod u=rwx,og=r Payment1/configuration/instance.properties
+  24  chmod ug=rwx,o=x Payment1/scripts/start.sh
+  25  man cat > cat.output
+  26  chmod uo=r,g=rwx cat.output
+  27  cd ~
+  28  pwd
+  29  echo $HOME
+  30  ls -l Payment1/scripts/start.sh
+  31  ls -l Payment1/configuration/instance.properties
+  32  ls -l
+  33  rm -rf Payment1
+  34  rm -i cat.output
+  35  mkdir temp
+  36  MYTEMP=~/temp
+  37  echo $MYTEMP
+  38  MYTEMP=
+  39  rmdir temp
+  40  history > Paul.110522.module4

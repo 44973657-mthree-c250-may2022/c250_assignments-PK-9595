@@ -1,0 +1,1361 @@
+[ec2-user@ip-172-31-25-170 ~]$ df
+Filesystem     1K-blocks    Used Available Use% Mounted on
+devtmpfs          485340       0    485340   0% /dev
+tmpfs             493848       0    493848   0% /dev/shm
+tmpfs             493848     456    493392   1% /run
+tmpfs             493848       0    493848   0% /sys/fs/cgroup
+/dev/xvda1       8376300 2067132   6309168  25% /
+tmpfs              98772       0     98772   0% /run/user/1000
+[ec2-user@ip-172-31-25-170 ~]$ df -h
+Filesystem      Size  Used Avail Use% Mounted on
+devtmpfs        474M     0  474M   0% /dev
+tmpfs           483M     0  483M   0% /dev/shm
+tmpfs           483M  456K  482M   1% /run
+tmpfs           483M     0  483M   0% /sys/fs/cgroup
+/dev/xvda1      8.0G  2.0G  6.1G  25% /
+tmpfs            97M     0   97M   0% /run/user/1000
+[ec2-user@ip-172-31-25-170 ~]$ df -h > filesystem.usage
+[ec2-user@ip-172-31-25-170 ~]$ du
+4       ./.ssh
+28      ./script
+20      ./linuxExercises
+336     .
+[ec2-user@ip-172-31-25-170 ~]$ du ~
+4       /home/ec2-user/.ssh
+28      /home/ec2-user/script
+20      /home/ec2-user/linuxExercises
+336     /home/ec2-user
+[ec2-user@ip-172-31-25-170 ~]$ du -h ~ > disk.usage
+[ec2-user@ip-172-31-25-170 ~]$ du -ah > usage2
+[ec2-user@ip-172-31-25-170 ~]$ du -ah /var
+du: cannot read directory ‘/var/cache/ldconfig’: Permission denied
+0       /var/cache/ldconfig
+332K    /var/cache/amzn2extras/catalog-cache-0
+332K    /var/cache/amzn2extras
+5.1M    /var/cache/yum/x86_64/2/amzn2-core/gen/updateinfo.xml
+208M    /var/cache/yum/x86_64/2/amzn2-core/gen/primary_db.sqlite
+52K     /var/cache/yum/x86_64/2/amzn2-core/gen/comps.xml
+213M    /var/cache/yum/x86_64/2/amzn2-core/gen
+0       /var/cache/yum/x86_64/2/amzn2-core/packages
+4.0K    /var/cache/yum/x86_64/2/amzn2-core/mirrorlist.txt
+4.0K    /var/cache/yum/x86_64/2/amzn2-core/repomd.xml
+0       /var/cache/yum/x86_64/2/amzn2-core/cachecookie
+8.0K    /var/cache/yum/x86_64/2/amzn2-core/comps.xml.gz
+480K    /var/cache/yum/x86_64/2/amzn2-core/updateinfo.xml.gz
+63M     /var/cache/yum/x86_64/2/amzn2-core/primary.sqlite.gz
+275M    /var/cache/yum/x86_64/2/amzn2-core
+44K     /var/cache/yum/x86_64/2/amzn2extra-docker/gen/updateinfo.xml
+436K    /var/cache/yum/x86_64/2/amzn2extra-docker/gen/primary_db.sqlite
+480K    /var/cache/yum/x86_64/2/amzn2extra-docker/gen
+0       /var/cache/yum/x86_64/2/amzn2extra-docker/packages
+4.0K    /var/cache/yum/x86_64/2/amzn2extra-docker/mirrorlist.txt
+4.0K    /var/cache/yum/x86_64/2/amzn2extra-docker/repomd.xml
+0       /var/cache/yum/x86_64/2/amzn2extra-docker/cachecookie
+12K     /var/cache/yum/x86_64/2/amzn2extra-docker/updateinfo.xml.gz
+96K     /var/cache/yum/x86_64/2/amzn2extra-docker/primary.sqlite.gz
+596K    /var/cache/yum/x86_64/2/amzn2extra-docker
+0       /var/cache/yum/x86_64/2/.gpgkeyschecked.yum
+124K    /var/cache/yum/x86_64/2/amzn2extra-kernel-5.10/gen/updateinfo.xml
+28M     /var/cache/yum/x86_64/2/amzn2extra-kernel-5.10/gen/primary_db.sqlite
+28M     /var/cache/yum/x86_64/2/amzn2extra-kernel-5.10/gen
+0       /var/cache/yum/x86_64/2/amzn2extra-kernel-5.10/packages
+4.0K    /var/cache/yum/x86_64/2/amzn2extra-kernel-5.10/mirrorlist.txt
+4.0K    /var/cache/yum/x86_64/2/amzn2extra-kernel-5.10/repomd.xml
+0       /var/cache/yum/x86_64/2/amzn2extra-kernel-5.10/cachecookie
+9.1M    /var/cache/yum/x86_64/2/amzn2extra-kernel-5.10/primary.sqlite.gz
+20K     /var/cache/yum/x86_64/2/amzn2extra-kernel-5.10/updateinfo.xml.gz
+37M     /var/cache/yum/x86_64/2/amzn2extra-kernel-5.10
+4.0K    /var/cache/yum/x86_64/2/timedhosts
+313M    /var/cache/yum/x86_64/2
+313M    /var/cache/yum/x86_64
+313M    /var/cache/yum
+4.0K    /var/cache/man/CACHEDIR.TAG
+0       /var/cache/man/cat1
+0       /var/cache/man/cat2
+0       /var/cache/man/cat3
+0       /var/cache/man/cat4
+0       /var/cache/man/cat5
+0       /var/cache/man/cat6
+0       /var/cache/man/cat7
+0       /var/cache/man/cat8
+0       /var/cache/man/cat9
+948K    /var/cache/man/index.db
+0       /var/cache/man/hu/cat1
+0       /var/cache/man/hu/cat4
+0       /var/cache/man/hu/cat8
+16K     /var/cache/man/hu/index.db
+4.0K    /var/cache/man/hu/CACHEDIR.TAG
+20K     /var/cache/man/hu
+0       /var/cache/man/da/cat1
+0       /var/cache/man/da/cat5
+0       /var/cache/man/da/cat8
+16K     /var/cache/man/da/index.db
+4.0K    /var/cache/man/da/CACHEDIR.TAG
+20K     /var/cache/man/da
+0       /var/cache/man/de/cat1
+0       /var/cache/man/de/cat3
+0       /var/cache/man/de/cat5
+0       /var/cache/man/de/cat8
+16K     /var/cache/man/de/index.db
+4.0K    /var/cache/man/de/CACHEDIR.TAG
+20K     /var/cache/man/de
+0       /var/cache/man/fr/cat1
+0       /var/cache/man/fr/cat3
+0       /var/cache/man/fr/cat5
+0       /var/cache/man/fr/cat8
+16K     /var/cache/man/fr/index.db
+4.0K    /var/cache/man/fr/CACHEDIR.TAG
+20K     /var/cache/man/fr
+0       /var/cache/man/it/cat1
+0       /var/cache/man/it/cat3
+0       /var/cache/man/it/cat5
+0       /var/cache/man/it/cat8
+16K     /var/cache/man/it/index.db
+4.0K    /var/cache/man/it/CACHEDIR.TAG
+20K     /var/cache/man/it
+0       /var/cache/man/ja/cat1
+0       /var/cache/man/ja/cat5
+0       /var/cache/man/ja/cat8
+16K     /var/cache/man/ja/index.db
+4.0K    /var/cache/man/ja/CACHEDIR.TAG
+20K     /var/cache/man/ja
+0       /var/cache/man/pl/cat1
+0       /var/cache/man/pl/cat3
+0       /var/cache/man/pl/cat8
+16K     /var/cache/man/pl/index.db
+4.0K    /var/cache/man/pl/CACHEDIR.TAG
+20K     /var/cache/man/pl
+0       /var/cache/man/ru/cat1
+0       /var/cache/man/ru/cat3
+0       /var/cache/man/ru/cat5
+0       /var/cache/man/ru/cat8
+20K     /var/cache/man/ru/index.db
+4.0K    /var/cache/man/ru/CACHEDIR.TAG
+24K     /var/cache/man/ru
+0       /var/cache/man/tr/cat1
+0       /var/cache/man/tr/cat5
+0       /var/cache/man/tr/cat8
+16K     /var/cache/man/tr/index.db
+4.0K    /var/cache/man/tr/CACHEDIR.TAG
+20K     /var/cache/man/tr
+0       /var/cache/man/cs/cat1
+0       /var/cache/man/cs/cat3
+0       /var/cache/man/cs/cat5
+0       /var/cache/man/cs/cat7
+0       /var/cache/man/cs/cat8
+16K     /var/cache/man/cs/index.db
+4.0K    /var/cache/man/cs/CACHEDIR.TAG
+20K     /var/cache/man/cs
+0       /var/cache/man/id/cat8
+16K     /var/cache/man/id/index.db
+4.0K    /var/cache/man/id/CACHEDIR.TAG
+20K     /var/cache/man/id
+0       /var/cache/man/ko/cat8
+16K     /var/cache/man/ko/index.db
+4.0K    /var/cache/man/ko/CACHEDIR.TAG
+20K     /var/cache/man/ko
+0       /var/cache/man/pt_BR/cat1
+0       /var/cache/man/pt_BR/cat5
+0       /var/cache/man/pt_BR/cat8
+16K     /var/cache/man/pt_BR/index.db
+4.0K    /var/cache/man/pt_BR/CACHEDIR.TAG
+20K     /var/cache/man/pt_BR
+0       /var/cache/man/sv/cat1
+0       /var/cache/man/sv/cat3
+0       /var/cache/man/sv/cat5
+0       /var/cache/man/sv/cat8
+16K     /var/cache/man/sv/index.db
+4.0K    /var/cache/man/sv/CACHEDIR.TAG
+20K     /var/cache/man/sv
+0       /var/cache/man/zh_CN/cat1
+0       /var/cache/man/zh_CN/cat3
+0       /var/cache/man/zh_CN/cat5
+0       /var/cache/man/zh_CN/cat8
+16K     /var/cache/man/zh_CN/index.db
+4.0K    /var/cache/man/zh_CN/CACHEDIR.TAG
+20K     /var/cache/man/zh_CN
+0       /var/cache/man/zh_TW/cat1
+0       /var/cache/man/zh_TW/cat8
+16K     /var/cache/man/zh_TW/index.db
+4.0K    /var/cache/man/zh_TW/CACHEDIR.TAG
+20K     /var/cache/man/zh_TW
+0       /var/cache/man/sk/cat8
+16K     /var/cache/man/sk/index.db
+4.0K    /var/cache/man/sk/CACHEDIR.TAG
+20K     /var/cache/man/sk
+0       /var/cache/man/pt/cat8
+16K     /var/cache/man/pt/index.db
+4.0K    /var/cache/man/pt/CACHEDIR.TAG
+20K     /var/cache/man/pt
+0       /var/cache/man/ca/cat8
+16K     /var/cache/man/ca/index.db
+4.0K    /var/cache/man/ca/CACHEDIR.TAG
+20K     /var/cache/man/ca
+0       /var/cache/man/es/cat1
+0       /var/cache/man/es/cat5
+0       /var/cache/man/es/cat8
+16K     /var/cache/man/es/index.db
+4.0K    /var/cache/man/es/CACHEDIR.TAG
+20K     /var/cache/man/es
+0       /var/cache/man/uk/cat8
+16K     /var/cache/man/uk/index.db
+4.0K    /var/cache/man/uk/CACHEDIR.TAG
+20K     /var/cache/man/uk
+0       /var/cache/man/en/cat2
+0       /var/cache/man/en/cat3
+0       /var/cache/man/en/cat4
+0       /var/cache/man/en/cat5
+0       /var/cache/man/en/cat7
+16K     /var/cache/man/en/index.db
+4.0K    /var/cache/man/en/CACHEDIR.TAG
+20K     /var/cache/man/en
+0       /var/cache/man/overrides/cat1
+0       /var/cache/man/overrides/cat2
+0       /var/cache/man/overrides/cat3
+0       /var/cache/man/overrides/cat4
+0       /var/cache/man/overrides/cat5
+0       /var/cache/man/overrides/cat7
+0       /var/cache/man/overrides/cat8
+128K    /var/cache/man/overrides/index.db
+4.0K    /var/cache/man/overrides/CACHEDIR.TAG
+132K    /var/cache/man/overrides
+0       /var/cache/man/local/cat1
+0       /var/cache/man/local/cat2
+0       /var/cache/man/local/cat3
+0       /var/cache/man/local/cat4
+0       /var/cache/man/local/cat5
+0       /var/cache/man/local/cat6
+0       /var/cache/man/local/cat7
+0       /var/cache/man/local/cat8
+0       /var/cache/man/local/cat9
+16K     /var/cache/man/local/index.db
+4.0K    /var/cache/man/local/CACHEDIR.TAG
+20K     /var/cache/man/local
+1.6M    /var/cache/man
+du: cannot read directory ‘/var/cache/httpd’: Permission denied
+0       /var/cache/httpd
+du: cannot read directory ‘/var/cache/tomcat’: Permission denied
+0       /var/cache/tomcat
+315M    /var/cache
+8.0K    /var/log/yum.log
+0       /var/log/tallylog
+4.0K    /var/log/grubby_prune_debug
+20K     /var/log/lastlog
+36K     /var/log/wtmp
+124K    /var/log/btmp
+956K    /var/log/messages
+492K    /var/log/secure
+20K     /var/log/maillog
+0       /var/log/spooler
+240K    /var/log/sa/sa10
+176K    /var/log/sa/sar10
+332K    /var/log/sa/sa11
+244K    /var/log/sa/sar11
+332K    /var/log/sa/sa12
+244K    /var/log/sa/sar12
+332K    /var/log/sa/sa13
+244K    /var/log/sa/sar13
+128K    /var/log/sa/sa14
+2.3M    /var/log/sa
+du: cannot read directory ‘/var/log/audit’: Permission denied
+0       /var/log/audit
+du: cannot read directory ‘/var/log/amazon/ssm’: Permission denied
+0       /var/log/amazon/ssm
+0       /var/log/amazon
+du: cannot read directory ‘/var/log/chrony’: Permission denied
+0       /var/log/chrony
+25M     /var/log/journal/2d99ef724dce45369047869bf2504a0b/system.journal
+8.0M    /var/log/journal/2d99ef724dce45369047869bf2504a0b/user-1000.journal
+33M     /var/log/journal/2d99ef724dce45369047869bf2504a0b
+33M     /var/log/journal
+4.0K    /var/log/boot.log
+276K    /var/log/cloud-init.log
+12K     /var/log/cloud-init-output.log
+84K     /var/log/cron
+32K     /var/log/dmesg.old
+du: cannot read directory ‘/var/log/httpd’: Permission denied
+0       /var/log/httpd
+32K     /var/log/dmesg
+32K     /var/log/boot.log-20220511
+8.0K    /var/log/boot.log-20220512
+4.0K    /var/log/grubby
+8.0K    /var/log/boot.log-20220513
+du: cannot read directory ‘/var/log/tomcat’: Permission denied
+0       /var/log/tomcat
+8.0K    /var/log/boot.log-20220514
+37M     /var/log
+4.0K    /var/lib/yum/uuid
+4.0K    /var/lib/yum/yumdb/t/ca18a8239a2208bceb02a3d286f8ab6d7ccff4e5-tree-1.6.0-10.amzn2.0.1-x86_64/from_repo
+4.0K    /var/lib/yum/yumdb/t/ca18a8239a2208bceb02a3d286f8ab6d7ccff4e5-tree-1.6.0-10.amzn2.0.1-x86_64/reason
+4.0K    /var/lib/yum/yumdb/t/ca18a8239a2208bceb02a3d286f8ab6d7ccff4e5-tree-1.6.0-10.amzn2.0.1-x86_64/releasever
+4.0K    /var/lib/yum/yumdb/t/ca18a8239a2208bceb02a3d286f8ab6d7ccff4e5-tree-1.6.0-10.amzn2.0.1-x86_64/var_product
+4.0K    /var/lib/yum/yumdb/t/ca18a8239a2208bceb02a3d286f8ab6d7ccff4e5-tree-1.6.0-10.amzn2.0.1-x86_64/var_target
+4.0K    /var/lib/yum/yumdb/t/ca18a8239a2208bceb02a3d286f8ab6d7ccff4e5-tree-1.6.0-10.amzn2.0.1-x86_64/var_awsregion
+4.0K    /var/lib/yum/yumdb/t/ca18a8239a2208bceb02a3d286f8ab6d7ccff4e5-tree-1.6.0-10.amzn2.0.1-x86_64/var_awsdomain
+4.0K    /var/lib/yum/yumdb/t/ca18a8239a2208bceb02a3d286f8ab6d7ccff4e5-tree-1.6.0-10.amzn2.0.1-x86_64/var_awsproto
+4.0K    /var/lib/yum/yumdb/t/ca18a8239a2208bceb02a3d286f8ab6d7ccff4e5-tree-1.6.0-10.amzn2.0.1-x86_64/var_amazonlinux
+4.0K    /var/lib/yum/yumdb/t/ca18a8239a2208bceb02a3d286f8ab6d7ccff4e5-tree-1.6.0-10.amzn2.0.1-x86_64/var_uuid
+4.0K    /var/lib/yum/yumdb/t/ca18a8239a2208bceb02a3d286f8ab6d7ccff4e5-tree-1.6.0-10.amzn2.0.1-x86_64/command_line
+4.0K    /var/lib/yum/yumdb/t/ca18a8239a2208bceb02a3d286f8ab6d7ccff4e5-tree-1.6.0-10.amzn2.0.1-x86_64/checksum_type
+4.0K    /var/lib/yum/yumdb/t/ca18a8239a2208bceb02a3d286f8ab6d7ccff4e5-tree-1.6.0-10.amzn2.0.1-x86_64/checksum_data
+4.0K    /var/lib/yum/yumdb/t/ca18a8239a2208bceb02a3d286f8ab6d7ccff4e5-tree-1.6.0-10.amzn2.0.1-x86_64/origin_url
+4.0K    /var/lib/yum/yumdb/t/ca18a8239a2208bceb02a3d286f8ab6d7ccff4e5-tree-1.6.0-10.amzn2.0.1-x86_64/from_repo_revision
+4.0K    /var/lib/yum/yumdb/t/ca18a8239a2208bceb02a3d286f8ab6d7ccff4e5-tree-1.6.0-10.amzn2.0.1-x86_64/installed_by
+68K     /var/lib/yum/yumdb/t/ca18a8239a2208bceb02a3d286f8ab6d7ccff4e5-tree-1.6.0-10.amzn2.0.1-x86_64
+4.0K    /var/lib/yum/yumdb/t/9d8c400e0259db5c345496fef4e53048639a47f3-tomcat-jsp-2.2-api-7.0.76-10.amzn2.0.2-noarch/from_repo
+4.0K    /var/lib/yum/yumdb/t/9d8c400e0259db5c345496fef4e53048639a47f3-tomcat-jsp-2.2-api-7.0.76-10.amzn2.0.2-noarch/reason
+4.0K    /var/lib/yum/yumdb/t/9d8c400e0259db5c345496fef4e53048639a47f3-tomcat-jsp-2.2-api-7.0.76-10.amzn2.0.2-noarch/releasever
+4.0K    /var/lib/yum/yumdb/t/9d8c400e0259db5c345496fef4e53048639a47f3-tomcat-jsp-2.2-api-7.0.76-10.amzn2.0.2-noarch/var_product
+4.0K    /var/lib/yum/yumdb/t/9d8c400e0259db5c345496fef4e53048639a47f3-tomcat-jsp-2.2-api-7.0.76-10.amzn2.0.2-noarch/var_target
+4.0K    /var/lib/yum/yumdb/t/9d8c400e0259db5c345496fef4e53048639a47f3-tomcat-jsp-2.2-api-7.0.76-10.amzn2.0.2-noarch/var_awsregion
+4.0K    /var/lib/yum/yumdb/t/9d8c400e0259db5c345496fef4e53048639a47f3-tomcat-jsp-2.2-api-7.0.76-10.amzn2.0.2-noarch/var_awsdomain
+4.0K    /var/lib/yum/yumdb/t/9d8c400e0259db5c345496fef4e53048639a47f3-tomcat-jsp-2.2-api-7.0.76-10.amzn2.0.2-noarch/var_awsproto
+4.0K    /var/lib/yum/yumdb/t/9d8c400e0259db5c345496fef4e53048639a47f3-tomcat-jsp-2.2-api-7.0.76-10.amzn2.0.2-noarch/var_amazonlinux
+4.0K    /var/lib/yum/yumdb/t/9d8c400e0259db5c345496fef4e53048639a47f3-tomcat-jsp-2.2-api-7.0.76-10.amzn2.0.2-noarch/var_uuid
+4.0K    /var/lib/yum/yumdb/t/9d8c400e0259db5c345496fef4e53048639a47f3-tomcat-jsp-2.2-api-7.0.76-10.amzn2.0.2-noarch/command_line
+4.0K    /var/lib/yum/yumdb/t/9d8c400e0259db5c345496fef4e53048639a47f3-tomcat-jsp-2.2-api-7.0.76-10.amzn2.0.2-noarch/checksum_type
+4.0K    /var/lib/yum/yumdb/t/9d8c400e0259db5c345496fef4e53048639a47f3-tomcat-jsp-2.2-api-7.0.76-10.amzn2.0.2-noarch/checksum_data
+4.0K    /var/lib/yum/yumdb/t/9d8c400e0259db5c345496fef4e53048639a47f3-tomcat-jsp-2.2-api-7.0.76-10.amzn2.0.2-noarch/origin_url
+4.0K    /var/lib/yum/yumdb/t/9d8c400e0259db5c345496fef4e53048639a47f3-tomcat-jsp-2.2-api-7.0.76-10.amzn2.0.2-noarch/from_repo_revision
+4.0K    /var/lib/yum/yumdb/t/9d8c400e0259db5c345496fef4e53048639a47f3-tomcat-jsp-2.2-api-7.0.76-10.amzn2.0.2-noarch/installed_by
+68K     /var/lib/yum/yumdb/t/9d8c400e0259db5c345496fef4e53048639a47f3-tomcat-jsp-2.2-api-7.0.76-10.amzn2.0.2-noarch
+4.0K    /var/lib/yum/yumdb/t/6d479285d8a92db15fbc7d9126c1cd085eb1d5eb-tomcat-servlet-3.0-api-7.0.76-10.amzn2.0.2-noarch/var_product
+4.0K    /var/lib/yum/yumdb/t/6d479285d8a92db15fbc7d9126c1cd085eb1d5eb-tomcat-servlet-3.0-api-7.0.76-10.amzn2.0.2-noarch/var_target
+4.0K    /var/lib/yum/yumdb/t/6d479285d8a92db15fbc7d9126c1cd085eb1d5eb-tomcat-servlet-3.0-api-7.0.76-10.amzn2.0.2-noarch/var_awsregion
+4.0K    /var/lib/yum/yumdb/t/6d479285d8a92db15fbc7d9126c1cd085eb1d5eb-tomcat-servlet-3.0-api-7.0.76-10.amzn2.0.2-noarch/var_awsdomain
+4.0K    /var/lib/yum/yumdb/t/6d479285d8a92db15fbc7d9126c1cd085eb1d5eb-tomcat-servlet-3.0-api-7.0.76-10.amzn2.0.2-noarch/var_awsproto
+4.0K    /var/lib/yum/yumdb/t/6d479285d8a92db15fbc7d9126c1cd085eb1d5eb-tomcat-servlet-3.0-api-7.0.76-10.amzn2.0.2-noarch/var_amazonlinux
+4.0K    /var/lib/yum/yumdb/t/6d479285d8a92db15fbc7d9126c1cd085eb1d5eb-tomcat-servlet-3.0-api-7.0.76-10.amzn2.0.2-noarch/var_uuid
+4.0K    /var/lib/yum/yumdb/t/6d479285d8a92db15fbc7d9126c1cd085eb1d5eb-tomcat-servlet-3.0-api-7.0.76-10.amzn2.0.2-noarch/checksum_data
+4.0K    /var/lib/yum/yumdb/t/6d479285d8a92db15fbc7d9126c1cd085eb1d5eb-tomcat-servlet-3.0-api-7.0.76-10.amzn2.0.2-noarch/origin_url
+40K     /var/lib/yum/yumdb/t/6d479285d8a92db15fbc7d9126c1cd085eb1d5eb-tomcat-servlet-3.0-api-7.0.76-10.amzn2.0.2-noarch
+4.0K    /var/lib/yum/yumdb/t/01ed265b286275ec4d8ba1ff9b313db03c61ff46-tomcat-el-2.2-api-7.0.76-10.amzn2.0.2-noarch/var_product
+4.0K    /var/lib/yum/yumdb/t/01ed265b286275ec4d8ba1ff9b313db03c61ff46-tomcat-el-2.2-api-7.0.76-10.amzn2.0.2-noarch/var_target
+4.0K    /var/lib/yum/yumdb/t/01ed265b286275ec4d8ba1ff9b313db03c61ff46-tomcat-el-2.2-api-7.0.76-10.amzn2.0.2-noarch/var_awsregion
+4.0K    /var/lib/yum/yumdb/t/01ed265b286275ec4d8ba1ff9b313db03c61ff46-tomcat-el-2.2-api-7.0.76-10.amzn2.0.2-noarch/var_awsdomain
+4.0K    /var/lib/yum/yumdb/t/01ed265b286275ec4d8ba1ff9b313db03c61ff46-tomcat-el-2.2-api-7.0.76-10.amzn2.0.2-noarch/var_awsproto
+4.0K    /var/lib/yum/yumdb/t/01ed265b286275ec4d8ba1ff9b313db03c61ff46-tomcat-el-2.2-api-7.0.76-10.amzn2.0.2-noarch/var_amazonlinux
+4.0K    /var/lib/yum/yumdb/t/01ed265b286275ec4d8ba1ff9b313db03c61ff46-tomcat-el-2.2-api-7.0.76-10.amzn2.0.2-noarch/var_uuid
+4.0K    /var/lib/yum/yumdb/t/01ed265b286275ec4d8ba1ff9b313db03c61ff46-tomcat-el-2.2-api-7.0.76-10.amzn2.0.2-noarch/checksum_data
+4.0K    /var/lib/yum/yumdb/t/01ed265b286275ec4d8ba1ff9b313db03c61ff46-tomcat-el-2.2-api-7.0.76-10.amzn2.0.2-noarch/origin_url
+40K     /var/lib/yum/yumdb/t/01ed265b286275ec4d8ba1ff9b313db03c61ff46-tomcat-el-2.2-api-7.0.76-10.amzn2.0.2-noarch
+4.0K    /var/lib/yum/yumdb/t/f9b21be53be4fd0fdd57e3da78ec6ad449b0c506-tomcat-lib-7.0.76-10.amzn2.0.2-noarch/var_product
+4.0K    /var/lib/yum/yumdb/t/f9b21be53be4fd0fdd57e3da78ec6ad449b0c506-tomcat-lib-7.0.76-10.amzn2.0.2-noarch/var_target
+4.0K    /var/lib/yum/yumdb/t/f9b21be53be4fd0fdd57e3da78ec6ad449b0c506-tomcat-lib-7.0.76-10.amzn2.0.2-noarch/var_awsregion
+4.0K    /var/lib/yum/yumdb/t/f9b21be53be4fd0fdd57e3da78ec6ad449b0c506-tomcat-lib-7.0.76-10.amzn2.0.2-noarch/var_awsdomain
+4.0K    /var/lib/yum/yumdb/t/f9b21be53be4fd0fdd57e3da78ec6ad449b0c506-tomcat-lib-7.0.76-10.amzn2.0.2-noarch/var_awsproto
+4.0K    /var/lib/yum/yumdb/t/f9b21be53be4fd0fdd57e3da78ec6ad449b0c506-tomcat-lib-7.0.76-10.amzn2.0.2-noarch/var_amazonlinux
+4.0K    /var/lib/yum/yumdb/t/f9b21be53be4fd0fdd57e3da78ec6ad449b0c506-tomcat-lib-7.0.76-10.amzn2.0.2-noarch/var_uuid
+4.0K    /var/lib/yum/yumdb/t/f9b21be53be4fd0fdd57e3da78ec6ad449b0c506-tomcat-lib-7.0.76-10.amzn2.0.2-noarch/checksum_data
+4.0K    /var/lib/yum/yumdb/t/f9b21be53be4fd0fdd57e3da78ec6ad449b0c506-tomcat-lib-7.0.76-10.amzn2.0.2-noarch/origin_url
+40K     /var/lib/yum/yumdb/t/f9b21be53be4fd0fdd57e3da78ec6ad449b0c506-tomcat-lib-7.0.76-10.amzn2.0.2-noarch
+4.0K    /var/lib/yum/yumdb/t/73f379594be6f26ce966aef5eb7e3af0d4cce41f-tomcat-7.0.76-10.amzn2.0.2-noarch/reason
+4.0K    /var/lib/yum/yumdb/t/73f379594be6f26ce966aef5eb7e3af0d4cce41f-tomcat-7.0.76-10.amzn2.0.2-noarch/var_product
+4.0K    /var/lib/yum/yumdb/t/73f379594be6f26ce966aef5eb7e3af0d4cce41f-tomcat-7.0.76-10.amzn2.0.2-noarch/var_target
+4.0K    /var/lib/yum/yumdb/t/73f379594be6f26ce966aef5eb7e3af0d4cce41f-tomcat-7.0.76-10.amzn2.0.2-noarch/var_awsregion
+4.0K    /var/lib/yum/yumdb/t/73f379594be6f26ce966aef5eb7e3af0d4cce41f-tomcat-7.0.76-10.amzn2.0.2-noarch/var_awsdomain
+4.0K    /var/lib/yum/yumdb/t/73f379594be6f26ce966aef5eb7e3af0d4cce41f-tomcat-7.0.76-10.amzn2.0.2-noarch/var_awsproto
+4.0K    /var/lib/yum/yumdb/t/73f379594be6f26ce966aef5eb7e3af0d4cce41f-tomcat-7.0.76-10.amzn2.0.2-noarch/var_amazonlinux
+4.0K    /var/lib/yum/yumdb/t/73f379594be6f26ce966aef5eb7e3af0d4cce41f-tomcat-7.0.76-10.amzn2.0.2-noarch/var_uuid
+4.0K    /var/lib/yum/yumdb/t/73f379594be6f26ce966aef5eb7e3af0d4cce41f-tomcat-7.0.76-10.amzn2.0.2-noarch/checksum_data
+4.0K    /var/lib/yum/yumdb/t/73f379594be6f26ce966aef5eb7e3af0d4cce41f-tomcat-7.0.76-10.amzn2.0.2-noarch/origin_url
+44K     /var/lib/yum/yumdb/t/73f379594be6f26ce966aef5eb7e3af0d4cce41f-tomcat-7.0.76-10.amzn2.0.2-noarch
+304K    /var/lib/yum/yumdb/t
+4.0K    /var/lib/yum/yumdb/a/f0ed53e5d6b1a0a65d7671343250b210dac24c96-apr-util-1.6.1-5.amzn2.0.2-x86_64/from_repo
+4.0K    /var/lib/yum/yumdb/a/f0ed53e5d6b1a0a65d7671343250b210dac24c96-apr-util-1.6.1-5.amzn2.0.2-x86_64/reason
+4.0K    /var/lib/yum/yumdb/a/f0ed53e5d6b1a0a65d7671343250b210dac24c96-apr-util-1.6.1-5.amzn2.0.2-x86_64/releasever
+4.0K    /var/lib/yum/yumdb/a/f0ed53e5d6b1a0a65d7671343250b210dac24c96-apr-util-1.6.1-5.amzn2.0.2-x86_64/var_product
+4.0K    /var/lib/yum/yumdb/a/f0ed53e5d6b1a0a65d7671343250b210dac24c96-apr-util-1.6.1-5.amzn2.0.2-x86_64/var_target
+4.0K    /var/lib/yum/yumdb/a/f0ed53e5d6b1a0a65d7671343250b210dac24c96-apr-util-1.6.1-5.amzn2.0.2-x86_64/var_awsregion
+4.0K    /var/lib/yum/yumdb/a/f0ed53e5d6b1a0a65d7671343250b210dac24c96-apr-util-1.6.1-5.amzn2.0.2-x86_64/var_awsdomain
+4.0K    /var/lib/yum/yumdb/a/f0ed53e5d6b1a0a65d7671343250b210dac24c96-apr-util-1.6.1-5.amzn2.0.2-x86_64/var_awsproto
+4.0K    /var/lib/yum/yumdb/a/f0ed53e5d6b1a0a65d7671343250b210dac24c96-apr-util-1.6.1-5.amzn2.0.2-x86_64/var_amazonlinux
+4.0K    /var/lib/yum/yumdb/a/f0ed53e5d6b1a0a65d7671343250b210dac24c96-apr-util-1.6.1-5.amzn2.0.2-x86_64/var_uuid
+4.0K    /var/lib/yum/yumdb/a/f0ed53e5d6b1a0a65d7671343250b210dac24c96-apr-util-1.6.1-5.amzn2.0.2-x86_64/command_line
+4.0K    /var/lib/yum/yumdb/a/f0ed53e5d6b1a0a65d7671343250b210dac24c96-apr-util-1.6.1-5.amzn2.0.2-x86_64/checksum_type
+4.0K    /var/lib/yum/yumdb/a/f0ed53e5d6b1a0a65d7671343250b210dac24c96-apr-util-1.6.1-5.amzn2.0.2-x86_64/checksum_data
+4.0K    /var/lib/yum/yumdb/a/f0ed53e5d6b1a0a65d7671343250b210dac24c96-apr-util-1.6.1-5.amzn2.0.2-x86_64/origin_url
+4.0K    /var/lib/yum/yumdb/a/f0ed53e5d6b1a0a65d7671343250b210dac24c96-apr-util-1.6.1-5.amzn2.0.2-x86_64/from_repo_revision
+4.0K    /var/lib/yum/yumdb/a/f0ed53e5d6b1a0a65d7671343250b210dac24c96-apr-util-1.6.1-5.amzn2.0.2-x86_64/installed_by
+68K     /var/lib/yum/yumdb/a/f0ed53e5d6b1a0a65d7671343250b210dac24c96-apr-util-1.6.1-5.amzn2.0.2-x86_64
+4.0K    /var/lib/yum/yumdb/a/e0f700445bc61265f86c0eccd52216bf864c7506-apr-util-bdb-1.6.1-5.amzn2.0.2-x86_64/var_product
+4.0K    /var/lib/yum/yumdb/a/e0f700445bc61265f86c0eccd52216bf864c7506-apr-util-bdb-1.6.1-5.amzn2.0.2-x86_64/var_target
+4.0K    /var/lib/yum/yumdb/a/e0f700445bc61265f86c0eccd52216bf864c7506-apr-util-bdb-1.6.1-5.amzn2.0.2-x86_64/var_awsregion
+4.0K    /var/lib/yum/yumdb/a/e0f700445bc61265f86c0eccd52216bf864c7506-apr-util-bdb-1.6.1-5.amzn2.0.2-x86_64/var_awsdomain
+4.0K    /var/lib/yum/yumdb/a/e0f700445bc61265f86c0eccd52216bf864c7506-apr-util-bdb-1.6.1-5.amzn2.0.2-x86_64/var_awsproto
+4.0K    /var/lib/yum/yumdb/a/e0f700445bc61265f86c0eccd52216bf864c7506-apr-util-bdb-1.6.1-5.amzn2.0.2-x86_64/var_amazonlinux
+4.0K    /var/lib/yum/yumdb/a/e0f700445bc61265f86c0eccd52216bf864c7506-apr-util-bdb-1.6.1-5.amzn2.0.2-x86_64/var_uuid
+4.0K    /var/lib/yum/yumdb/a/e0f700445bc61265f86c0eccd52216bf864c7506-apr-util-bdb-1.6.1-5.amzn2.0.2-x86_64/checksum_data
+4.0K    /var/lib/yum/yumdb/a/e0f700445bc61265f86c0eccd52216bf864c7506-apr-util-bdb-1.6.1-5.amzn2.0.2-x86_64/origin_url
+40K     /var/lib/yum/yumdb/a/e0f700445bc61265f86c0eccd52216bf864c7506-apr-util-bdb-1.6.1-5.amzn2.0.2-x86_64
+4.0K    /var/lib/yum/yumdb/a/5975e82fbbf33662cabecb524f840778485c0274-apr-1.7.0-9.amzn2-x86_64/var_product
+4.0K    /var/lib/yum/yumdb/a/5975e82fbbf33662cabecb524f840778485c0274-apr-1.7.0-9.amzn2-x86_64/var_target
+4.0K    /var/lib/yum/yumdb/a/5975e82fbbf33662cabecb524f840778485c0274-apr-1.7.0-9.amzn2-x86_64/var_awsregion
+4.0K    /var/lib/yum/yumdb/a/5975e82fbbf33662cabecb524f840778485c0274-apr-1.7.0-9.amzn2-x86_64/var_awsdomain
+4.0K    /var/lib/yum/yumdb/a/5975e82fbbf33662cabecb524f840778485c0274-apr-1.7.0-9.amzn2-x86_64/var_awsproto
+4.0K    /var/lib/yum/yumdb/a/5975e82fbbf33662cabecb524f840778485c0274-apr-1.7.0-9.amzn2-x86_64/var_amazonlinux
+4.0K    /var/lib/yum/yumdb/a/5975e82fbbf33662cabecb524f840778485c0274-apr-1.7.0-9.amzn2-x86_64/var_uuid
+4.0K    /var/lib/yum/yumdb/a/5975e82fbbf33662cabecb524f840778485c0274-apr-1.7.0-9.amzn2-x86_64/checksum_data
+4.0K    /var/lib/yum/yumdb/a/5975e82fbbf33662cabecb524f840778485c0274-apr-1.7.0-9.amzn2-x86_64/origin_url
+40K     /var/lib/yum/yumdb/a/5975e82fbbf33662cabecb524f840778485c0274-apr-1.7.0-9.amzn2-x86_64
+4.0K    /var/lib/yum/yumdb/a/6613dc8d5ae116a3d4209def0e6eaf58bf9796e8-alsa-lib-1.1.4.1-2.amzn2-x86_64/from_repo
+4.0K    /var/lib/yum/yumdb/a/6613dc8d5ae116a3d4209def0e6eaf58bf9796e8-alsa-lib-1.1.4.1-2.amzn2-x86_64/reason
+4.0K    /var/lib/yum/yumdb/a/6613dc8d5ae116a3d4209def0e6eaf58bf9796e8-alsa-lib-1.1.4.1-2.amzn2-x86_64/releasever
+4.0K    /var/lib/yum/yumdb/a/6613dc8d5ae116a3d4209def0e6eaf58bf9796e8-alsa-lib-1.1.4.1-2.amzn2-x86_64/var_product
+4.0K    /var/lib/yum/yumdb/a/6613dc8d5ae116a3d4209def0e6eaf58bf9796e8-alsa-lib-1.1.4.1-2.amzn2-x86_64/var_target
+4.0K    /var/lib/yum/yumdb/a/6613dc8d5ae116a3d4209def0e6eaf58bf9796e8-alsa-lib-1.1.4.1-2.amzn2-x86_64/var_awsregion
+4.0K    /var/lib/yum/yumdb/a/6613dc8d5ae116a3d4209def0e6eaf58bf9796e8-alsa-lib-1.1.4.1-2.amzn2-x86_64/var_awsdomain
+4.0K    /var/lib/yum/yumdb/a/6613dc8d5ae116a3d4209def0e6eaf58bf9796e8-alsa-lib-1.1.4.1-2.amzn2-x86_64/var_awsproto
+4.0K    /var/lib/yum/yumdb/a/6613dc8d5ae116a3d4209def0e6eaf58bf9796e8-alsa-lib-1.1.4.1-2.amzn2-x86_64/var_amazonlinux
+4.0K    /var/lib/yum/yumdb/a/6613dc8d5ae116a3d4209def0e6eaf58bf9796e8-alsa-lib-1.1.4.1-2.amzn2-x86_64/var_uuid
+4.0K    /var/lib/yum/yumdb/a/6613dc8d5ae116a3d4209def0e6eaf58bf9796e8-alsa-lib-1.1.4.1-2.amzn2-x86_64/command_line
+4.0K    /var/lib/yum/yumdb/a/6613dc8d5ae116a3d4209def0e6eaf58bf9796e8-alsa-lib-1.1.4.1-2.amzn2-x86_64/checksum_type
+4.0K    /var/lib/yum/yumdb/a/6613dc8d5ae116a3d4209def0e6eaf58bf9796e8-alsa-lib-1.1.4.1-2.amzn2-x86_64/checksum_data
+4.0K    /var/lib/yum/yumdb/a/6613dc8d5ae116a3d4209def0e6eaf58bf9796e8-alsa-lib-1.1.4.1-2.amzn2-x86_64/origin_url
+4.0K    /var/lib/yum/yumdb/a/6613dc8d5ae116a3d4209def0e6eaf58bf9796e8-alsa-lib-1.1.4.1-2.amzn2-x86_64/from_repo_revision
+4.0K    /var/lib/yum/yumdb/a/6613dc8d5ae116a3d4209def0e6eaf58bf9796e8-alsa-lib-1.1.4.1-2.amzn2-x86_64/installed_by
+68K     /var/lib/yum/yumdb/a/6613dc8d5ae116a3d4209def0e6eaf58bf9796e8-alsa-lib-1.1.4.1-2.amzn2-x86_64
+4.0K    /var/lib/yum/yumdb/a/c1bd5c580b555d9ce37c52e104f26a0c0c4be796-apache-commons-collections-3.2.1-22.amzn2-noarch/var_product
+4.0K    /var/lib/yum/yumdb/a/c1bd5c580b555d9ce37c52e104f26a0c0c4be796-apache-commons-collections-3.2.1-22.amzn2-noarch/var_target
+4.0K    /var/lib/yum/yumdb/a/c1bd5c580b555d9ce37c52e104f26a0c0c4be796-apache-commons-collections-3.2.1-22.amzn2-noarch/var_awsregion
+4.0K    /var/lib/yum/yumdb/a/c1bd5c580b555d9ce37c52e104f26a0c0c4be796-apache-commons-collections-3.2.1-22.amzn2-noarch/var_awsdomain
+4.0K    /var/lib/yum/yumdb/a/c1bd5c580b555d9ce37c52e104f26a0c0c4be796-apache-commons-collections-3.2.1-22.amzn2-noarch/var_awsproto
+4.0K    /var/lib/yum/yumdb/a/c1bd5c580b555d9ce37c52e104f26a0c0c4be796-apache-commons-collections-3.2.1-22.amzn2-noarch/var_amazonlinux
+4.0K    /var/lib/yum/yumdb/a/c1bd5c580b555d9ce37c52e104f26a0c0c4be796-apache-commons-collections-3.2.1-22.amzn2-noarch/var_uuid
+4.0K    /var/lib/yum/yumdb/a/c1bd5c580b555d9ce37c52e104f26a0c0c4be796-apache-commons-collections-3.2.1-22.amzn2-noarch/checksum_data
+4.0K    /var/lib/yum/yumdb/a/c1bd5c580b555d9ce37c52e104f26a0c0c4be796-apache-commons-collections-3.2.1-22.amzn2-noarch/origin_url
+40K     /var/lib/yum/yumdb/a/c1bd5c580b555d9ce37c52e104f26a0c0c4be796-apache-commons-collections-3.2.1-22.amzn2-noarch
+4.0K    /var/lib/yum/yumdb/a/483ec15918533cb6d166e8a49a9eed669ba923d6-apache-commons-logging-1.1.2-7.amzn2-noarch/var_product
+4.0K    /var/lib/yum/yumdb/a/483ec15918533cb6d166e8a49a9eed669ba923d6-apache-commons-logging-1.1.2-7.amzn2-noarch/var_target
+4.0K    /var/lib/yum/yumdb/a/483ec15918533cb6d166e8a49a9eed669ba923d6-apache-commons-logging-1.1.2-7.amzn2-noarch/var_awsregion
+4.0K    /var/lib/yum/yumdb/a/483ec15918533cb6d166e8a49a9eed669ba923d6-apache-commons-logging-1.1.2-7.amzn2-noarch/var_awsdomain
+4.0K    /var/lib/yum/yumdb/a/483ec15918533cb6d166e8a49a9eed669ba923d6-apache-commons-logging-1.1.2-7.amzn2-noarch/var_awsproto
+4.0K    /var/lib/yum/yumdb/a/483ec15918533cb6d166e8a49a9eed669ba923d6-apache-commons-logging-1.1.2-7.amzn2-noarch/var_amazonlinux
+4.0K    /var/lib/yum/yumdb/a/483ec15918533cb6d166e8a49a9eed669ba923d6-apache-commons-logging-1.1.2-7.amzn2-noarch/var_uuid
+4.0K    /var/lib/yum/yumdb/a/483ec15918533cb6d166e8a49a9eed669ba923d6-apache-commons-logging-1.1.2-7.amzn2-noarch/checksum_data
+4.0K    /var/lib/yum/yumdb/a/483ec15918533cb6d166e8a49a9eed669ba923d6-apache-commons-logging-1.1.2-7.amzn2-noarch/origin_url
+40K     /var/lib/yum/yumdb/a/483ec15918533cb6d166e8a49a9eed669ba923d6-apache-commons-logging-1.1.2-7.amzn2-noarch
+4.0K    /var/lib/yum/yumdb/a/a3b9e03fe1415a1b4bd6f5e63adee53117e09136-avalon-logkit-2.1-14.1.amzn2-noarch/var_product
+4.0K    /var/lib/yum/yumdb/a/a3b9e03fe1415a1b4bd6f5e63adee53117e09136-avalon-logkit-2.1-14.1.amzn2-noarch/var_target
+4.0K    /var/lib/yum/yumdb/a/a3b9e03fe1415a1b4bd6f5e63adee53117e09136-avalon-logkit-2.1-14.1.amzn2-noarch/var_awsregion
+4.0K    /var/lib/yum/yumdb/a/a3b9e03fe1415a1b4bd6f5e63adee53117e09136-avalon-logkit-2.1-14.1.amzn2-noarch/var_awsdomain
+4.0K    /var/lib/yum/yumdb/a/a3b9e03fe1415a1b4bd6f5e63adee53117e09136-avalon-logkit-2.1-14.1.amzn2-noarch/var_awsproto
+4.0K    /var/lib/yum/yumdb/a/a3b9e03fe1415a1b4bd6f5e63adee53117e09136-avalon-logkit-2.1-14.1.amzn2-noarch/var_amazonlinux
+4.0K    /var/lib/yum/yumdb/a/a3b9e03fe1415a1b4bd6f5e63adee53117e09136-avalon-logkit-2.1-14.1.amzn2-noarch/var_uuid
+4.0K    /var/lib/yum/yumdb/a/a3b9e03fe1415a1b4bd6f5e63adee53117e09136-avalon-logkit-2.1-14.1.amzn2-noarch/checksum_data
+4.0K    /var/lib/yum/yumdb/a/a3b9e03fe1415a1b4bd6f5e63adee53117e09136-avalon-logkit-2.1-14.1.amzn2-noarch/origin_url
+40K     /var/lib/yum/yumdb/a/a3b9e03fe1415a1b4bd6f5e63adee53117e09136-avalon-logkit-2.1-14.1.amzn2-noarch
+4.0K    /var/lib/yum/yumdb/a/fcbcd0baf718cfb9d1e243f8ad568b020f1a8a9f-apache-commons-pool-1.6-9.amzn2-noarch/var_product
+4.0K    /var/lib/yum/yumdb/a/fcbcd0baf718cfb9d1e243f8ad568b020f1a8a9f-apache-commons-pool-1.6-9.amzn2-noarch/var_target
+4.0K    /var/lib/yum/yumdb/a/fcbcd0baf718cfb9d1e243f8ad568b020f1a8a9f-apache-commons-pool-1.6-9.amzn2-noarch/var_awsregion
+4.0K    /var/lib/yum/yumdb/a/fcbcd0baf718cfb9d1e243f8ad568b020f1a8a9f-apache-commons-pool-1.6-9.amzn2-noarch/var_awsdomain
+4.0K    /var/lib/yum/yumdb/a/fcbcd0baf718cfb9d1e243f8ad568b020f1a8a9f-apache-commons-pool-1.6-9.amzn2-noarch/var_awsproto
+4.0K    /var/lib/yum/yumdb/a/fcbcd0baf718cfb9d1e243f8ad568b020f1a8a9f-apache-commons-pool-1.6-9.amzn2-noarch/var_amazonlinux
+4.0K    /var/lib/yum/yumdb/a/fcbcd0baf718cfb9d1e243f8ad568b020f1a8a9f-apache-commons-pool-1.6-9.amzn2-noarch/var_uuid
+4.0K    /var/lib/yum/yumdb/a/fcbcd0baf718cfb9d1e243f8ad568b020f1a8a9f-apache-commons-pool-1.6-9.amzn2-noarch/checksum_data
+4.0K    /var/lib/yum/yumdb/a/fcbcd0baf718cfb9d1e243f8ad568b020f1a8a9f-apache-commons-pool-1.6-9.amzn2-noarch/origin_url
+40K     /var/lib/yum/yumdb/a/fcbcd0baf718cfb9d1e243f8ad568b020f1a8a9f-apache-commons-pool-1.6-9.amzn2-noarch
+4.0K    /var/lib/yum/yumdb/a/b80b4c010335d696f929e85291112ad050bda058-apache-commons-dbcp-1.4-17.amzn2-noarch/var_product
+4.0K    /var/lib/yum/yumdb/a/b80b4c010335d696f929e85291112ad050bda058-apache-commons-dbcp-1.4-17.amzn2-noarch/var_target
+4.0K    /var/lib/yum/yumdb/a/b80b4c010335d696f929e85291112ad050bda058-apache-commons-dbcp-1.4-17.amzn2-noarch/var_awsregion
+4.0K    /var/lib/yum/yumdb/a/b80b4c010335d696f929e85291112ad050bda058-apache-commons-dbcp-1.4-17.amzn2-noarch/var_awsdomain
+4.0K    /var/lib/yum/yumdb/a/b80b4c010335d696f929e85291112ad050bda058-apache-commons-dbcp-1.4-17.amzn2-noarch/var_awsproto
+4.0K    /var/lib/yum/yumdb/a/b80b4c010335d696f929e85291112ad050bda058-apache-commons-dbcp-1.4-17.amzn2-noarch/var_amazonlinux
+4.0K    /var/lib/yum/yumdb/a/b80b4c010335d696f929e85291112ad050bda058-apache-commons-dbcp-1.4-17.amzn2-noarch/var_uuid
+4.0K    /var/lib/yum/yumdb/a/b80b4c010335d696f929e85291112ad050bda058-apache-commons-dbcp-1.4-17.amzn2-noarch/checksum_data
+4.0K    /var/lib/yum/yumdb/a/b80b4c010335d696f929e85291112ad050bda058-apache-commons-dbcp-1.4-17.amzn2-noarch/origin_url
+40K     /var/lib/yum/yumdb/a/b80b4c010335d696f929e85291112ad050bda058-apache-commons-dbcp-1.4-17.amzn2-noarch
+4.0K    /var/lib/yum/yumdb/a/bc49df5021b20517762da7c65032995855559867-apache-commons-daemon-1.0.13-7.amzn2-x86_64/var_product
+4.0K    /var/lib/yum/yumdb/a/bc49df5021b20517762da7c65032995855559867-apache-commons-daemon-1.0.13-7.amzn2-x86_64/var_target
+4.0K    /var/lib/yum/yumdb/a/bc49df5021b20517762da7c65032995855559867-apache-commons-daemon-1.0.13-7.amzn2-x86_64/var_awsregion
+4.0K    /var/lib/yum/yumdb/a/bc49df5021b20517762da7c65032995855559867-apache-commons-daemon-1.0.13-7.amzn2-x86_64/var_awsdomain
+4.0K    /var/lib/yum/yumdb/a/bc49df5021b20517762da7c65032995855559867-apache-commons-daemon-1.0.13-7.amzn2-x86_64/var_awsproto
+4.0K    /var/lib/yum/yumdb/a/bc49df5021b20517762da7c65032995855559867-apache-commons-daemon-1.0.13-7.amzn2-x86_64/var_amazonlinux
+4.0K    /var/lib/yum/yumdb/a/bc49df5021b20517762da7c65032995855559867-apache-commons-daemon-1.0.13-7.amzn2-x86_64/var_uuid
+4.0K    /var/lib/yum/yumdb/a/bc49df5021b20517762da7c65032995855559867-apache-commons-daemon-1.0.13-7.amzn2-x86_64/checksum_data
+4.0K    /var/lib/yum/yumdb/a/bc49df5021b20517762da7c65032995855559867-apache-commons-daemon-1.0.13-7.amzn2-x86_64/origin_url
+40K     /var/lib/yum/yumdb/a/bc49df5021b20517762da7c65032995855559867-apache-commons-daemon-1.0.13-7.amzn2-x86_64
+4.0K    /var/lib/yum/yumdb/a/668330e7f0db60f3ea506419b2cdf569af136bdd-avalon-framework-4.3-10.1.amzn2-noarch/var_product
+4.0K    /var/lib/yum/yumdb/a/668330e7f0db60f3ea506419b2cdf569af136bdd-avalon-framework-4.3-10.1.amzn2-noarch/var_target
+4.0K    /var/lib/yum/yumdb/a/668330e7f0db60f3ea506419b2cdf569af136bdd-avalon-framework-4.3-10.1.amzn2-noarch/var_awsregion
+4.0K    /var/lib/yum/yumdb/a/668330e7f0db60f3ea506419b2cdf569af136bdd-avalon-framework-4.3-10.1.amzn2-noarch/var_awsdomain
+4.0K    /var/lib/yum/yumdb/a/668330e7f0db60f3ea506419b2cdf569af136bdd-avalon-framework-4.3-10.1.amzn2-noarch/var_awsproto
+4.0K    /var/lib/yum/yumdb/a/668330e7f0db60f3ea506419b2cdf569af136bdd-avalon-framework-4.3-10.1.amzn2-noarch/var_amazonlinux
+4.0K    /var/lib/yum/yumdb/a/668330e7f0db60f3ea506419b2cdf569af136bdd-avalon-framework-4.3-10.1.amzn2-noarch/var_uuid
+4.0K    /var/lib/yum/yumdb/a/668330e7f0db60f3ea506419b2cdf569af136bdd-avalon-framework-4.3-10.1.amzn2-noarch/checksum_data
+4.0K    /var/lib/yum/yumdb/a/668330e7f0db60f3ea506419b2cdf569af136bdd-avalon-framework-4.3-10.1.amzn2-noarch/origin_url
+40K     /var/lib/yum/yumdb/a/668330e7f0db60f3ea506419b2cdf569af136bdd-avalon-framework-4.3-10.1.amzn2-noarch
+500K    /var/lib/yum/yumdb/a
+4.0K    /var/lib/yum/yumdb/m/32b71ccb37b0cf671c3c7a554531457469f36f2b-mod_http2-1.15.19-1.amzn2.0.1-x86_64/var_product
+4.0K    /var/lib/yum/yumdb/m/32b71ccb37b0cf671c3c7a554531457469f36f2b-mod_http2-1.15.19-1.amzn2.0.1-x86_64/var_target
+4.0K    /var/lib/yum/yumdb/m/32b71ccb37b0cf671c3c7a554531457469f36f2b-mod_http2-1.15.19-1.amzn2.0.1-x86_64/var_awsregion
+4.0K    /var/lib/yum/yumdb/m/32b71ccb37b0cf671c3c7a554531457469f36f2b-mod_http2-1.15.19-1.amzn2.0.1-x86_64/var_awsdomain
+4.0K    /var/lib/yum/yumdb/m/32b71ccb37b0cf671c3c7a554531457469f36f2b-mod_http2-1.15.19-1.amzn2.0.1-x86_64/var_awsproto
+4.0K    /var/lib/yum/yumdb/m/32b71ccb37b0cf671c3c7a554531457469f36f2b-mod_http2-1.15.19-1.amzn2.0.1-x86_64/var_amazonlinux
+4.0K    /var/lib/yum/yumdb/m/32b71ccb37b0cf671c3c7a554531457469f36f2b-mod_http2-1.15.19-1.amzn2.0.1-x86_64/var_uuid
+4.0K    /var/lib/yum/yumdb/m/32b71ccb37b0cf671c3c7a554531457469f36f2b-mod_http2-1.15.19-1.amzn2.0.1-x86_64/checksum_data
+4.0K    /var/lib/yum/yumdb/m/32b71ccb37b0cf671c3c7a554531457469f36f2b-mod_http2-1.15.19-1.amzn2.0.1-x86_64/origin_url
+40K     /var/lib/yum/yumdb/m/32b71ccb37b0cf671c3c7a554531457469f36f2b-mod_http2-1.15.19-1.amzn2.0.1-x86_64
+4.0K    /var/lib/yum/yumdb/m/ab9e4499963055f2ffeead1699c8a9d51015c99b-mailcap-2.1.41-2.amzn2-noarch/var_product
+4.0K    /var/lib/yum/yumdb/m/ab9e4499963055f2ffeead1699c8a9d51015c99b-mailcap-2.1.41-2.amzn2-noarch/var_target
+4.0K    /var/lib/yum/yumdb/m/ab9e4499963055f2ffeead1699c8a9d51015c99b-mailcap-2.1.41-2.amzn2-noarch/var_awsregion
+4.0K    /var/lib/yum/yumdb/m/ab9e4499963055f2ffeead1699c8a9d51015c99b-mailcap-2.1.41-2.amzn2-noarch/var_awsdomain
+4.0K    /var/lib/yum/yumdb/m/ab9e4499963055f2ffeead1699c8a9d51015c99b-mailcap-2.1.41-2.amzn2-noarch/var_awsproto
+4.0K    /var/lib/yum/yumdb/m/ab9e4499963055f2ffeead1699c8a9d51015c99b-mailcap-2.1.41-2.amzn2-noarch/var_amazonlinux
+4.0K    /var/lib/yum/yumdb/m/ab9e4499963055f2ffeead1699c8a9d51015c99b-mailcap-2.1.41-2.amzn2-noarch/var_uuid
+4.0K    /var/lib/yum/yumdb/m/ab9e4499963055f2ffeead1699c8a9d51015c99b-mailcap-2.1.41-2.amzn2-noarch/checksum_data
+4.0K    /var/lib/yum/yumdb/m/ab9e4499963055f2ffeead1699c8a9d51015c99b-mailcap-2.1.41-2.amzn2-noarch/origin_url
+40K     /var/lib/yum/yumdb/m/ab9e4499963055f2ffeead1699c8a9d51015c99b-mailcap-2.1.41-2.amzn2-noarch
+80K     /var/lib/yum/yumdb/m
+4.0K    /var/lib/yum/yumdb/h/e0ec11ebc6c0224a6b83c0854a502a473273ed24-httpd-filesystem-2.4.53-1.amzn2-noarch/var_product
+4.0K    /var/lib/yum/yumdb/h/e0ec11ebc6c0224a6b83c0854a502a473273ed24-httpd-filesystem-2.4.53-1.amzn2-noarch/var_target
+4.0K    /var/lib/yum/yumdb/h/e0ec11ebc6c0224a6b83c0854a502a473273ed24-httpd-filesystem-2.4.53-1.amzn2-noarch/var_awsregion
+4.0K    /var/lib/yum/yumdb/h/e0ec11ebc6c0224a6b83c0854a502a473273ed24-httpd-filesystem-2.4.53-1.amzn2-noarch/var_awsdomain
+4.0K    /var/lib/yum/yumdb/h/e0ec11ebc6c0224a6b83c0854a502a473273ed24-httpd-filesystem-2.4.53-1.amzn2-noarch/var_awsproto
+4.0K    /var/lib/yum/yumdb/h/e0ec11ebc6c0224a6b83c0854a502a473273ed24-httpd-filesystem-2.4.53-1.amzn2-noarch/var_amazonlinux
+4.0K    /var/lib/yum/yumdb/h/e0ec11ebc6c0224a6b83c0854a502a473273ed24-httpd-filesystem-2.4.53-1.amzn2-noarch/var_uuid
+4.0K    /var/lib/yum/yumdb/h/e0ec11ebc6c0224a6b83c0854a502a473273ed24-httpd-filesystem-2.4.53-1.amzn2-noarch/checksum_data
+4.0K    /var/lib/yum/yumdb/h/e0ec11ebc6c0224a6b83c0854a502a473273ed24-httpd-filesystem-2.4.53-1.amzn2-noarch/origin_url
+40K     /var/lib/yum/yumdb/h/e0ec11ebc6c0224a6b83c0854a502a473273ed24-httpd-filesystem-2.4.53-1.amzn2-noarch
+4.0K    /var/lib/yum/yumdb/h/39637674edc85ff2a85e3411f50b39fbf7824a9a-httpd-tools-2.4.53-1.amzn2-x86_64/var_product
+4.0K    /var/lib/yum/yumdb/h/39637674edc85ff2a85e3411f50b39fbf7824a9a-httpd-tools-2.4.53-1.amzn2-x86_64/var_target
+4.0K    /var/lib/yum/yumdb/h/39637674edc85ff2a85e3411f50b39fbf7824a9a-httpd-tools-2.4.53-1.amzn2-x86_64/var_awsregion
+4.0K    /var/lib/yum/yumdb/h/39637674edc85ff2a85e3411f50b39fbf7824a9a-httpd-tools-2.4.53-1.amzn2-x86_64/var_awsdomain
+4.0K    /var/lib/yum/yumdb/h/39637674edc85ff2a85e3411f50b39fbf7824a9a-httpd-tools-2.4.53-1.amzn2-x86_64/var_awsproto
+4.0K    /var/lib/yum/yumdb/h/39637674edc85ff2a85e3411f50b39fbf7824a9a-httpd-tools-2.4.53-1.amzn2-x86_64/var_amazonlinux
+4.0K    /var/lib/yum/yumdb/h/39637674edc85ff2a85e3411f50b39fbf7824a9a-httpd-tools-2.4.53-1.amzn2-x86_64/var_uuid
+4.0K    /var/lib/yum/yumdb/h/39637674edc85ff2a85e3411f50b39fbf7824a9a-httpd-tools-2.4.53-1.amzn2-x86_64/checksum_data
+4.0K    /var/lib/yum/yumdb/h/39637674edc85ff2a85e3411f50b39fbf7824a9a-httpd-tools-2.4.53-1.amzn2-x86_64/origin_url
+40K     /var/lib/yum/yumdb/h/39637674edc85ff2a85e3411f50b39fbf7824a9a-httpd-tools-2.4.53-1.amzn2-x86_64
+4.0K    /var/lib/yum/yumdb/h/3c182bb5528fe662aa5253fc720af423deac1c50-httpd-2.4.53-1.amzn2-x86_64/reason
+4.0K    /var/lib/yum/yumdb/h/3c182bb5528fe662aa5253fc720af423deac1c50-httpd-2.4.53-1.amzn2-x86_64/var_product
+4.0K    /var/lib/yum/yumdb/h/3c182bb5528fe662aa5253fc720af423deac1c50-httpd-2.4.53-1.amzn2-x86_64/var_target
+4.0K    /var/lib/yum/yumdb/h/3c182bb5528fe662aa5253fc720af423deac1c50-httpd-2.4.53-1.amzn2-x86_64/var_awsregion
+4.0K    /var/lib/yum/yumdb/h/3c182bb5528fe662aa5253fc720af423deac1c50-httpd-2.4.53-1.amzn2-x86_64/var_awsdomain
+4.0K    /var/lib/yum/yumdb/h/3c182bb5528fe662aa5253fc720af423deac1c50-httpd-2.4.53-1.amzn2-x86_64/var_awsproto
+4.0K    /var/lib/yum/yumdb/h/3c182bb5528fe662aa5253fc720af423deac1c50-httpd-2.4.53-1.amzn2-x86_64/var_amazonlinux
+4.0K    /var/lib/yum/yumdb/h/3c182bb5528fe662aa5253fc720af423deac1c50-httpd-2.4.53-1.amzn2-x86_64/var_uuid
+4.0K    /var/lib/yum/yumdb/h/3c182bb5528fe662aa5253fc720af423deac1c50-httpd-2.4.53-1.amzn2-x86_64/checksum_data
+4.0K    /var/lib/yum/yumdb/h/3c182bb5528fe662aa5253fc720af423deac1c50-httpd-2.4.53-1.amzn2-x86_64/origin_url
+44K     /var/lib/yum/yumdb/h/3c182bb5528fe662aa5253fc720af423deac1c50-httpd-2.4.53-1.amzn2-x86_64
+124K    /var/lib/yum/yumdb/h
+4.0K    /var/lib/yum/yumdb/g/61e724ab435167d69fe2309de7c78692bc32420a-generic-logos-httpd-18.0.0-4.amzn2-noarch/var_product
+4.0K    /var/lib/yum/yumdb/g/61e724ab435167d69fe2309de7c78692bc32420a-generic-logos-httpd-18.0.0-4.amzn2-noarch/var_target
+4.0K    /var/lib/yum/yumdb/g/61e724ab435167d69fe2309de7c78692bc32420a-generic-logos-httpd-18.0.0-4.amzn2-noarch/var_awsregion
+4.0K    /var/lib/yum/yumdb/g/61e724ab435167d69fe2309de7c78692bc32420a-generic-logos-httpd-18.0.0-4.amzn2-noarch/var_awsdomain
+4.0K    /var/lib/yum/yumdb/g/61e724ab435167d69fe2309de7c78692bc32420a-generic-logos-httpd-18.0.0-4.amzn2-noarch/var_awsproto
+4.0K    /var/lib/yum/yumdb/g/61e724ab435167d69fe2309de7c78692bc32420a-generic-logos-httpd-18.0.0-4.amzn2-noarch/var_amazonlinux
+4.0K    /var/lib/yum/yumdb/g/61e724ab435167d69fe2309de7c78692bc32420a-generic-logos-httpd-18.0.0-4.amzn2-noarch/var_uuid
+4.0K    /var/lib/yum/yumdb/g/61e724ab435167d69fe2309de7c78692bc32420a-generic-logos-httpd-18.0.0-4.amzn2-noarch/checksum_data
+4.0K    /var/lib/yum/yumdb/g/61e724ab435167d69fe2309de7c78692bc32420a-generic-logos-httpd-18.0.0-4.amzn2-noarch/origin_url
+40K     /var/lib/yum/yumdb/g/61e724ab435167d69fe2309de7c78692bc32420a-generic-logos-httpd-18.0.0-4.amzn2-noarch
+4.0K    /var/lib/yum/yumdb/g/4d169c7485e82c36694ae85067714aebf50e44f5-geronimo-jms-1.1.1-19.amzn2-noarch/var_product
+4.0K    /var/lib/yum/yumdb/g/4d169c7485e82c36694ae85067714aebf50e44f5-geronimo-jms-1.1.1-19.amzn2-noarch/var_target
+4.0K    /var/lib/yum/yumdb/g/4d169c7485e82c36694ae85067714aebf50e44f5-geronimo-jms-1.1.1-19.amzn2-noarch/var_awsregion
+4.0K    /var/lib/yum/yumdb/g/4d169c7485e82c36694ae85067714aebf50e44f5-geronimo-jms-1.1.1-19.amzn2-noarch/var_awsdomain
+4.0K    /var/lib/yum/yumdb/g/4d169c7485e82c36694ae85067714aebf50e44f5-geronimo-jms-1.1.1-19.amzn2-noarch/var_awsproto
+4.0K    /var/lib/yum/yumdb/g/4d169c7485e82c36694ae85067714aebf50e44f5-geronimo-jms-1.1.1-19.amzn2-noarch/var_amazonlinux
+4.0K    /var/lib/yum/yumdb/g/4d169c7485e82c36694ae85067714aebf50e44f5-geronimo-jms-1.1.1-19.amzn2-noarch/var_uuid
+4.0K    /var/lib/yum/yumdb/g/4d169c7485e82c36694ae85067714aebf50e44f5-geronimo-jms-1.1.1-19.amzn2-noarch/checksum_data
+4.0K    /var/lib/yum/yumdb/g/4d169c7485e82c36694ae85067714aebf50e44f5-geronimo-jms-1.1.1-19.amzn2-noarch/origin_url
+40K     /var/lib/yum/yumdb/g/4d169c7485e82c36694ae85067714aebf50e44f5-geronimo-jms-1.1.1-19.amzn2-noarch
+4.0K    /var/lib/yum/yumdb/g/d7b709305727b437223ca221384fabbf7089772b-geronimo-jta-1.1.1-17.amzn2-noarch/var_product
+4.0K    /var/lib/yum/yumdb/g/d7b709305727b437223ca221384fabbf7089772b-geronimo-jta-1.1.1-17.amzn2-noarch/var_target
+4.0K    /var/lib/yum/yumdb/g/d7b709305727b437223ca221384fabbf7089772b-geronimo-jta-1.1.1-17.amzn2-noarch/var_awsregion
+4.0K    /var/lib/yum/yumdb/g/d7b709305727b437223ca221384fabbf7089772b-geronimo-jta-1.1.1-17.amzn2-noarch/var_awsdomain
+4.0K    /var/lib/yum/yumdb/g/d7b709305727b437223ca221384fabbf7089772b-geronimo-jta-1.1.1-17.amzn2-noarch/var_awsproto
+4.0K    /var/lib/yum/yumdb/g/d7b709305727b437223ca221384fabbf7089772b-geronimo-jta-1.1.1-17.amzn2-noarch/var_amazonlinux
+4.0K    /var/lib/yum/yumdb/g/d7b709305727b437223ca221384fabbf7089772b-geronimo-jta-1.1.1-17.amzn2-noarch/var_uuid
+4.0K    /var/lib/yum/yumdb/g/d7b709305727b437223ca221384fabbf7089772b-geronimo-jta-1.1.1-17.amzn2-noarch/checksum_data
+4.0K    /var/lib/yum/yumdb/g/d7b709305727b437223ca221384fabbf7089772b-geronimo-jta-1.1.1-17.amzn2-noarch/origin_url
+40K     /var/lib/yum/yumdb/g/d7b709305727b437223ca221384fabbf7089772b-geronimo-jta-1.1.1-17.amzn2-noarch
+120K    /var/lib/yum/yumdb/g
+4.0K    /var/lib/yum/yumdb/k/9c90c331124ec31173e448187a7960a582bdd686-kernel-5.10.112-108.499.amzn2-x86_64/from_repo
+4.0K    /var/lib/yum/yumdb/k/9c90c331124ec31173e448187a7960a582bdd686-kernel-5.10.112-108.499.amzn2-x86_64/reason
+4.0K    /var/lib/yum/yumdb/k/9c90c331124ec31173e448187a7960a582bdd686-kernel-5.10.112-108.499.amzn2-x86_64/releasever
+4.0K    /var/lib/yum/yumdb/k/9c90c331124ec31173e448187a7960a582bdd686-kernel-5.10.112-108.499.amzn2-x86_64/var_product
+4.0K    /var/lib/yum/yumdb/k/9c90c331124ec31173e448187a7960a582bdd686-kernel-5.10.112-108.499.amzn2-x86_64/var_target
+4.0K    /var/lib/yum/yumdb/k/9c90c331124ec31173e448187a7960a582bdd686-kernel-5.10.112-108.499.amzn2-x86_64/var_awsregion
+4.0K    /var/lib/yum/yumdb/k/9c90c331124ec31173e448187a7960a582bdd686-kernel-5.10.112-108.499.amzn2-x86_64/var_awsdomain
+4.0K    /var/lib/yum/yumdb/k/9c90c331124ec31173e448187a7960a582bdd686-kernel-5.10.112-108.499.amzn2-x86_64/var_awsproto
+4.0K    /var/lib/yum/yumdb/k/9c90c331124ec31173e448187a7960a582bdd686-kernel-5.10.112-108.499.amzn2-x86_64/var_amazonlinux
+4.0K    /var/lib/yum/yumdb/k/9c90c331124ec31173e448187a7960a582bdd686-kernel-5.10.112-108.499.amzn2-x86_64/var_uuid
+4.0K    /var/lib/yum/yumdb/k/9c90c331124ec31173e448187a7960a582bdd686-kernel-5.10.112-108.499.amzn2-x86_64/command_line
+4.0K    /var/lib/yum/yumdb/k/9c90c331124ec31173e448187a7960a582bdd686-kernel-5.10.112-108.499.amzn2-x86_64/checksum_type
+4.0K    /var/lib/yum/yumdb/k/9c90c331124ec31173e448187a7960a582bdd686-kernel-5.10.112-108.499.amzn2-x86_64/checksum_data
+4.0K    /var/lib/yum/yumdb/k/9c90c331124ec31173e448187a7960a582bdd686-kernel-5.10.112-108.499.amzn2-x86_64/origin_url
+4.0K    /var/lib/yum/yumdb/k/9c90c331124ec31173e448187a7960a582bdd686-kernel-5.10.112-108.499.amzn2-x86_64/from_repo_revision
+4.0K    /var/lib/yum/yumdb/k/9c90c331124ec31173e448187a7960a582bdd686-kernel-5.10.112-108.499.amzn2-x86_64/installed_by
+68K     /var/lib/yum/yumdb/k/9c90c331124ec31173e448187a7960a582bdd686-kernel-5.10.112-108.499.amzn2-x86_64
+4.0K    /var/lib/yum/yumdb/k/8496eb7432ac04eb7bc808b6f215d084f84a98dd-kernel-tools-5.10.112-108.499.amzn2-x86_64/var_product
+4.0K    /var/lib/yum/yumdb/k/8496eb7432ac04eb7bc808b6f215d084f84a98dd-kernel-tools-5.10.112-108.499.amzn2-x86_64/var_target
+4.0K    /var/lib/yum/yumdb/k/8496eb7432ac04eb7bc808b6f215d084f84a98dd-kernel-tools-5.10.112-108.499.amzn2-x86_64/var_awsregion
+4.0K    /var/lib/yum/yumdb/k/8496eb7432ac04eb7bc808b6f215d084f84a98dd-kernel-tools-5.10.112-108.499.amzn2-x86_64/var_awsdomain
+4.0K    /var/lib/yum/yumdb/k/8496eb7432ac04eb7bc808b6f215d084f84a98dd-kernel-tools-5.10.112-108.499.amzn2-x86_64/var_awsproto
+4.0K    /var/lib/yum/yumdb/k/8496eb7432ac04eb7bc808b6f215d084f84a98dd-kernel-tools-5.10.112-108.499.amzn2-x86_64/var_amazonlinux
+4.0K    /var/lib/yum/yumdb/k/8496eb7432ac04eb7bc808b6f215d084f84a98dd-kernel-tools-5.10.112-108.499.amzn2-x86_64/var_uuid
+4.0K    /var/lib/yum/yumdb/k/8496eb7432ac04eb7bc808b6f215d084f84a98dd-kernel-tools-5.10.112-108.499.amzn2-x86_64/checksum_data
+4.0K    /var/lib/yum/yumdb/k/8496eb7432ac04eb7bc808b6f215d084f84a98dd-kernel-tools-5.10.112-108.499.amzn2-x86_64/origin_url
+40K     /var/lib/yum/yumdb/k/8496eb7432ac04eb7bc808b6f215d084f84a98dd-kernel-tools-5.10.112-108.499.amzn2-x86_64
+108K    /var/lib/yum/yumdb/k
+4.0K    /var/lib/yum/yumdb/c/18be6c126274a5ea52ef77cff06633a4ac4ae22f-curl-7.79.1-2.amzn2.0.1-x86_64/from_repo
+4.0K    /var/lib/yum/yumdb/c/18be6c126274a5ea52ef77cff06633a4ac4ae22f-curl-7.79.1-2.amzn2.0.1-x86_64/var_product
+4.0K    /var/lib/yum/yumdb/c/18be6c126274a5ea52ef77cff06633a4ac4ae22f-curl-7.79.1-2.amzn2.0.1-x86_64/var_target
+4.0K    /var/lib/yum/yumdb/c/18be6c126274a5ea52ef77cff06633a4ac4ae22f-curl-7.79.1-2.amzn2.0.1-x86_64/var_awsregion
+4.0K    /var/lib/yum/yumdb/c/18be6c126274a5ea52ef77cff06633a4ac4ae22f-curl-7.79.1-2.amzn2.0.1-x86_64/var_awsdomain
+4.0K    /var/lib/yum/yumdb/c/18be6c126274a5ea52ef77cff06633a4ac4ae22f-curl-7.79.1-2.amzn2.0.1-x86_64/var_awsproto
+4.0K    /var/lib/yum/yumdb/c/18be6c126274a5ea52ef77cff06633a4ac4ae22f-curl-7.79.1-2.amzn2.0.1-x86_64/var_amazonlinux
+4.0K    /var/lib/yum/yumdb/c/18be6c126274a5ea52ef77cff06633a4ac4ae22f-curl-7.79.1-2.amzn2.0.1-x86_64/var_uuid
+4.0K    /var/lib/yum/yumdb/c/18be6c126274a5ea52ef77cff06633a4ac4ae22f-curl-7.79.1-2.amzn2.0.1-x86_64/checksum_data
+4.0K    /var/lib/yum/yumdb/c/18be6c126274a5ea52ef77cff06633a4ac4ae22f-curl-7.79.1-2.amzn2.0.1-x86_64/origin_url
+4.0K    /var/lib/yum/yumdb/c/18be6c126274a5ea52ef77cff06633a4ac4ae22f-curl-7.79.1-2.amzn2.0.1-x86_64/from_repo_revision
+48K     /var/lib/yum/yumdb/c/18be6c126274a5ea52ef77cff06633a4ac4ae22f-curl-7.79.1-2.amzn2.0.1-x86_64
+48K     /var/lib/yum/yumdb/c
+4.0K    /var/lib/yum/yumdb/l/3e33c801937df3e49f519385aa1c9a88f32e857a-libcurl-7.79.1-2.amzn2.0.1-x86_64/var_product
+4.0K    /var/lib/yum/yumdb/l/3e33c801937df3e49f519385aa1c9a88f32e857a-libcurl-7.79.1-2.amzn2.0.1-x86_64/var_target
+4.0K    /var/lib/yum/yumdb/l/3e33c801937df3e49f519385aa1c9a88f32e857a-libcurl-7.79.1-2.amzn2.0.1-x86_64/var_awsregion
+4.0K    /var/lib/yum/yumdb/l/3e33c801937df3e49f519385aa1c9a88f32e857a-libcurl-7.79.1-2.amzn2.0.1-x86_64/var_awsdomain
+4.0K    /var/lib/yum/yumdb/l/3e33c801937df3e49f519385aa1c9a88f32e857a-libcurl-7.79.1-2.amzn2.0.1-x86_64/var_awsproto
+4.0K    /var/lib/yum/yumdb/l/3e33c801937df3e49f519385aa1c9a88f32e857a-libcurl-7.79.1-2.amzn2.0.1-x86_64/var_amazonlinux
+4.0K    /var/lib/yum/yumdb/l/3e33c801937df3e49f519385aa1c9a88f32e857a-libcurl-7.79.1-2.amzn2.0.1-x86_64/var_uuid
+4.0K    /var/lib/yum/yumdb/l/3e33c801937df3e49f519385aa1c9a88f32e857a-libcurl-7.79.1-2.amzn2.0.1-x86_64/checksum_data
+4.0K    /var/lib/yum/yumdb/l/3e33c801937df3e49f519385aa1c9a88f32e857a-libcurl-7.79.1-2.amzn2.0.1-x86_64/origin_url
+40K     /var/lib/yum/yumdb/l/3e33c801937df3e49f519385aa1c9a88f32e857a-libcurl-7.79.1-2.amzn2.0.1-x86_64
+4.0K    /var/lib/yum/yumdb/l/d569396ebbfa440400a7d0c1a9e5cdf272f43fb9-libxcb-1.12-1.amzn2.0.2-x86_64/var_product
+4.0K    /var/lib/yum/yumdb/l/d569396ebbfa440400a7d0c1a9e5cdf272f43fb9-libxcb-1.12-1.amzn2.0.2-x86_64/var_target
+4.0K    /var/lib/yum/yumdb/l/d569396ebbfa440400a7d0c1a9e5cdf272f43fb9-libxcb-1.12-1.amzn2.0.2-x86_64/var_awsregion
+4.0K    /var/lib/yum/yumdb/l/d569396ebbfa440400a7d0c1a9e5cdf272f43fb9-libxcb-1.12-1.amzn2.0.2-x86_64/var_awsdomain
+4.0K    /var/lib/yum/yumdb/l/d569396ebbfa440400a7d0c1a9e5cdf272f43fb9-libxcb-1.12-1.amzn2.0.2-x86_64/var_awsproto
+4.0K    /var/lib/yum/yumdb/l/d569396ebbfa440400a7d0c1a9e5cdf272f43fb9-libxcb-1.12-1.amzn2.0.2-x86_64/var_amazonlinux
+4.0K    /var/lib/yum/yumdb/l/d569396ebbfa440400a7d0c1a9e5cdf272f43fb9-libxcb-1.12-1.amzn2.0.2-x86_64/var_uuid
+4.0K    /var/lib/yum/yumdb/l/d569396ebbfa440400a7d0c1a9e5cdf272f43fb9-libxcb-1.12-1.amzn2.0.2-x86_64/checksum_data
+4.0K    /var/lib/yum/yumdb/l/d569396ebbfa440400a7d0c1a9e5cdf272f43fb9-libxcb-1.12-1.amzn2.0.2-x86_64/origin_url
+40K     /var/lib/yum/yumdb/l/d569396ebbfa440400a7d0c1a9e5cdf272f43fb9-libxcb-1.12-1.amzn2.0.2-x86_64
+4.0K    /var/lib/yum/yumdb/l/5946f78cdee705bd94dab43ed68e1d15cf43a3bf-libXrandr-1.5.1-2.amzn2.0.3-x86_64/var_product
+4.0K    /var/lib/yum/yumdb/l/5946f78cdee705bd94dab43ed68e1d15cf43a3bf-libXrandr-1.5.1-2.amzn2.0.3-x86_64/var_target
+4.0K    /var/lib/yum/yumdb/l/5946f78cdee705bd94dab43ed68e1d15cf43a3bf-libXrandr-1.5.1-2.amzn2.0.3-x86_64/var_awsregion
+4.0K    /var/lib/yum/yumdb/l/5946f78cdee705bd94dab43ed68e1d15cf43a3bf-libXrandr-1.5.1-2.amzn2.0.3-x86_64/var_awsdomain
+4.0K    /var/lib/yum/yumdb/l/5946f78cdee705bd94dab43ed68e1d15cf43a3bf-libXrandr-1.5.1-2.amzn2.0.3-x86_64/var_awsproto
+4.0K    /var/lib/yum/yumdb/l/5946f78cdee705bd94dab43ed68e1d15cf43a3bf-libXrandr-1.5.1-2.amzn2.0.3-x86_64/var_amazonlinux
+4.0K    /var/lib/yum/yumdb/l/5946f78cdee705bd94dab43ed68e1d15cf43a3bf-libXrandr-1.5.1-2.amzn2.0.3-x86_64/var_uuid
+4.0K    /var/lib/yum/yumdb/l/5946f78cdee705bd94dab43ed68e1d15cf43a3bf-libXrandr-1.5.1-2.amzn2.0.3-x86_64/checksum_data
+4.0K    /var/lib/yum/yumdb/l/5946f78cdee705bd94dab43ed68e1d15cf43a3bf-libXrandr-1.5.1-2.amzn2.0.3-x86_64/origin_url
+40K     /var/lib/yum/yumdb/l/5946f78cdee705bd94dab43ed68e1d15cf43a3bf-libXrandr-1.5.1-2.amzn2.0.3-x86_64
+4.0K    /var/lib/yum/yumdb/l/bef6e4fb4c5a31827d7293f8248f41f881ba1017-libXext-1.3.3-3.amzn2.0.2-x86_64/var_product
+4.0K    /var/lib/yum/yumdb/l/bef6e4fb4c5a31827d7293f8248f41f881ba1017-libXext-1.3.3-3.amzn2.0.2-x86_64/var_target
+4.0K    /var/lib/yum/yumdb/l/bef6e4fb4c5a31827d7293f8248f41f881ba1017-libXext-1.3.3-3.amzn2.0.2-x86_64/var_awsregion
+4.0K    /var/lib/yum/yumdb/l/bef6e4fb4c5a31827d7293f8248f41f881ba1017-libXext-1.3.3-3.amzn2.0.2-x86_64/var_awsdomain
+4.0K    /var/lib/yum/yumdb/l/bef6e4fb4c5a31827d7293f8248f41f881ba1017-libXext-1.3.3-3.amzn2.0.2-x86_64/var_awsproto
+4.0K    /var/lib/yum/yumdb/l/bef6e4fb4c5a31827d7293f8248f41f881ba1017-libXext-1.3.3-3.amzn2.0.2-x86_64/var_amazonlinux
+4.0K    /var/lib/yum/yumdb/l/bef6e4fb4c5a31827d7293f8248f41f881ba1017-libXext-1.3.3-3.amzn2.0.2-x86_64/var_uuid
+4.0K    /var/lib/yum/yumdb/l/bef6e4fb4c5a31827d7293f8248f41f881ba1017-libXext-1.3.3-3.amzn2.0.2-x86_64/checksum_data
+4.0K    /var/lib/yum/yumdb/l/bef6e4fb4c5a31827d7293f8248f41f881ba1017-libXext-1.3.3-3.amzn2.0.2-x86_64/origin_url
+40K     /var/lib/yum/yumdb/l/bef6e4fb4c5a31827d7293f8248f41f881ba1017-libXext-1.3.3-3.amzn2.0.2-x86_64
+4.0K    /var/lib/yum/yumdb/l/ec1e5c44e761530c2b9e223d1293a9053c2e485e-libX11-1.6.7-3.amzn2.0.2-x86_64/var_product
+4.0K    /var/lib/yum/yumdb/l/ec1e5c44e761530c2b9e223d1293a9053c2e485e-libX11-1.6.7-3.amzn2.0.2-x86_64/var_target
+4.0K    /var/lib/yum/yumdb/l/ec1e5c44e761530c2b9e223d1293a9053c2e485e-libX11-1.6.7-3.amzn2.0.2-x86_64/var_awsregion
+4.0K    /var/lib/yum/yumdb/l/ec1e5c44e761530c2b9e223d1293a9053c2e485e-libX11-1.6.7-3.amzn2.0.2-x86_64/var_awsdomain
+4.0K    /var/lib/yum/yumdb/l/ec1e5c44e761530c2b9e223d1293a9053c2e485e-libX11-1.6.7-3.amzn2.0.2-x86_64/var_awsproto
+4.0K    /var/lib/yum/yumdb/l/ec1e5c44e761530c2b9e223d1293a9053c2e485e-libX11-1.6.7-3.amzn2.0.2-x86_64/var_amazonlinux
+4.0K    /var/lib/yum/yumdb/l/ec1e5c44e761530c2b9e223d1293a9053c2e485e-libX11-1.6.7-3.amzn2.0.2-x86_64/var_uuid
+4.0K    /var/lib/yum/yumdb/l/ec1e5c44e761530c2b9e223d1293a9053c2e485e-libX11-1.6.7-3.amzn2.0.2-x86_64/checksum_data
+4.0K    /var/lib/yum/yumdb/l/ec1e5c44e761530c2b9e223d1293a9053c2e485e-libX11-1.6.7-3.amzn2.0.2-x86_64/origin_url
+40K     /var/lib/yum/yumdb/l/ec1e5c44e761530c2b9e223d1293a9053c2e485e-libX11-1.6.7-3.amzn2.0.2-x86_64
+4.0K    /var/lib/yum/yumdb/l/a9c810eeed2ea269ea0394c0fe15b797f90ff6cb-libX11-common-1.6.7-3.amzn2.0.2-noarch/var_product
+4.0K    /var/lib/yum/yumdb/l/a9c810eeed2ea269ea0394c0fe15b797f90ff6cb-libX11-common-1.6.7-3.amzn2.0.2-noarch/var_target
+4.0K    /var/lib/yum/yumdb/l/a9c810eeed2ea269ea0394c0fe15b797f90ff6cb-libX11-common-1.6.7-3.amzn2.0.2-noarch/var_awsregion
+4.0K    /var/lib/yum/yumdb/l/a9c810eeed2ea269ea0394c0fe15b797f90ff6cb-libX11-common-1.6.7-3.amzn2.0.2-noarch/var_awsdomain
+4.0K    /var/lib/yum/yumdb/l/a9c810eeed2ea269ea0394c0fe15b797f90ff6cb-libX11-common-1.6.7-3.amzn2.0.2-noarch/var_awsproto
+4.0K    /var/lib/yum/yumdb/l/a9c810eeed2ea269ea0394c0fe15b797f90ff6cb-libX11-common-1.6.7-3.amzn2.0.2-noarch/var_amazonlinux
+4.0K    /var/lib/yum/yumdb/l/a9c810eeed2ea269ea0394c0fe15b797f90ff6cb-libX11-common-1.6.7-3.amzn2.0.2-noarch/var_uuid
+4.0K    /var/lib/yum/yumdb/l/a9c810eeed2ea269ea0394c0fe15b797f90ff6cb-libX11-common-1.6.7-3.amzn2.0.2-noarch/checksum_data
+4.0K    /var/lib/yum/yumdb/l/a9c810eeed2ea269ea0394c0fe15b797f90ff6cb-libX11-common-1.6.7-3.amzn2.0.2-noarch/origin_url
+40K     /var/lib/yum/yumdb/l/a9c810eeed2ea269ea0394c0fe15b797f90ff6cb-libX11-common-1.6.7-3.amzn2.0.2-noarch
+4.0K    /var/lib/yum/yumdb/l/62dc7f84682bb2f9501a7e3b5a98a1b84257783f-libXau-1.0.8-2.1.amzn2.0.2-x86_64/var_product
+4.0K    /var/lib/yum/yumdb/l/62dc7f84682bb2f9501a7e3b5a98a1b84257783f-libXau-1.0.8-2.1.amzn2.0.2-x86_64/var_target
+4.0K    /var/lib/yum/yumdb/l/62dc7f84682bb2f9501a7e3b5a98a1b84257783f-libXau-1.0.8-2.1.amzn2.0.2-x86_64/var_awsregion
+4.0K    /var/lib/yum/yumdb/l/62dc7f84682bb2f9501a7e3b5a98a1b84257783f-libXau-1.0.8-2.1.amzn2.0.2-x86_64/var_awsdomain
+4.0K    /var/lib/yum/yumdb/l/62dc7f84682bb2f9501a7e3b5a98a1b84257783f-libXau-1.0.8-2.1.amzn2.0.2-x86_64/var_awsproto
+4.0K    /var/lib/yum/yumdb/l/62dc7f84682bb2f9501a7e3b5a98a1b84257783f-libXau-1.0.8-2.1.amzn2.0.2-x86_64/var_amazonlinux
+4.0K    /var/lib/yum/yumdb/l/62dc7f84682bb2f9501a7e3b5a98a1b84257783f-libXau-1.0.8-2.1.amzn2.0.2-x86_64/var_uuid
+4.0K    /var/lib/yum/yumdb/l/62dc7f84682bb2f9501a7e3b5a98a1b84257783f-libXau-1.0.8-2.1.amzn2.0.2-x86_64/checksum_data
+4.0K    /var/lib/yum/yumdb/l/62dc7f84682bb2f9501a7e3b5a98a1b84257783f-libXau-1.0.8-2.1.amzn2.0.2-x86_64/origin_url
+40K     /var/lib/yum/yumdb/l/62dc7f84682bb2f9501a7e3b5a98a1b84257783f-libXau-1.0.8-2.1.amzn2.0.2-x86_64
+4.0K    /var/lib/yum/yumdb/l/5583c7b77309daf3a6364b56d4d71122fd8cfd36-libSM-1.2.2-2.amzn2.0.2-x86_64/var_product
+4.0K    /var/lib/yum/yumdb/l/5583c7b77309daf3a6364b56d4d71122fd8cfd36-libSM-1.2.2-2.amzn2.0.2-x86_64/var_target
+4.0K    /var/lib/yum/yumdb/l/5583c7b77309daf3a6364b56d4d71122fd8cfd36-libSM-1.2.2-2.amzn2.0.2-x86_64/var_awsregion
+4.0K    /var/lib/yum/yumdb/l/5583c7b77309daf3a6364b56d4d71122fd8cfd36-libSM-1.2.2-2.amzn2.0.2-x86_64/var_awsdomain
+4.0K    /var/lib/yum/yumdb/l/5583c7b77309daf3a6364b56d4d71122fd8cfd36-libSM-1.2.2-2.amzn2.0.2-x86_64/var_awsproto
+4.0K    /var/lib/yum/yumdb/l/5583c7b77309daf3a6364b56d4d71122fd8cfd36-libSM-1.2.2-2.amzn2.0.2-x86_64/var_amazonlinux
+4.0K    /var/lib/yum/yumdb/l/5583c7b77309daf3a6364b56d4d71122fd8cfd36-libSM-1.2.2-2.amzn2.0.2-x86_64/var_uuid
+4.0K    /var/lib/yum/yumdb/l/5583c7b77309daf3a6364b56d4d71122fd8cfd36-libSM-1.2.2-2.amzn2.0.2-x86_64/checksum_data
+4.0K    /var/lib/yum/yumdb/l/5583c7b77309daf3a6364b56d4d71122fd8cfd36-libSM-1.2.2-2.amzn2.0.2-x86_64/origin_url
+40K     /var/lib/yum/yumdb/l/5583c7b77309daf3a6364b56d4d71122fd8cfd36-libSM-1.2.2-2.amzn2.0.2-x86_64
+4.0K    /var/lib/yum/yumdb/l/f4067b2b8790fefd54967bcb1e06781e75e42bde-libXrender-0.9.10-1.amzn2.0.2-x86_64/var_product
+4.0K    /var/lib/yum/yumdb/l/f4067b2b8790fefd54967bcb1e06781e75e42bde-libXrender-0.9.10-1.amzn2.0.2-x86_64/var_target
+4.0K    /var/lib/yum/yumdb/l/f4067b2b8790fefd54967bcb1e06781e75e42bde-libXrender-0.9.10-1.amzn2.0.2-x86_64/var_awsregion
+4.0K    /var/lib/yum/yumdb/l/f4067b2b8790fefd54967bcb1e06781e75e42bde-libXrender-0.9.10-1.amzn2.0.2-x86_64/var_awsdomain
+4.0K    /var/lib/yum/yumdb/l/f4067b2b8790fefd54967bcb1e06781e75e42bde-libXrender-0.9.10-1.amzn2.0.2-x86_64/var_awsproto
+4.0K    /var/lib/yum/yumdb/l/f4067b2b8790fefd54967bcb1e06781e75e42bde-libXrender-0.9.10-1.amzn2.0.2-x86_64/var_amazonlinux
+4.0K    /var/lib/yum/yumdb/l/f4067b2b8790fefd54967bcb1e06781e75e42bde-libXrender-0.9.10-1.amzn2.0.2-x86_64/var_uuid
+4.0K    /var/lib/yum/yumdb/l/f4067b2b8790fefd54967bcb1e06781e75e42bde-libXrender-0.9.10-1.amzn2.0.2-x86_64/checksum_data
+4.0K    /var/lib/yum/yumdb/l/f4067b2b8790fefd54967bcb1e06781e75e42bde-libXrender-0.9.10-1.amzn2.0.2-x86_64/origin_url
+40K     /var/lib/yum/yumdb/l/f4067b2b8790fefd54967bcb1e06781e75e42bde-libXrender-0.9.10-1.amzn2.0.2-x86_64
+4.0K    /var/lib/yum/yumdb/l/9a60357501147fa9b98ed2c20b6ba82ed4efc46a-libXt-1.1.5-3.amzn2.0.2-x86_64/var_product
+4.0K    /var/lib/yum/yumdb/l/9a60357501147fa9b98ed2c20b6ba82ed4efc46a-libXt-1.1.5-3.amzn2.0.2-x86_64/var_target
+4.0K    /var/lib/yum/yumdb/l/9a60357501147fa9b98ed2c20b6ba82ed4efc46a-libXt-1.1.5-3.amzn2.0.2-x86_64/var_awsregion
+4.0K    /var/lib/yum/yumdb/l/9a60357501147fa9b98ed2c20b6ba82ed4efc46a-libXt-1.1.5-3.amzn2.0.2-x86_64/var_awsdomain
+4.0K    /var/lib/yum/yumdb/l/9a60357501147fa9b98ed2c20b6ba82ed4efc46a-libXt-1.1.5-3.amzn2.0.2-x86_64/var_awsproto
+4.0K    /var/lib/yum/yumdb/l/9a60357501147fa9b98ed2c20b6ba82ed4efc46a-libXt-1.1.5-3.amzn2.0.2-x86_64/var_amazonlinux
+4.0K    /var/lib/yum/yumdb/l/9a60357501147fa9b98ed2c20b6ba82ed4efc46a-libXt-1.1.5-3.amzn2.0.2-x86_64/var_uuid
+4.0K    /var/lib/yum/yumdb/l/9a60357501147fa9b98ed2c20b6ba82ed4efc46a-libXt-1.1.5-3.amzn2.0.2-x86_64/checksum_data
+4.0K    /var/lib/yum/yumdb/l/9a60357501147fa9b98ed2c20b6ba82ed4efc46a-libXt-1.1.5-3.amzn2.0.2-x86_64/origin_url
+40K     /var/lib/yum/yumdb/l/9a60357501147fa9b98ed2c20b6ba82ed4efc46a-libXt-1.1.5-3.amzn2.0.2-x86_64
+4.0K    /var/lib/yum/yumdb/l/4e4e787d73f0da8df4fceab71629c5409b49b148-libXinerama-1.1.3-2.1.amzn2.0.2-x86_64/var_product
+4.0K    /var/lib/yum/yumdb/l/4e4e787d73f0da8df4fceab71629c5409b49b148-libXinerama-1.1.3-2.1.amzn2.0.2-x86_64/var_target
+4.0K    /var/lib/yum/yumdb/l/4e4e787d73f0da8df4fceab71629c5409b49b148-libXinerama-1.1.3-2.1.amzn2.0.2-x86_64/var_awsregion
+4.0K    /var/lib/yum/yumdb/l/4e4e787d73f0da8df4fceab71629c5409b49b148-libXinerama-1.1.3-2.1.amzn2.0.2-x86_64/var_awsdomain
+4.0K    /var/lib/yum/yumdb/l/4e4e787d73f0da8df4fceab71629c5409b49b148-libXinerama-1.1.3-2.1.amzn2.0.2-x86_64/var_awsproto
+4.0K    /var/lib/yum/yumdb/l/4e4e787d73f0da8df4fceab71629c5409b49b148-libXinerama-1.1.3-2.1.amzn2.0.2-x86_64/var_amazonlinux
+4.0K    /var/lib/yum/yumdb/l/4e4e787d73f0da8df4fceab71629c5409b49b148-libXinerama-1.1.3-2.1.amzn2.0.2-x86_64/var_uuid
+4.0K    /var/lib/yum/yumdb/l/4e4e787d73f0da8df4fceab71629c5409b49b148-libXinerama-1.1.3-2.1.amzn2.0.2-x86_64/checksum_data
+4.0K    /var/lib/yum/yumdb/l/4e4e787d73f0da8df4fceab71629c5409b49b148-libXinerama-1.1.3-2.1.amzn2.0.2-x86_64/origin_url
+40K     /var/lib/yum/yumdb/l/4e4e787d73f0da8df4fceab71629c5409b49b148-libXinerama-1.1.3-2.1.amzn2.0.2-x86_64
+4.0K    /var/lib/yum/yumdb/l/49a884f6cce1840162010c661f7742022558b22b-libXi-1.7.9-1.amzn2.0.2-x86_64/var_product
+4.0K    /var/lib/yum/yumdb/l/49a884f6cce1840162010c661f7742022558b22b-libXi-1.7.9-1.amzn2.0.2-x86_64/var_target
+4.0K    /var/lib/yum/yumdb/l/49a884f6cce1840162010c661f7742022558b22b-libXi-1.7.9-1.amzn2.0.2-x86_64/var_awsregion
+4.0K    /var/lib/yum/yumdb/l/49a884f6cce1840162010c661f7742022558b22b-libXi-1.7.9-1.amzn2.0.2-x86_64/var_awsdomain
+4.0K    /var/lib/yum/yumdb/l/49a884f6cce1840162010c661f7742022558b22b-libXi-1.7.9-1.amzn2.0.2-x86_64/var_awsproto
+4.0K    /var/lib/yum/yumdb/l/49a884f6cce1840162010c661f7742022558b22b-libXi-1.7.9-1.amzn2.0.2-x86_64/var_amazonlinux
+4.0K    /var/lib/yum/yumdb/l/49a884f6cce1840162010c661f7742022558b22b-libXi-1.7.9-1.amzn2.0.2-x86_64/var_uuid
+4.0K    /var/lib/yum/yumdb/l/49a884f6cce1840162010c661f7742022558b22b-libXi-1.7.9-1.amzn2.0.2-x86_64/checksum_data
+4.0K    /var/lib/yum/yumdb/l/49a884f6cce1840162010c661f7742022558b22b-libXi-1.7.9-1.amzn2.0.2-x86_64/origin_url
+40K     /var/lib/yum/yumdb/l/49a884f6cce1840162010c661f7742022558b22b-libXi-1.7.9-1.amzn2.0.2-x86_64
+4.0K    /var/lib/yum/yumdb/l/e18923e1d974460fef296ff667affdc6b9f2489a-libxslt-1.1.28-6.amzn2-x86_64/var_product
+4.0K    /var/lib/yum/yumdb/l/e18923e1d974460fef296ff667affdc6b9f2489a-libxslt-1.1.28-6.amzn2-x86_64/var_target
+4.0K    /var/lib/yum/yumdb/l/e18923e1d974460fef296ff667affdc6b9f2489a-libxslt-1.1.28-6.amzn2-x86_64/var_awsregion
+4.0K    /var/lib/yum/yumdb/l/e18923e1d974460fef296ff667affdc6b9f2489a-libxslt-1.1.28-6.amzn2-x86_64/var_awsdomain
+4.0K    /var/lib/yum/yumdb/l/e18923e1d974460fef296ff667affdc6b9f2489a-libxslt-1.1.28-6.amzn2-x86_64/var_awsproto
+4.0K    /var/lib/yum/yumdb/l/e18923e1d974460fef296ff667affdc6b9f2489a-libxslt-1.1.28-6.amzn2-x86_64/var_amazonlinux
+4.0K    /var/lib/yum/yumdb/l/e18923e1d974460fef296ff667affdc6b9f2489a-libxslt-1.1.28-6.amzn2-x86_64/var_uuid
+4.0K    /var/lib/yum/yumdb/l/e18923e1d974460fef296ff667affdc6b9f2489a-libxslt-1.1.28-6.amzn2-x86_64/checksum_data
+4.0K    /var/lib/yum/yumdb/l/e18923e1d974460fef296ff667affdc6b9f2489a-libxslt-1.1.28-6.amzn2-x86_64/origin_url
+40K     /var/lib/yum/yumdb/l/e18923e1d974460fef296ff667affdc6b9f2489a-libxslt-1.1.28-6.amzn2-x86_64
+4.0K    /var/lib/yum/yumdb/l/c39a51d7400475300f985310b1387d9fb4360cbb-libXtst-1.2.3-1.amzn2.0.2-x86_64/var_product
+4.0K    /var/lib/yum/yumdb/l/c39a51d7400475300f985310b1387d9fb4360cbb-libXtst-1.2.3-1.amzn2.0.2-x86_64/var_target
+4.0K    /var/lib/yum/yumdb/l/c39a51d7400475300f985310b1387d9fb4360cbb-libXtst-1.2.3-1.amzn2.0.2-x86_64/var_awsregion
+4.0K    /var/lib/yum/yumdb/l/c39a51d7400475300f985310b1387d9fb4360cbb-libXtst-1.2.3-1.amzn2.0.2-x86_64/var_awsdomain
+4.0K    /var/lib/yum/yumdb/l/c39a51d7400475300f985310b1387d9fb4360cbb-libXtst-1.2.3-1.amzn2.0.2-x86_64/var_awsproto
+4.0K    /var/lib/yum/yumdb/l/c39a51d7400475300f985310b1387d9fb4360cbb-libXtst-1.2.3-1.amzn2.0.2-x86_64/var_amazonlinux
+4.0K    /var/lib/yum/yumdb/l/c39a51d7400475300f985310b1387d9fb4360cbb-libXtst-1.2.3-1.amzn2.0.2-x86_64/var_uuid
+4.0K    /var/lib/yum/yumdb/l/c39a51d7400475300f985310b1387d9fb4360cbb-libXtst-1.2.3-1.amzn2.0.2-x86_64/checksum_data
+4.0K    /var/lib/yum/yumdb/l/c39a51d7400475300f985310b1387d9fb4360cbb-libXtst-1.2.3-1.amzn2.0.2-x86_64/origin_url
+40K     /var/lib/yum/yumdb/l/c39a51d7400475300f985310b1387d9fb4360cbb-libXtst-1.2.3-1.amzn2.0.2-x86_64
+4.0K    /var/lib/yum/yumdb/l/9365cfb3e8b9070b3e4fd87d8c5abd96bc9b9fb7-libICE-1.0.9-9.amzn2.0.2-x86_64/var_product
+4.0K    /var/lib/yum/yumdb/l/9365cfb3e8b9070b3e4fd87d8c5abd96bc9b9fb7-libICE-1.0.9-9.amzn2.0.2-x86_64/var_target
+4.0K    /var/lib/yum/yumdb/l/9365cfb3e8b9070b3e4fd87d8c5abd96bc9b9fb7-libICE-1.0.9-9.amzn2.0.2-x86_64/var_awsregion
+4.0K    /var/lib/yum/yumdb/l/9365cfb3e8b9070b3e4fd87d8c5abd96bc9b9fb7-libICE-1.0.9-9.amzn2.0.2-x86_64/var_awsdomain
+4.0K    /var/lib/yum/yumdb/l/9365cfb3e8b9070b3e4fd87d8c5abd96bc9b9fb7-libICE-1.0.9-9.amzn2.0.2-x86_64/var_awsproto
+4.0K    /var/lib/yum/yumdb/l/9365cfb3e8b9070b3e4fd87d8c5abd96bc9b9fb7-libICE-1.0.9-9.amzn2.0.2-x86_64/var_amazonlinux
+4.0K    /var/lib/yum/yumdb/l/9365cfb3e8b9070b3e4fd87d8c5abd96bc9b9fb7-libICE-1.0.9-9.amzn2.0.2-x86_64/var_uuid
+4.0K    /var/lib/yum/yumdb/l/9365cfb3e8b9070b3e4fd87d8c5abd96bc9b9fb7-libICE-1.0.9-9.amzn2.0.2-x86_64/checksum_data
+4.0K    /var/lib/yum/yumdb/l/9365cfb3e8b9070b3e4fd87d8c5abd96bc9b9fb7-libICE-1.0.9-9.amzn2.0.2-x86_64/origin_url
+40K     /var/lib/yum/yumdb/l/9365cfb3e8b9070b3e4fd87d8c5abd96bc9b9fb7-libICE-1.0.9-9.amzn2.0.2-x86_64
+4.0K    /var/lib/yum/yumdb/l/3c44c704cafdea761c515e5fd716974fa264a16d-log4j-cve-2021-44228-hotpatch-1.1-16.amzn2-noarch/var_product
+4.0K    /var/lib/yum/yumdb/l/3c44c704cafdea761c515e5fd716974fa264a16d-log4j-cve-2021-44228-hotpatch-1.1-16.amzn2-noarch/var_target
+4.0K    /var/lib/yum/yumdb/l/3c44c704cafdea761c515e5fd716974fa264a16d-log4j-cve-2021-44228-hotpatch-1.1-16.amzn2-noarch/var_awsregion
+4.0K    /var/lib/yum/yumdb/l/3c44c704cafdea761c515e5fd716974fa264a16d-log4j-cve-2021-44228-hotpatch-1.1-16.amzn2-noarch/var_awsdomain
+4.0K    /var/lib/yum/yumdb/l/3c44c704cafdea761c515e5fd716974fa264a16d-log4j-cve-2021-44228-hotpatch-1.1-16.amzn2-noarch/var_awsproto
+4.0K    /var/lib/yum/yumdb/l/3c44c704cafdea761c515e5fd716974fa264a16d-log4j-cve-2021-44228-hotpatch-1.1-16.amzn2-noarch/var_amazonlinux
+4.0K    /var/lib/yum/yumdb/l/3c44c704cafdea761c515e5fd716974fa264a16d-log4j-cve-2021-44228-hotpatch-1.1-16.amzn2-noarch/var_uuid
+4.0K    /var/lib/yum/yumdb/l/3c44c704cafdea761c515e5fd716974fa264a16d-log4j-cve-2021-44228-hotpatch-1.1-16.amzn2-noarch/checksum_data
+4.0K    /var/lib/yum/yumdb/l/3c44c704cafdea761c515e5fd716974fa264a16d-log4j-cve-2021-44228-hotpatch-1.1-16.amzn2-noarch/origin_url
+40K     /var/lib/yum/yumdb/l/3c44c704cafdea761c515e5fd716974fa264a16d-log4j-cve-2021-44228-hotpatch-1.1-16.amzn2-noarch
+4.0K    /var/lib/yum/yumdb/l/d6e43e1d25c240393830bc1816fa623fb825cb72-log4j-1.2.17-18.amzn2-noarch/var_product
+4.0K    /var/lib/yum/yumdb/l/d6e43e1d25c240393830bc1816fa623fb825cb72-log4j-1.2.17-18.amzn2-noarch/var_target
+4.0K    /var/lib/yum/yumdb/l/d6e43e1d25c240393830bc1816fa623fb825cb72-log4j-1.2.17-18.amzn2-noarch/var_awsregion
+4.0K    /var/lib/yum/yumdb/l/d6e43e1d25c240393830bc1816fa623fb825cb72-log4j-1.2.17-18.amzn2-noarch/var_awsdomain
+4.0K    /var/lib/yum/yumdb/l/d6e43e1d25c240393830bc1816fa623fb825cb72-log4j-1.2.17-18.amzn2-noarch/var_awsproto
+4.0K    /var/lib/yum/yumdb/l/d6e43e1d25c240393830bc1816fa623fb825cb72-log4j-1.2.17-18.amzn2-noarch/var_amazonlinux
+4.0K    /var/lib/yum/yumdb/l/d6e43e1d25c240393830bc1816fa623fb825cb72-log4j-1.2.17-18.amzn2-noarch/var_uuid
+4.0K    /var/lib/yum/yumdb/l/d6e43e1d25c240393830bc1816fa623fb825cb72-log4j-1.2.17-18.amzn2-noarch/checksum_data
+4.0K    /var/lib/yum/yumdb/l/d6e43e1d25c240393830bc1816fa623fb825cb72-log4j-1.2.17-18.amzn2-noarch/origin_url
+40K     /var/lib/yum/yumdb/l/d6e43e1d25c240393830bc1816fa623fb825cb72-log4j-1.2.17-18.amzn2-noarch
+684K    /var/lib/yum/yumdb/l
+4.0K    /var/lib/yum/yumdb/i/54df449ebaa1fe09b3aa9b4f292098544e22fea3-iproute-5.10.0-2.amzn2.0.2-x86_64/var_product
+4.0K    /var/lib/yum/yumdb/i/54df449ebaa1fe09b3aa9b4f292098544e22fea3-iproute-5.10.0-2.amzn2.0.2-x86_64/var_target
+4.0K    /var/lib/yum/yumdb/i/54df449ebaa1fe09b3aa9b4f292098544e22fea3-iproute-5.10.0-2.amzn2.0.2-x86_64/var_awsregion
+4.0K    /var/lib/yum/yumdb/i/54df449ebaa1fe09b3aa9b4f292098544e22fea3-iproute-5.10.0-2.amzn2.0.2-x86_64/var_awsdomain
+4.0K    /var/lib/yum/yumdb/i/54df449ebaa1fe09b3aa9b4f292098544e22fea3-iproute-5.10.0-2.amzn2.0.2-x86_64/var_awsproto
+4.0K    /var/lib/yum/yumdb/i/54df449ebaa1fe09b3aa9b4f292098544e22fea3-iproute-5.10.0-2.amzn2.0.2-x86_64/var_amazonlinux
+4.0K    /var/lib/yum/yumdb/i/54df449ebaa1fe09b3aa9b4f292098544e22fea3-iproute-5.10.0-2.amzn2.0.2-x86_64/var_uuid
+4.0K    /var/lib/yum/yumdb/i/54df449ebaa1fe09b3aa9b4f292098544e22fea3-iproute-5.10.0-2.amzn2.0.2-x86_64/checksum_data
+4.0K    /var/lib/yum/yumdb/i/54df449ebaa1fe09b3aa9b4f292098544e22fea3-iproute-5.10.0-2.amzn2.0.2-x86_64/origin_url
+40K     /var/lib/yum/yumdb/i/54df449ebaa1fe09b3aa9b4f292098544e22fea3-iproute-5.10.0-2.amzn2.0.2-x86_64
+40K     /var/lib/yum/yumdb/i
+4.0K    /var/lib/yum/yumdb/d/a89f7d845f6c73a06a792eeff8f765c56f6d8121-dejavu-serif-fonts-2.33-6.amzn2-noarch/var_product
+4.0K    /var/lib/yum/yumdb/d/a89f7d845f6c73a06a792eeff8f765c56f6d8121-dejavu-serif-fonts-2.33-6.amzn2-noarch/var_target
+4.0K    /var/lib/yum/yumdb/d/a89f7d845f6c73a06a792eeff8f765c56f6d8121-dejavu-serif-fonts-2.33-6.amzn2-noarch/var_awsregion
+4.0K    /var/lib/yum/yumdb/d/a89f7d845f6c73a06a792eeff8f765c56f6d8121-dejavu-serif-fonts-2.33-6.amzn2-noarch/var_awsdomain
+4.0K    /var/lib/yum/yumdb/d/a89f7d845f6c73a06a792eeff8f765c56f6d8121-dejavu-serif-fonts-2.33-6.amzn2-noarch/var_awsproto
+4.0K    /var/lib/yum/yumdb/d/a89f7d845f6c73a06a792eeff8f765c56f6d8121-dejavu-serif-fonts-2.33-6.amzn2-noarch/var_amazonlinux
+4.0K    /var/lib/yum/yumdb/d/a89f7d845f6c73a06a792eeff8f765c56f6d8121-dejavu-serif-fonts-2.33-6.amzn2-noarch/var_uuid
+4.0K    /var/lib/yum/yumdb/d/a89f7d845f6c73a06a792eeff8f765c56f6d8121-dejavu-serif-fonts-2.33-6.amzn2-noarch/checksum_data
+4.0K    /var/lib/yum/yumdb/d/a89f7d845f6c73a06a792eeff8f765c56f6d8121-dejavu-serif-fonts-2.33-6.amzn2-noarch/origin_url
+40K     /var/lib/yum/yumdb/d/a89f7d845f6c73a06a792eeff8f765c56f6d8121-dejavu-serif-fonts-2.33-6.amzn2-noarch
+4.0K    /var/lib/yum/yumdb/d/e1000ea8af7d0cfec74f3893369b9c122bc24798-dejavu-sans-mono-fonts-2.33-6.amzn2-noarch/var_product
+4.0K    /var/lib/yum/yumdb/d/e1000ea8af7d0cfec74f3893369b9c122bc24798-dejavu-sans-mono-fonts-2.33-6.amzn2-noarch/var_target
+4.0K    /var/lib/yum/yumdb/d/e1000ea8af7d0cfec74f3893369b9c122bc24798-dejavu-sans-mono-fonts-2.33-6.amzn2-noarch/var_awsregion
+4.0K    /var/lib/yum/yumdb/d/e1000ea8af7d0cfec74f3893369b9c122bc24798-dejavu-sans-mono-fonts-2.33-6.amzn2-noarch/var_awsdomain
+4.0K    /var/lib/yum/yumdb/d/e1000ea8af7d0cfec74f3893369b9c122bc24798-dejavu-sans-mono-fonts-2.33-6.amzn2-noarch/var_awsproto
+4.0K    /var/lib/yum/yumdb/d/e1000ea8af7d0cfec74f3893369b9c122bc24798-dejavu-sans-mono-fonts-2.33-6.amzn2-noarch/var_amazonlinux
+4.0K    /var/lib/yum/yumdb/d/e1000ea8af7d0cfec74f3893369b9c122bc24798-dejavu-sans-mono-fonts-2.33-6.amzn2-noarch/var_uuid
+4.0K    /var/lib/yum/yumdb/d/e1000ea8af7d0cfec74f3893369b9c122bc24798-dejavu-sans-mono-fonts-2.33-6.amzn2-noarch/checksum_data
+4.0K    /var/lib/yum/yumdb/d/e1000ea8af7d0cfec74f3893369b9c122bc24798-dejavu-sans-mono-fonts-2.33-6.amzn2-noarch/origin_url
+40K     /var/lib/yum/yumdb/d/e1000ea8af7d0cfec74f3893369b9c122bc24798-dejavu-sans-mono-fonts-2.33-6.amzn2-noarch
+4.0K    /var/lib/yum/yumdb/d/2c399ea1ca26f0101de3048b18cc0c94bc89d674-dejavu-fonts-common-2.33-6.amzn2-noarch/var_product
+4.0K    /var/lib/yum/yumdb/d/2c399ea1ca26f0101de3048b18cc0c94bc89d674-dejavu-fonts-common-2.33-6.amzn2-noarch/var_target
+4.0K    /var/lib/yum/yumdb/d/2c399ea1ca26f0101de3048b18cc0c94bc89d674-dejavu-fonts-common-2.33-6.amzn2-noarch/var_awsregion
+4.0K    /var/lib/yum/yumdb/d/2c399ea1ca26f0101de3048b18cc0c94bc89d674-dejavu-fonts-common-2.33-6.amzn2-noarch/var_awsdomain
+4.0K    /var/lib/yum/yumdb/d/2c399ea1ca26f0101de3048b18cc0c94bc89d674-dejavu-fonts-common-2.33-6.amzn2-noarch/var_awsproto
+4.0K    /var/lib/yum/yumdb/d/2c399ea1ca26f0101de3048b18cc0c94bc89d674-dejavu-fonts-common-2.33-6.amzn2-noarch/var_amazonlinux
+4.0K    /var/lib/yum/yumdb/d/2c399ea1ca26f0101de3048b18cc0c94bc89d674-dejavu-fonts-common-2.33-6.amzn2-noarch/var_uuid
+4.0K    /var/lib/yum/yumdb/d/2c399ea1ca26f0101de3048b18cc0c94bc89d674-dejavu-fonts-common-2.33-6.amzn2-noarch/checksum_data
+4.0K    /var/lib/yum/yumdb/d/2c399ea1ca26f0101de3048b18cc0c94bc89d674-dejavu-fonts-common-2.33-6.amzn2-noarch/origin_url
+40K     /var/lib/yum/yumdb/d/2c399ea1ca26f0101de3048b18cc0c94bc89d674-dejavu-fonts-common-2.33-6.amzn2-noarch
+4.0K    /var/lib/yum/yumdb/d/fd83bd32aa9b7bb267b1f8b040408e489da0c3d2-dejavu-sans-fonts-2.33-6.amzn2-noarch/var_product
+4.0K    /var/lib/yum/yumdb/d/fd83bd32aa9b7bb267b1f8b040408e489da0c3d2-dejavu-sans-fonts-2.33-6.amzn2-noarch/var_target
+4.0K    /var/lib/yum/yumdb/d/fd83bd32aa9b7bb267b1f8b040408e489da0c3d2-dejavu-sans-fonts-2.33-6.amzn2-noarch/var_awsregion
+4.0K    /var/lib/yum/yumdb/d/fd83bd32aa9b7bb267b1f8b040408e489da0c3d2-dejavu-sans-fonts-2.33-6.amzn2-noarch/var_awsdomain
+4.0K    /var/lib/yum/yumdb/d/fd83bd32aa9b7bb267b1f8b040408e489da0c3d2-dejavu-sans-fonts-2.33-6.amzn2-noarch/var_awsproto
+4.0K    /var/lib/yum/yumdb/d/fd83bd32aa9b7bb267b1f8b040408e489da0c3d2-dejavu-sans-fonts-2.33-6.amzn2-noarch/var_amazonlinux
+4.0K    /var/lib/yum/yumdb/d/fd83bd32aa9b7bb267b1f8b040408e489da0c3d2-dejavu-sans-fonts-2.33-6.amzn2-noarch/var_uuid
+4.0K    /var/lib/yum/yumdb/d/fd83bd32aa9b7bb267b1f8b040408e489da0c3d2-dejavu-sans-fonts-2.33-6.amzn2-noarch/checksum_data
+4.0K    /var/lib/yum/yumdb/d/fd83bd32aa9b7bb267b1f8b040408e489da0c3d2-dejavu-sans-fonts-2.33-6.amzn2-noarch/origin_url
+40K     /var/lib/yum/yumdb/d/fd83bd32aa9b7bb267b1f8b040408e489da0c3d2-dejavu-sans-fonts-2.33-6.amzn2-noarch
+164K    /var/lib/yum/yumdb/d
+4.0K    /var/lib/yum/yumdb/p/2ac8fff354f14a63e4bcadb7669a084c9ff0ef2f-python-lxml-3.2.1-4.amzn2.0.3-x86_64/var_product
+4.0K    /var/lib/yum/yumdb/p/2ac8fff354f14a63e4bcadb7669a084c9ff0ef2f-python-lxml-3.2.1-4.amzn2.0.3-x86_64/var_target
+4.0K    /var/lib/yum/yumdb/p/2ac8fff354f14a63e4bcadb7669a084c9ff0ef2f-python-lxml-3.2.1-4.amzn2.0.3-x86_64/var_awsregion
+4.0K    /var/lib/yum/yumdb/p/2ac8fff354f14a63e4bcadb7669a084c9ff0ef2f-python-lxml-3.2.1-4.amzn2.0.3-x86_64/var_awsdomain
+4.0K    /var/lib/yum/yumdb/p/2ac8fff354f14a63e4bcadb7669a084c9ff0ef2f-python-lxml-3.2.1-4.amzn2.0.3-x86_64/var_awsproto
+4.0K    /var/lib/yum/yumdb/p/2ac8fff354f14a63e4bcadb7669a084c9ff0ef2f-python-lxml-3.2.1-4.amzn2.0.3-x86_64/var_amazonlinux
+4.0K    /var/lib/yum/yumdb/p/2ac8fff354f14a63e4bcadb7669a084c9ff0ef2f-python-lxml-3.2.1-4.amzn2.0.3-x86_64/var_uuid
+4.0K    /var/lib/yum/yumdb/p/2ac8fff354f14a63e4bcadb7669a084c9ff0ef2f-python-lxml-3.2.1-4.amzn2.0.3-x86_64/checksum_data
+4.0K    /var/lib/yum/yumdb/p/2ac8fff354f14a63e4bcadb7669a084c9ff0ef2f-python-lxml-3.2.1-4.amzn2.0.3-x86_64/origin_url
+40K     /var/lib/yum/yumdb/p/2ac8fff354f14a63e4bcadb7669a084c9ff0ef2f-python-lxml-3.2.1-4.amzn2.0.3-x86_64
+4.0K    /var/lib/yum/yumdb/p/d40dadcce8fd43cf03172f546da094484b7592c0-python-javapackages-3.4.1-11.amzn2-noarch/var_product
+4.0K    /var/lib/yum/yumdb/p/d40dadcce8fd43cf03172f546da094484b7592c0-python-javapackages-3.4.1-11.amzn2-noarch/var_target
+4.0K    /var/lib/yum/yumdb/p/d40dadcce8fd43cf03172f546da094484b7592c0-python-javapackages-3.4.1-11.amzn2-noarch/var_awsregion
+4.0K    /var/lib/yum/yumdb/p/d40dadcce8fd43cf03172f546da094484b7592c0-python-javapackages-3.4.1-11.amzn2-noarch/var_awsdomain
+4.0K    /var/lib/yum/yumdb/p/d40dadcce8fd43cf03172f546da094484b7592c0-python-javapackages-3.4.1-11.amzn2-noarch/var_awsproto
+4.0K    /var/lib/yum/yumdb/p/d40dadcce8fd43cf03172f546da094484b7592c0-python-javapackages-3.4.1-11.amzn2-noarch/var_amazonlinux
+4.0K    /var/lib/yum/yumdb/p/d40dadcce8fd43cf03172f546da094484b7592c0-python-javapackages-3.4.1-11.amzn2-noarch/var_uuid
+4.0K    /var/lib/yum/yumdb/p/d40dadcce8fd43cf03172f546da094484b7592c0-python-javapackages-3.4.1-11.amzn2-noarch/checksum_data
+4.0K    /var/lib/yum/yumdb/p/d40dadcce8fd43cf03172f546da094484b7592c0-python-javapackages-3.4.1-11.amzn2-noarch/origin_url
+40K     /var/lib/yum/yumdb/p/d40dadcce8fd43cf03172f546da094484b7592c0-python-javapackages-3.4.1-11.amzn2-noarch
+80K     /var/lib/yum/yumdb/p
+4.0K    /var/lib/yum/yumdb/f/8bf1854d50cbd47b6dedc762fd2b6819c0ea4a2c-fontpackages-filesystem-1.44-8.amzn2-noarch/var_product
+4.0K    /var/lib/yum/yumdb/f/8bf1854d50cbd47b6dedc762fd2b6819c0ea4a2c-fontpackages-filesystem-1.44-8.amzn2-noarch/var_target
+4.0K    /var/lib/yum/yumdb/f/8bf1854d50cbd47b6dedc762fd2b6819c0ea4a2c-fontpackages-filesystem-1.44-8.amzn2-noarch/var_awsregion
+4.0K    /var/lib/yum/yumdb/f/8bf1854d50cbd47b6dedc762fd2b6819c0ea4a2c-fontpackages-filesystem-1.44-8.amzn2-noarch/var_awsdomain
+4.0K    /var/lib/yum/yumdb/f/8bf1854d50cbd47b6dedc762fd2b6819c0ea4a2c-fontpackages-filesystem-1.44-8.amzn2-noarch/var_awsproto
+4.0K    /var/lib/yum/yumdb/f/8bf1854d50cbd47b6dedc762fd2b6819c0ea4a2c-fontpackages-filesystem-1.44-8.amzn2-noarch/var_amazonlinux
+4.0K    /var/lib/yum/yumdb/f/8bf1854d50cbd47b6dedc762fd2b6819c0ea4a2c-fontpackages-filesystem-1.44-8.amzn2-noarch/var_uuid
+4.0K    /var/lib/yum/yumdb/f/8bf1854d50cbd47b6dedc762fd2b6819c0ea4a2c-fontpackages-filesystem-1.44-8.amzn2-noarch/checksum_data
+4.0K    /var/lib/yum/yumdb/f/8bf1854d50cbd47b6dedc762fd2b6819c0ea4a2c-fontpackages-filesystem-1.44-8.amzn2-noarch/origin_url
+40K     /var/lib/yum/yumdb/f/8bf1854d50cbd47b6dedc762fd2b6819c0ea4a2c-fontpackages-filesystem-1.44-8.amzn2-noarch
+4.0K    /var/lib/yum/yumdb/f/a246fe64baf046f1f5c8749c6087361fe262b82b-fontconfig-2.13.0-4.3.amzn2-x86_64/var_product
+4.0K    /var/lib/yum/yumdb/f/a246fe64baf046f1f5c8749c6087361fe262b82b-fontconfig-2.13.0-4.3.amzn2-x86_64/var_target
+4.0K    /var/lib/yum/yumdb/f/a246fe64baf046f1f5c8749c6087361fe262b82b-fontconfig-2.13.0-4.3.amzn2-x86_64/var_awsregion
+4.0K    /var/lib/yum/yumdb/f/a246fe64baf046f1f5c8749c6087361fe262b82b-fontconfig-2.13.0-4.3.amzn2-x86_64/var_awsdomain
+4.0K    /var/lib/yum/yumdb/f/a246fe64baf046f1f5c8749c6087361fe262b82b-fontconfig-2.13.0-4.3.amzn2-x86_64/var_awsproto
+4.0K    /var/lib/yum/yumdb/f/a246fe64baf046f1f5c8749c6087361fe262b82b-fontconfig-2.13.0-4.3.amzn2-x86_64/var_amazonlinux
+4.0K    /var/lib/yum/yumdb/f/a246fe64baf046f1f5c8749c6087361fe262b82b-fontconfig-2.13.0-4.3.amzn2-x86_64/var_uuid
+4.0K    /var/lib/yum/yumdb/f/a246fe64baf046f1f5c8749c6087361fe262b82b-fontconfig-2.13.0-4.3.amzn2-x86_64/checksum_data
+4.0K    /var/lib/yum/yumdb/f/a246fe64baf046f1f5c8749c6087361fe262b82b-fontconfig-2.13.0-4.3.amzn2-x86_64/origin_url
+40K     /var/lib/yum/yumdb/f/a246fe64baf046f1f5c8749c6087361fe262b82b-fontconfig-2.13.0-4.3.amzn2-x86_64
+80K     /var/lib/yum/yumdb/f
+4.0K    /var/lib/yum/yumdb/j/537bcf2d9a92a1120b265d3499400d7f0d76cd76-java-17-amazon-corretto-headless-17.0.3+6-1.amzn2.1-x86_64/var_product
+4.0K    /var/lib/yum/yumdb/j/537bcf2d9a92a1120b265d3499400d7f0d76cd76-java-17-amazon-corretto-headless-17.0.3+6-1.amzn2.1-x86_64/var_target
+4.0K    /var/lib/yum/yumdb/j/537bcf2d9a92a1120b265d3499400d7f0d76cd76-java-17-amazon-corretto-headless-17.0.3+6-1.amzn2.1-x86_64/var_awsregion
+4.0K    /var/lib/yum/yumdb/j/537bcf2d9a92a1120b265d3499400d7f0d76cd76-java-17-amazon-corretto-headless-17.0.3+6-1.amzn2.1-x86_64/var_awsdomain
+4.0K    /var/lib/yum/yumdb/j/537bcf2d9a92a1120b265d3499400d7f0d76cd76-java-17-amazon-corretto-headless-17.0.3+6-1.amzn2.1-x86_64/var_awsproto
+4.0K    /var/lib/yum/yumdb/j/537bcf2d9a92a1120b265d3499400d7f0d76cd76-java-17-amazon-corretto-headless-17.0.3+6-1.amzn2.1-x86_64/var_amazonlinux
+4.0K    /var/lib/yum/yumdb/j/537bcf2d9a92a1120b265d3499400d7f0d76cd76-java-17-amazon-corretto-headless-17.0.3+6-1.amzn2.1-x86_64/var_uuid
+4.0K    /var/lib/yum/yumdb/j/537bcf2d9a92a1120b265d3499400d7f0d76cd76-java-17-amazon-corretto-headless-17.0.3+6-1.amzn2.1-x86_64/checksum_data
+4.0K    /var/lib/yum/yumdb/j/537bcf2d9a92a1120b265d3499400d7f0d76cd76-java-17-amazon-corretto-headless-17.0.3+6-1.amzn2.1-x86_64/origin_url
+40K     /var/lib/yum/yumdb/j/537bcf2d9a92a1120b265d3499400d7f0d76cd76-java-17-amazon-corretto-headless-17.0.3+6-1.amzn2.1-x86_64
+4.0K    /var/lib/yum/yumdb/j/458cd0f11ae68503077ec8a0771ae1b68d61eb90-java-17-amazon-corretto-17.0.3+6-1.amzn2.1-x86_64/reason
+4.0K    /var/lib/yum/yumdb/j/458cd0f11ae68503077ec8a0771ae1b68d61eb90-java-17-amazon-corretto-17.0.3+6-1.amzn2.1-x86_64/var_product
+4.0K    /var/lib/yum/yumdb/j/458cd0f11ae68503077ec8a0771ae1b68d61eb90-java-17-amazon-corretto-17.0.3+6-1.amzn2.1-x86_64/var_target
+4.0K    /var/lib/yum/yumdb/j/458cd0f11ae68503077ec8a0771ae1b68d61eb90-java-17-amazon-corretto-17.0.3+6-1.amzn2.1-x86_64/var_awsregion
+4.0K    /var/lib/yum/yumdb/j/458cd0f11ae68503077ec8a0771ae1b68d61eb90-java-17-amazon-corretto-17.0.3+6-1.amzn2.1-x86_64/var_awsdomain
+4.0K    /var/lib/yum/yumdb/j/458cd0f11ae68503077ec8a0771ae1b68d61eb90-java-17-amazon-corretto-17.0.3+6-1.amzn2.1-x86_64/var_awsproto
+4.0K    /var/lib/yum/yumdb/j/458cd0f11ae68503077ec8a0771ae1b68d61eb90-java-17-amazon-corretto-17.0.3+6-1.amzn2.1-x86_64/var_amazonlinux
+4.0K    /var/lib/yum/yumdb/j/458cd0f11ae68503077ec8a0771ae1b68d61eb90-java-17-amazon-corretto-17.0.3+6-1.amzn2.1-x86_64/var_uuid
+4.0K    /var/lib/yum/yumdb/j/458cd0f11ae68503077ec8a0771ae1b68d61eb90-java-17-amazon-corretto-17.0.3+6-1.amzn2.1-x86_64/checksum_data
+4.0K    /var/lib/yum/yumdb/j/458cd0f11ae68503077ec8a0771ae1b68d61eb90-java-17-amazon-corretto-17.0.3+6-1.amzn2.1-x86_64/origin_url
+44K     /var/lib/yum/yumdb/j/458cd0f11ae68503077ec8a0771ae1b68d61eb90-java-17-amazon-corretto-17.0.3+6-1.amzn2.1-x86_64
+4.0K    /var/lib/yum/yumdb/j/0a075d6179ff4d55cd0902b44df786528e95b19e-javapackages-tools-3.4.1-11.amzn2-noarch/var_product
+4.0K    /var/lib/yum/yumdb/j/0a075d6179ff4d55cd0902b44df786528e95b19e-javapackages-tools-3.4.1-11.amzn2-noarch/var_target
+4.0K    /var/lib/yum/yumdb/j/0a075d6179ff4d55cd0902b44df786528e95b19e-javapackages-tools-3.4.1-11.amzn2-noarch/var_awsregion
+4.0K    /var/lib/yum/yumdb/j/0a075d6179ff4d55cd0902b44df786528e95b19e-javapackages-tools-3.4.1-11.amzn2-noarch/var_awsdomain
+4.0K    /var/lib/yum/yumdb/j/0a075d6179ff4d55cd0902b44df786528e95b19e-javapackages-tools-3.4.1-11.amzn2-noarch/var_awsproto
+4.0K    /var/lib/yum/yumdb/j/0a075d6179ff4d55cd0902b44df786528e95b19e-javapackages-tools-3.4.1-11.amzn2-noarch/var_amazonlinux
+4.0K    /var/lib/yum/yumdb/j/0a075d6179ff4d55cd0902b44df786528e95b19e-javapackages-tools-3.4.1-11.amzn2-noarch/var_uuid
+4.0K    /var/lib/yum/yumdb/j/0a075d6179ff4d55cd0902b44df786528e95b19e-javapackages-tools-3.4.1-11.amzn2-noarch/checksum_data
+4.0K    /var/lib/yum/yumdb/j/0a075d6179ff4d55cd0902b44df786528e95b19e-javapackages-tools-3.4.1-11.amzn2-noarch/origin_url
+40K     /var/lib/yum/yumdb/j/0a075d6179ff4d55cd0902b44df786528e95b19e-javapackages-tools-3.4.1-11.amzn2-noarch
+4.0K    /var/lib/yum/yumdb/j/d8d186630e18c1d1370517e5ee79ef0ec8e5132d-javamail-1.4.6-8.amzn2-noarch/var_product
+4.0K    /var/lib/yum/yumdb/j/d8d186630e18c1d1370517e5ee79ef0ec8e5132d-javamail-1.4.6-8.amzn2-noarch/var_target
+4.0K    /var/lib/yum/yumdb/j/d8d186630e18c1d1370517e5ee79ef0ec8e5132d-javamail-1.4.6-8.amzn2-noarch/var_awsregion
+4.0K    /var/lib/yum/yumdb/j/d8d186630e18c1d1370517e5ee79ef0ec8e5132d-javamail-1.4.6-8.amzn2-noarch/var_awsdomain
+4.0K    /var/lib/yum/yumdb/j/d8d186630e18c1d1370517e5ee79ef0ec8e5132d-javamail-1.4.6-8.amzn2-noarch/var_awsproto
+4.0K    /var/lib/yum/yumdb/j/d8d186630e18c1d1370517e5ee79ef0ec8e5132d-javamail-1.4.6-8.amzn2-noarch/var_amazonlinux
+4.0K    /var/lib/yum/yumdb/j/d8d186630e18c1d1370517e5ee79ef0ec8e5132d-javamail-1.4.6-8.amzn2-noarch/var_uuid
+4.0K    /var/lib/yum/yumdb/j/d8d186630e18c1d1370517e5ee79ef0ec8e5132d-javamail-1.4.6-8.amzn2-noarch/checksum_data
+4.0K    /var/lib/yum/yumdb/j/d8d186630e18c1d1370517e5ee79ef0ec8e5132d-javamail-1.4.6-8.amzn2-noarch/origin_url
+40K     /var/lib/yum/yumdb/j/d8d186630e18c1d1370517e5ee79ef0ec8e5132d-javamail-1.4.6-8.amzn2-noarch
+168K    /var/lib/yum/yumdb/j
+4.0K    /var/lib/yum/yumdb/x/84d517dec22fc76993d294cd830bf955e3dc4c0d-xerces-j2-2.11.0-17.amzn2-noarch/var_product
+4.0K    /var/lib/yum/yumdb/x/84d517dec22fc76993d294cd830bf955e3dc4c0d-xerces-j2-2.11.0-17.amzn2-noarch/var_target
+4.0K    /var/lib/yum/yumdb/x/84d517dec22fc76993d294cd830bf955e3dc4c0d-xerces-j2-2.11.0-17.amzn2-noarch/var_awsregion
+4.0K    /var/lib/yum/yumdb/x/84d517dec22fc76993d294cd830bf955e3dc4c0d-xerces-j2-2.11.0-17.amzn2-noarch/var_awsdomain
+4.0K    /var/lib/yum/yumdb/x/84d517dec22fc76993d294cd830bf955e3dc4c0d-xerces-j2-2.11.0-17.amzn2-noarch/var_awsproto
+4.0K    /var/lib/yum/yumdb/x/84d517dec22fc76993d294cd830bf955e3dc4c0d-xerces-j2-2.11.0-17.amzn2-noarch/var_amazonlinux
+4.0K    /var/lib/yum/yumdb/x/84d517dec22fc76993d294cd830bf955e3dc4c0d-xerces-j2-2.11.0-17.amzn2-noarch/var_uuid
+4.0K    /var/lib/yum/yumdb/x/84d517dec22fc76993d294cd830bf955e3dc4c0d-xerces-j2-2.11.0-17.amzn2-noarch/checksum_data
+4.0K    /var/lib/yum/yumdb/x/84d517dec22fc76993d294cd830bf955e3dc4c0d-xerces-j2-2.11.0-17.amzn2-noarch/origin_url
+40K     /var/lib/yum/yumdb/x/84d517dec22fc76993d294cd830bf955e3dc4c0d-xerces-j2-2.11.0-17.amzn2-noarch
+4.0K    /var/lib/yum/yumdb/x/e3d3eba56ccf88e031cf00b229bd04b8299baaec-xml-commons-resolver-1.2-15.amzn2-noarch/var_product
+4.0K    /var/lib/yum/yumdb/x/e3d3eba56ccf88e031cf00b229bd04b8299baaec-xml-commons-resolver-1.2-15.amzn2-noarch/var_target
+4.0K    /var/lib/yum/yumdb/x/e3d3eba56ccf88e031cf00b229bd04b8299baaec-xml-commons-resolver-1.2-15.amzn2-noarch/var_awsregion
+4.0K    /var/lib/yum/yumdb/x/e3d3eba56ccf88e031cf00b229bd04b8299baaec-xml-commons-resolver-1.2-15.amzn2-noarch/var_awsdomain
+4.0K    /var/lib/yum/yumdb/x/e3d3eba56ccf88e031cf00b229bd04b8299baaec-xml-commons-resolver-1.2-15.amzn2-noarch/var_awsproto
+4.0K    /var/lib/yum/yumdb/x/e3d3eba56ccf88e031cf00b229bd04b8299baaec-xml-commons-resolver-1.2-15.amzn2-noarch/var_amazonlinux
+4.0K    /var/lib/yum/yumdb/x/e3d3eba56ccf88e031cf00b229bd04b8299baaec-xml-commons-resolver-1.2-15.amzn2-noarch/var_uuid
+4.0K    /var/lib/yum/yumdb/x/e3d3eba56ccf88e031cf00b229bd04b8299baaec-xml-commons-resolver-1.2-15.amzn2-noarch/checksum_data
+4.0K    /var/lib/yum/yumdb/x/e3d3eba56ccf88e031cf00b229bd04b8299baaec-xml-commons-resolver-1.2-15.amzn2-noarch/origin_url
+40K     /var/lib/yum/yumdb/x/e3d3eba56ccf88e031cf00b229bd04b8299baaec-xml-commons-resolver-1.2-15.amzn2-noarch
+4.0K    /var/lib/yum/yumdb/x/2295ab13d09c555f1bbdc1dc2d7febbb040692f2-xml-commons-apis-1.4.01-16.amzn2-noarch/var_product
+4.0K    /var/lib/yum/yumdb/x/2295ab13d09c555f1bbdc1dc2d7febbb040692f2-xml-commons-apis-1.4.01-16.amzn2-noarch/var_target
+4.0K    /var/lib/yum/yumdb/x/2295ab13d09c555f1bbdc1dc2d7febbb040692f2-xml-commons-apis-1.4.01-16.amzn2-noarch/var_awsregion
+4.0K    /var/lib/yum/yumdb/x/2295ab13d09c555f1bbdc1dc2d7febbb040692f2-xml-commons-apis-1.4.01-16.amzn2-noarch/var_awsdomain
+4.0K    /var/lib/yum/yumdb/x/2295ab13d09c555f1bbdc1dc2d7febbb040692f2-xml-commons-apis-1.4.01-16.amzn2-noarch/var_awsproto
+4.0K    /var/lib/yum/yumdb/x/2295ab13d09c555f1bbdc1dc2d7febbb040692f2-xml-commons-apis-1.4.01-16.amzn2-noarch/var_amazonlinux
+4.0K    /var/lib/yum/yumdb/x/2295ab13d09c555f1bbdc1dc2d7febbb040692f2-xml-commons-apis-1.4.01-16.amzn2-noarch/var_uuid
+4.0K    /var/lib/yum/yumdb/x/2295ab13d09c555f1bbdc1dc2d7febbb040692f2-xml-commons-apis-1.4.01-16.amzn2-noarch/checksum_data
+4.0K    /var/lib/yum/yumdb/x/2295ab13d09c555f1bbdc1dc2d7febbb040692f2-xml-commons-apis-1.4.01-16.amzn2-noarch/origin_url
+40K     /var/lib/yum/yumdb/x/2295ab13d09c555f1bbdc1dc2d7febbb040692f2-xml-commons-apis-1.4.01-16.amzn2-noarch
+4.0K    /var/lib/yum/yumdb/x/74e3aeaac93b85ec2f8b90258be044eca1971347-xalan-j2-2.7.1-23.1.amzn2-noarch/var_product
+4.0K    /var/lib/yum/yumdb/x/74e3aeaac93b85ec2f8b90258be044eca1971347-xalan-j2-2.7.1-23.1.amzn2-noarch/var_target
+4.0K    /var/lib/yum/yumdb/x/74e3aeaac93b85ec2f8b90258be044eca1971347-xalan-j2-2.7.1-23.1.amzn2-noarch/var_awsregion
+4.0K    /var/lib/yum/yumdb/x/74e3aeaac93b85ec2f8b90258be044eca1971347-xalan-j2-2.7.1-23.1.amzn2-noarch/var_awsdomain
+4.0K    /var/lib/yum/yumdb/x/74e3aeaac93b85ec2f8b90258be044eca1971347-xalan-j2-2.7.1-23.1.amzn2-noarch/var_awsproto
+4.0K    /var/lib/yum/yumdb/x/74e3aeaac93b85ec2f8b90258be044eca1971347-xalan-j2-2.7.1-23.1.amzn2-noarch/var_amazonlinux
+4.0K    /var/lib/yum/yumdb/x/74e3aeaac93b85ec2f8b90258be044eca1971347-xalan-j2-2.7.1-23.1.amzn2-noarch/var_uuid
+4.0K    /var/lib/yum/yumdb/x/74e3aeaac93b85ec2f8b90258be044eca1971347-xalan-j2-2.7.1-23.1.amzn2-noarch/checksum_data
+4.0K    /var/lib/yum/yumdb/x/74e3aeaac93b85ec2f8b90258be044eca1971347-xalan-j2-2.7.1-23.1.amzn2-noarch/origin_url
+40K     /var/lib/yum/yumdb/x/74e3aeaac93b85ec2f8b90258be044eca1971347-xalan-j2-2.7.1-23.1.amzn2-noarch
+164K    /var/lib/yum/yumdb/x
+4.0K    /var/lib/yum/yumdb/e/ba8196e8e20188e4e310248b8ca3b0d2f0dd4188-ecj-4.5.2-3.amzn2.0.2-x86_64/var_product
+4.0K    /var/lib/yum/yumdb/e/ba8196e8e20188e4e310248b8ca3b0d2f0dd4188-ecj-4.5.2-3.amzn2.0.2-x86_64/var_target
+4.0K    /var/lib/yum/yumdb/e/ba8196e8e20188e4e310248b8ca3b0d2f0dd4188-ecj-4.5.2-3.amzn2.0.2-x86_64/var_awsregion
+4.0K    /var/lib/yum/yumdb/e/ba8196e8e20188e4e310248b8ca3b0d2f0dd4188-ecj-4.5.2-3.amzn2.0.2-x86_64/var_awsdomain
+4.0K    /var/lib/yum/yumdb/e/ba8196e8e20188e4e310248b8ca3b0d2f0dd4188-ecj-4.5.2-3.amzn2.0.2-x86_64/var_awsproto
+4.0K    /var/lib/yum/yumdb/e/ba8196e8e20188e4e310248b8ca3b0d2f0dd4188-ecj-4.5.2-3.amzn2.0.2-x86_64/var_amazonlinux
+4.0K    /var/lib/yum/yumdb/e/ba8196e8e20188e4e310248b8ca3b0d2f0dd4188-ecj-4.5.2-3.amzn2.0.2-x86_64/var_uuid
+4.0K    /var/lib/yum/yumdb/e/ba8196e8e20188e4e310248b8ca3b0d2f0dd4188-ecj-4.5.2-3.amzn2.0.2-x86_64/checksum_data
+4.0K    /var/lib/yum/yumdb/e/ba8196e8e20188e4e310248b8ca3b0d2f0dd4188-ecj-4.5.2-3.amzn2.0.2-x86_64/origin_url
+40K     /var/lib/yum/yumdb/e/ba8196e8e20188e4e310248b8ca3b0d2f0dd4188-ecj-4.5.2-3.amzn2.0.2-x86_64
+40K     /var/lib/yum/yumdb/e
+2.7M    /var/lib/yum/yumdb
+100K    /var/lib/yum/history/history-2022-05-10.sqlite
+du: cannot read directory ‘/var/lib/yum/history/2022-05-10/1’: Permission denied
+0       /var/lib/yum/history/2022-05-10/1
+du: cannot read directory ‘/var/lib/yum/history/2022-05-10/2’: Permission denied
+0       /var/lib/yum/history/2022-05-10/2
+du: cannot read directory ‘/var/lib/yum/history/2022-05-10/3’: Permission denied
+0       /var/lib/yum/history/2022-05-10/3
+du: cannot read directory ‘/var/lib/yum/history/2022-05-10/4’: Permission denied
+0       /var/lib/yum/history/2022-05-10/4
+du: cannot read directory ‘/var/lib/yum/history/2022-05-10/5’: Permission denied
+0       /var/lib/yum/history/2022-05-10/5
+du: cannot read directory ‘/var/lib/yum/history/2022-05-10/6’: Permission denied
+0       /var/lib/yum/history/2022-05-10/6
+du: cannot read directory ‘/var/lib/yum/history/2022-05-10/7’: Permission denied
+0       /var/lib/yum/history/2022-05-10/7
+0       /var/lib/yum/history/2022-05-10
+16K     /var/lib/yum/history/history-2022-05-10.sqlite-journal
+116K    /var/lib/yum/history
+4.0K    /var/lib/yum/groups/installed
+4.0K    /var/lib/yum/groups/environment
+8.0K    /var/lib/yum/groups
+0       /var/lib/yum/repos/x86_64/2/amzn2-core
+0       /var/lib/yum/repos/x86_64/2/amzn2extra-docker
+0       /var/lib/yum/repos/x86_64/2/amzn2extra-kernel-5.10
+0       /var/lib/yum/repos/x86_64/2
+0       /var/lib/yum/repos/x86_64
+0       /var/lib/yum/repos
+24K     /var/lib/yum/rpmdb-indexes/file-requires
+4.0K    /var/lib/yum/rpmdb-indexes/conflicts
+4.0K    /var/lib/yum/rpmdb-indexes/obsoletes
+28K     /var/lib/yum/rpmdb-indexes/pkgtups-checksums
+4.0K    /var/lib/yum/rpmdb-indexes/version
+64K     /var/lib/yum/rpmdb-indexes
+2.9M    /var/lib/yum
+0       /var/lib/rpm/.dbenv.lock
+0       /var/lib/rpm/.rpm.lock
+24M     /var/lib/rpm/Packages
+36K     /var/lib/rpm/Name
+2.2M    /var/lib/rpm/Basenames
+20K     /var/lib/rpm/Group
+164K    /var/lib/rpm/Requirename
+1.7M    /var/lib/rpm/Providename
+8.0K    /var/lib/rpm/Conflictname
+16K     /var/lib/rpm/Obsoletename
+8.0K    /var/lib/rpm/Triggername
+652K    /var/lib/rpm/Dirnames
+12K     /var/lib/rpm/Installtid
+36K     /var/lib/rpm/Sigmd5
+48K     /var/lib/rpm/Sha1header
+128K    /var/lib/rpm/__db.001
+80K     /var/lib/rpm/__db.002
+1.3M    /var/lib/rpm/__db.003
+30M     /var/lib/rpm
+0       /var/lib/games
+0       /var/lib/misc/postfix.aliasesdb-stamp
+0       /var/lib/misc
+0       /var/lib/rpm-state
+4.0K    /var/lib/alternatives/libnssckbi.so.x86_64
+4.0K    /var/lib/alternatives/ld
+4.0K    /var/lib/alternatives/mta
+4.0K    /var/lib/alternatives/cifs-idmap-plugin
+4.0K    /var/lib/alternatives/iptables
+4.0K    /var/lib/alternatives/java
+4.0K    /var/lib/alternatives/servlet
+4.0K    /var/lib/alternatives/jaxp_transform_impl
+4.0K    /var/lib/alternatives/jaxp_parser_impl
+4.0K    /var/lib/alternatives/jsp
+4.0K    /var/lib/alternatives/elspec
+44K     /var/lib/alternatives
+4.0K    /var/lib/logrotate/logrotate.status
+4.0K    /var/lib/logrotate
+60K     /var/lib/systemd/catalog/database
+60K     /var/lib/systemd/catalog
+0       /var/lib/systemd/coredump
+4.0K    /var/lib/systemd/random-seed
+64K     /var/lib/systemd
+du: cannot read directory ‘/var/lib/machines’: Permission denied
+0       /var/lib/machines
+0       /var/lib/dbus
+du: cannot read directory ‘/var/lib/rpcbind’: Permission denied
+0       /var/lib/rpcbind
+0       /var/lib/stateless/state
+0       /var/lib/stateless/writable
+0       /var/lib/stateless
+0       /var/lib/initramfs
+12K     /var/lib/dhclient/dhclient--eth0.lease
+4.0K    /var/lib/dhclient/dhclient6--eth0.lease
+16K     /var/lib/dhclient
+du: cannot read directory ‘/var/lib/rsyslog’: Permission denied
+0       /var/lib/rsyslog
+0       /var/lib/os-prober
+4.0K    /var/lib/plymouth/boot-duration
+4.0K    /var/lib/plymouth
+du: cannot read directory ‘/var/lib/gssproxy/clients’: Permission denied
+0       /var/lib/gssproxy/clients
+du: cannot read directory ‘/var/lib/gssproxy/rcache’: Permission denied
+0       /var/lib/gssproxy/rcache
+0       /var/lib/gssproxy/default.sock
+0       /var/lib/gssproxy
+0       /var/lib/nfs/etab
+0       /var/lib/nfs/rmtab
+0       /var/lib/nfs/rpc_pipefs/gssd/clntXX/gssd
+0       /var/lib/nfs/rpc_pipefs/gssd/clntXX/info
+0       /var/lib/nfs/rpc_pipefs/gssd/clntXX
+0       /var/lib/nfs/rpc_pipefs/gssd
+0       /var/lib/nfs/rpc_pipefs/nfsd
+0       /var/lib/nfs/rpc_pipefs/cache
+0       /var/lib/nfs/rpc_pipefs/nfsd4_cb
+0       /var/lib/nfs/rpc_pipefs/statd
+0       /var/lib/nfs/rpc_pipefs/portmap
+0       /var/lib/nfs/rpc_pipefs/nfs
+0       /var/lib/nfs/rpc_pipefs/mount
+0       /var/lib/nfs/rpc_pipefs/lockd
+0       /var/lib/nfs/rpc_pipefs
+du: cannot read directory ‘/var/lib/nfs/statd’: Permission denied
+0       /var/lib/nfs/statd
+0       /var/lib/nfs/state
+0       /var/lib/nfs/v4recovery
+0       /var/lib/nfs/xtab
+0       /var/lib/nfs
+du: cannot read directory ‘/var/lib/postfix’: Permission denied
+0       /var/lib/postfix
+4.0K    /var/lib/cloud/data/previous-datasource
+4.0K    /var/lib/cloud/data/instance-id
+4.0K    /var/lib/cloud/data/previous-instance-id
+4.0K    /var/lib/cloud/data/set-hostname
+4.0K    /var/lib/cloud/data/previous-hostname
+4.0K    /var/lib/cloud/data/status.json
+4.0K    /var/lib/cloud/data/result.json
+28K     /var/lib/cloud/data
+0       /var/lib/cloud/scripts/per-instance
+0       /var/lib/cloud/scripts/per-once
+0       /var/lib/cloud/scripts/per-boot
+0       /var/lib/cloud/scripts/vendor
+0       /var/lib/cloud/scripts
+0       /var/lib/cloud/seed
+0       /var/lib/cloud/instances/i-0722158fda2b0f2cd/handlers
+0       /var/lib/cloud/instances/i-0722158fda2b0f2cd/scripts
+4.0K    /var/lib/cloud/instances/i-0722158fda2b0f2cd/sem/consume_data
+4.0K    /var/lib/cloud/instances/i-0722158fda2b0f2cd/sem/config_write_files
+4.0K    /var/lib/cloud/instances/i-0722158fda2b0f2cd/sem/config_write_metadata
+4.0K    /var/lib/cloud/instances/i-0722158fda2b0f2cd/sem/config_amazonlinux_repo_https
+4.0K    /var/lib/cloud/instances/i-0722158fda2b0f2cd/sem/config_set_hostname
+4.0K    /var/lib/cloud/instances/i-0722158fda2b0f2cd/sem/config_rsyslog
+4.0K    /var/lib/cloud/instances/i-0722158fda2b0f2cd/sem/config_users_groups
+4.0K    /var/lib/cloud/instances/i-0722158fda2b0f2cd/sem/config_ssh
+4.0K    /var/lib/cloud/instances/i-0722158fda2b0f2cd/sem/config_resolv_conf
+4.0K    /var/lib/cloud/instances/i-0722158fda2b0f2cd/sem/config_disk_setup
+4.0K    /var/lib/cloud/instances/i-0722158fda2b0f2cd/sem/config_mounts
+4.0K    /var/lib/cloud/instances/i-0722158fda2b0f2cd/sem/config_locale
+4.0K    /var/lib/cloud/instances/i-0722158fda2b0f2cd/sem/config_set_passwords
+4.0K    /var/lib/cloud/instances/i-0722158fda2b0f2cd/sem/config_yum_configure
+4.0K    /var/lib/cloud/instances/i-0722158fda2b0f2cd/sem/config_yum_add_repo
+4.0K    /var/lib/cloud/instances/i-0722158fda2b0f2cd/sem/config_package_update_upgrade_install
+4.0K    /var/lib/cloud/instances/i-0722158fda2b0f2cd/sem/config_timezone
+4.0K    /var/lib/cloud/instances/i-0722158fda2b0f2cd/sem/config_runcmd
+4.0K    /var/lib/cloud/instances/i-0722158fda2b0f2cd/sem/config_scripts_per_instance
+4.0K    /var/lib/cloud/instances/i-0722158fda2b0f2cd/sem/config_scripts_user
+4.0K    /var/lib/cloud/instances/i-0722158fda2b0f2cd/sem/config_ssh_authkey_fingerprints
+4.0K    /var/lib/cloud/instances/i-0722158fda2b0f2cd/sem/config_keys_to_console
+4.0K    /var/lib/cloud/instances/i-0722158fda2b0f2cd/sem/config_phone_home
+4.0K    /var/lib/cloud/instances/i-0722158fda2b0f2cd/sem/config_power_state_change
+100K    /var/lib/cloud/instances/i-0722158fda2b0f2cd/sem
+4.0K    /var/lib/cloud/instances/i-0722158fda2b0f2cd/datasource
+16K     /var/lib/cloud/instances/i-0722158fda2b0f2cd/obj.pkl
+0       /var/lib/cloud/instances/i-0722158fda2b0f2cd/user-data.txt
+4.0K    /var/lib/cloud/instances/i-0722158fda2b0f2cd/user-data.txt.i
+0       /var/lib/cloud/instances/i-0722158fda2b0f2cd/vendor-data.txt
+4.0K    /var/lib/cloud/instances/i-0722158fda2b0f2cd/vendor-data.txt.i
+0       /var/lib/cloud/instances/i-0722158fda2b0f2cd/cloud-config.txt
+4.0K    /var/lib/cloud/instances/i-0722158fda2b0f2cd/boot-finished
+132K    /var/lib/cloud/instances/i-0722158fda2b0f2cd
+132K    /var/lib/cloud/instances
+0       /var/lib/cloud/handlers
+4.0K    /var/lib/cloud/sem/config_scripts_per_once.once
+4.0K    /var/lib/cloud/sem
+0       /var/lib/cloud/instance
+164K    /var/lib/cloud
+0       /var/lib/hibinit-agent
+du: cannot read directory ‘/var/lib/authconfig’: Permission denied
+0       /var/lib/authconfig
+du: cannot read directory ‘/var/lib/mlocate’: Permission denied
+0       /var/lib/mlocate
+4.0K    /var/lib/update-motd/motd
+4.0K    /var/lib/update-motd
+du: cannot read directory ‘/var/lib/amazon/ssm/ipc’: Permission denied
+0       /var/lib/amazon/ssm/ipc
+du: cannot read directory ‘/var/lib/amazon/ssm/runtimeconfig’: Permission denied
+0       /var/lib/amazon/ssm/runtimeconfig
+0       /var/lib/amazon/ssm
+0       /var/lib/amazon
+du: cannot read directory ‘/var/lib/chrony’: Permission denied
+0       /var/lib/chrony
+0       /var/lib/xfsdump/inventory
+0       /var/lib/xfsdump
+du: cannot read directory ‘/var/lib/dav’: Permission denied
+0       /var/lib/dav
+du: cannot read directory ‘/var/lib/httpd’: Permission denied
+0       /var/lib/httpd
+0       /var/lib/tomcat/webapps
+0       /var/lib/tomcat
+0       /var/lib/tomcats
+34M     /var/lib
+0       /var/run
+0       /var/lock
+0       /var/adm
+du: cannot read directory ‘/var/db/sudo’: Permission denied
+0       /var/db/sudo
+0       /var/db
+du: cannot read directory ‘/var/empty/sshd’: Permission denied
+0       /var/empty/sshd
+0       /var/empty
+0       /var/games
+0       /var/gopher
+0       /var/local
+0       /var/mail
+0       /var/nis
+0       /var/opt
+0       /var/preserve
+0       /var/spool/lpd
+0       /var/spool/mail/rpc
+28K     /var/spool/mail/ec2-user
+28K     /var/spool/mail
+4.0K    /var/spool/anacron/cron.daily
+4.0K    /var/spool/anacron/cron.weekly
+4.0K    /var/spool/anacron/cron.monthly
+12K     /var/spool/anacron
+du: cannot read directory ‘/var/spool/cron’: Permission denied
+0       /var/spool/cron
+0       /var/spool/plymouth
+du: cannot read directory ‘/var/spool/postfix/active’: Permission denied
+0       /var/spool/postfix/active
+du: cannot read directory ‘/var/spool/postfix/bounce’: Permission denied
+0       /var/spool/postfix/bounce
+du: cannot read directory ‘/var/spool/postfix/corrupt’: Permission denied
+0       /var/spool/postfix/corrupt
+du: cannot read directory ‘/var/spool/postfix/defer’: Permission denied
+0       /var/spool/postfix/defer
+du: cannot read directory ‘/var/spool/postfix/deferred’: Permission denied
+0       /var/spool/postfix/deferred
+du: cannot read directory ‘/var/spool/postfix/flush’: Permission denied
+0       /var/spool/postfix/flush
+du: cannot read directory ‘/var/spool/postfix/hold’: Permission denied
+0       /var/spool/postfix/hold
+du: cannot read directory ‘/var/spool/postfix/incoming’: Permission denied
+0       /var/spool/postfix/incoming
+du: cannot read directory ‘/var/spool/postfix/maildrop’: Permission denied
+0       /var/spool/postfix/maildrop
+4.0K    /var/spool/postfix/pid/master.pid
+0       /var/spool/postfix/pid/unix.cleanup
+0       /var/spool/postfix/pid/unix.local
+4.0K    /var/spool/postfix/pid
+du: cannot read directory ‘/var/spool/postfix/private’: Permission denied
+0       /var/spool/postfix/private
+du: cannot read directory ‘/var/spool/postfix/public’: Permission denied
+0       /var/spool/postfix/public
+du: cannot read directory ‘/var/spool/postfix/saved’: Permission denied
+0       /var/spool/postfix/saved
+du: cannot read directory ‘/var/spool/postfix/trace’: Permission denied
+0       /var/spool/postfix/trace
+4.0K    /var/spool/postfix
+du: cannot read directory ‘/var/spool/at’: Permission denied
+0       /var/spool/at
+44K     /var/spool
+du: cannot read directory ‘/var/tmp/systemd-private-a19ae497bd4840e9b574b586c81cca6f-chronyd.service-TFRnYu’: Permission denied
+0       /var/tmp/systemd-private-a19ae497bd4840e9b574b586c81cca6f-chronyd.service-TFRnYu
+du: cannot read directory ‘/var/tmp/systemd-private-a19ae497bd4840e9b574b586c81cca6f-httpd.service-HVMv7S’: Permission denied
+0       /var/tmp/systemd-private-a19ae497bd4840e9b574b586c81cca6f-httpd.service-HVMv7S
+12K     /var/tmp/bashrc.swp
+0       /var/tmp/yum-ec2-user-x99qRl/x86_64/2/amzn2-core/gen
+0       /var/tmp/yum-ec2-user-x99qRl/x86_64/2/amzn2-core/packages
+4.0K    /var/tmp/yum-ec2-user-x99qRl/x86_64/2/amzn2-core/repomd.xml
+0       /var/tmp/yum-ec2-user-x99qRl/x86_64/2/amzn2-core/cachecookie
+4.0K    /var/tmp/yum-ec2-user-x99qRl/x86_64/2/amzn2-core/mirrorlist.txt
+8.0K    /var/tmp/yum-ec2-user-x99qRl/x86_64/2/amzn2-core
+0       /var/tmp/yum-ec2-user-x99qRl/x86_64/2/amzn2extra-docker/gen
+0       /var/tmp/yum-ec2-user-x99qRl/x86_64/2/amzn2extra-docker/packages
+4.0K    /var/tmp/yum-ec2-user-x99qRl/x86_64/2/amzn2extra-docker/repomd.xml
+0       /var/tmp/yum-ec2-user-x99qRl/x86_64/2/amzn2extra-docker/cachecookie
+4.0K    /var/tmp/yum-ec2-user-x99qRl/x86_64/2/amzn2extra-docker/mirrorlist.txt
+8.0K    /var/tmp/yum-ec2-user-x99qRl/x86_64/2/amzn2extra-docker
+0       /var/tmp/yum-ec2-user-x99qRl/x86_64/2/amzn2extra-kernel-5.10/gen
+0       /var/tmp/yum-ec2-user-x99qRl/x86_64/2/amzn2extra-kernel-5.10/packages
+4.0K    /var/tmp/yum-ec2-user-x99qRl/x86_64/2/amzn2extra-kernel-5.10/repomd.xml
+0       /var/tmp/yum-ec2-user-x99qRl/x86_64/2/amzn2extra-kernel-5.10/cachecookie
+4.0K    /var/tmp/yum-ec2-user-x99qRl/x86_64/2/amzn2extra-kernel-5.10/mirrorlist.txt
+8.0K    /var/tmp/yum-ec2-user-x99qRl/x86_64/2/amzn2extra-kernel-5.10
+24K     /var/tmp/yum-ec2-user-x99qRl/x86_64/2
+24K     /var/tmp/yum-ec2-user-x99qRl/x86_64
+24K     /var/tmp/yum-ec2-user-x99qRl
+36K     /var/tmp
+0       /var/yp
+0       /var/kerberos/krb5/user
+0       /var/kerberos/krb5
+0       /var/kerberos
+0       /var/account/pacct
+0       /var/account
+4.0K    /var/.updated
+0       /var/www/cgi-bin
+4.0K    /var/www/html/index.html
+4.0K    /var/www/html
+4.0K    /var/www
+384M    /var
+[ec2-user@ip-172-31-25-170 ~]$ du -Lh ~
+4.0K    /home/ec2-user/.ssh
+28K     /home/ec2-user/script
+20K     /home/ec2-user/linuxExercises
+344K    /home/ec2-user
+[ec2-user@ip-172-31-25-170 ~]$ mkdir disk
+[ec2-user@ip-172-31-25-170 ~]$ cp linuxExercises/*module2 linuxExercises/*module4 linuxExercises/*module5 disk
+[ec2-user@ip-172-31-25-170 ~]$ ls disk
+Paul.100522.module2  Paul.110522.module4  Paul.120522.module5
+[ec2-user@ip-172-31-25-170 ~]$ cd disk
+[ec2-user@ip-172-31-25-170 disk]$ tar -cvf disk.tar *
+Paul.100522.module2
+Paul.110522.module4
+Paul.120522.module5
+[ec2-user@ip-172-31-25-170 disk]$ tar -xvf disk.tar
+Paul.100522.module2
+Paul.110522.module4
+Paul.120522.module5
+[ec2-user@ip-172-31-25-170 disk]$ ls
+disk.tar  Paul.100522.module2  Paul.110522.module4  Paul.120522.module5
+[ec2-user@ip-172-31-25-170 disk]$ tar -czvf disk.tar.gz *
+disk.tar
+Paul.100522.module2
+Paul.110522.module4
+Paul.120522.module5
+[ec2-user@ip-172-31-25-170 disk]$ touch newdisk
+[ec2-user@ip-172-31-25-170 disk]$ gunzip disk.tar.gz
+gzip: disk.tar already exists; do you wish to overwrite (y or n)? y
+[ec2-user@ip-172-31-25-170 disk]$ tar -rvf disk.tar newdisk
+newdisk
+[ec2-user@ip-172-31-25-170 disk]$ gzip disk.tar
+[ec2-user@ip-172-31-25-170 disk]$ mkdir ~/disk_output
+[ec2-user@ip-172-31-25-170 disk]$ tar -xvf disk.tar.gz -C ~/disk_output/
+disk.tar
+Paul.100522.module2
+Paul.110522.module4
+Paul.120522.module5
+newdisk
+[ec2-user@ip-172-31-25-170 disk]$ cd ~
+[ec2-user@ip-172-31-25-170 ~]$ ls
+disk         filesystem.usage          fixlog20220512071307.log  hello.txt       newOrders.log
+disk_output  fixGenerator.sh           fixlog.log                linuxExercises  script
+disk.usage   fixlog20220511165331.log  fixlog.logarchive         log.txt         usage2
+[ec2-user@ip-172-31-25-170 ~]$ ls disk_output/
+disk.tar  newdisk  Paul.100522.module2  Paul.110522.module4  Paul.120522.module5
+[ec2-user@ip-172-31-25-170 ~]$ gzip -r disk_output
+[ec2-user@ip-172-31-25-170 ~]$ ls -l disk_output/
+total 20
+-rw-rw-r-- 1 ec2-user ec2-user 1125 May 14 04:35 disk.tar.gz
+-rw-rw-r-- 1 ec2-user ec2-user   28 May 14 04:36 newdisk.gz
+-rw-r--r-- 1 ec2-user ec2-user  172 May 14 04:34 Paul.100522.module2.gz
+-rw-rw-r-- 1 ec2-user ec2-user  518 May 14 04:34 Paul.110522.module4.gz
+-rw-rw-r-- 1 ec2-user ec2-user  465 May 14 04:34 Paul.120522.module5.gz
+[ec2-user@ip-172-31-25-170 ~]$ history > linuxExercises/Paul.140522.module7
+
+HISTORY
+1000  df
+ 1001  df -h
+ 1002  df -h > filesystem.usage
+ 1003  du
+ 1004  du ~
+ 1005  du -h ~ > disk.usage
+ 1006  du -ah > usage2
+ 1007  du -ah /var
+ 1008  du -Lh ~
+ 1009  mkdir disk
+ 1010  cp linuxExercises/*module2 linuxExercises/*module4 linuxExercises/*module5 disk
+ 1011  ls disk
+ 1012  cd disk
+ 1013  tar -cvf disk.tar *
+ 1014  tar -xvf disk.tar
+ 1015  ls
+ 1016  tar -czvf disk.tar.gz *
+ 1017  touch newdisk
+ 1018  gunzip disk.tar.gz
+ 1019  tar -rvf disk.tar newdisk
+ 1020  gzip disk.tar
+ 1021  mkdir ~/disk_output
+ 1022  tar -xvf disk.tar.gz -C ~/disk_output/
+ 1023  cd ~
+ 1024  ls
+ 1025  ls disk_output/
+ 1026  gzip -r disk_output
+ 1027  ls -l disk_output/
+ 1028  history > linuxExercises/Paul.140522.module7

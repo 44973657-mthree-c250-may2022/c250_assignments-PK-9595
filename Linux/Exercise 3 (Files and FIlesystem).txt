@@ -1,0 +1,157 @@
+[ec2-user@ip-172-31-25-170 ~]$ cd ~
+[ec2-user@ip-172-31-25-170 ~]$ pwd
+/home/ec2-user
+[ec2-user@ip-172-31-25-170 ~]$ mkdir Algo1
+[ec2-user@ip-172-31-25-170 ~]$ mkdir ./Algo1 config bin logs scripts
+mkdir: cannot create directory ‘./Algo1’: File exists
+[ec2-user@ip-172-31-25-170 ~]$ ls
+Algo1  bin  config  logs  scripts
+[ec2-user@ip-172-31-25-170 ~]$ rmdir Algo1 bin config logs scripts
+[ec2-user@ip-172-31-25-170 ~]$ history -c
+[ec2-user@ip-172-31-25-170 ~]$ clear
+[ec2-user@ip-172-31-25-170 ~]$ cd ~
+[ec2-user@ip-172-31-25-170 ~]$ pwd
+/home/ec2-user
+[ec2-user@ip-172-31-25-170 ~]$ mkdir Algo1
+[ec2-user@ip-172-31-25-170 ~]$ mkdir Algo1/config Algo1/bin Algo1/logs Algo1/scripts
+[ec2-user@ip-172-31-25-170 ~]$ ls
+Algo1
+[ec2-user@ip-172-31-25-170 ~]$ cd Algo1
+[ec2-user@ip-172-31-25-170 Algo1]$ ls
+bin  config  logs  scripts
+[ec2-user@ip-172-31-25-170 Algo1]$ cd config
+[ec2-user@ip-172-31-25-170 config]$ touch config.config variables
+[ec2-user@ip-172-31-25-170 config]$ cd ../scripts
+[ec2-user@ip-172-31-25-170 scripts]$ touch start.sh stop.sh admin.sh
+[ec2-user@ip-172-31-25-170 scripts]$ cd ../logs
+[ec2-user@ip-172-31-25-170 logs]$ touch today.log
+[ec2-user@ip-172-31-25-170 logs]$ cd ~
+[ec2-user@ip-172-31-25-170 ~]$ ls -Rl
+.:
+total 0
+drwxrwxr-x 6 ec2-user ec2-user 58 May 11 05:04 Algo1
+
+./Algo1:
+total 0
+drwxrwxr-x 2 ec2-user ec2-user  6 May 11 05:04 bin
+drwxrwxr-x 2 ec2-user ec2-user 44 May 11 05:05 config
+drwxrwxr-x 2 ec2-user ec2-user 23 May 11 05:05 logs
+drwxrwxr-x 2 ec2-user ec2-user 53 May 11 05:05 scripts
+
+./Algo1/bin:
+total 0
+
+./Algo1/config:
+total 0
+-rw-rw-r-- 1 ec2-user ec2-user 0 May 11 05:05 config.config
+-rw-rw-r-- 1 ec2-user ec2-user 0 May 11 05:05 variables
+
+./Algo1/logs:
+total 0
+-rw-rw-r-- 1 ec2-user ec2-user 0 May 11 05:05 today.log
+
+./Algo1/scripts:
+total 0
+-rw-rw-r-- 1 ec2-user ec2-user 0 May 11 05:05 admin.sh
+-rw-rw-r-- 1 ec2-user ec2-user 0 May 11 05:05 start.sh
+-rw-rw-r-- 1 ec2-user ec2-user 0 May 11 05:05 stop.sh
+[ec2-user@ip-172-31-25-170 ~]$ rm Algo1/config/variables
+[ec2-user@ip-172-31-25-170 ~]$ rmdir Algo1/bin
+[ec2-user@ip-172-31-25-170 ~]$ mkdir Algo1/bin
+[ec2-user@ip-172-31-25-170 ~]$ mkdir Algo1/logs/oldlogs
+[ec2-user@ip-172-31-25-170 ~]$ cd Algo1/logs/oldlogs
+[ec2-user@ip-172-31-25-170 oldlogs]$ mkdir 2019 2018 2017
+[ec2-user@ip-172-31-25-170 oldlogs]$ touch 2017/2017.log
+[ec2-user@ip-172-31-25-170 oldlogs]$ touch 2018/2018.log
+[ec2-user@ip-172-31-25-170 oldlogs]$ touch 2019/2019.log
+[ec2-user@ip-172-31-25-170 oldlogs]$ cd ~
+[ec2-user@ip-172-31-25-170 ~]$ find -name oldlogs
+./Algo1/logs/oldlogs
+[ec2-user@ip-172-31-25-170 ~]$ rmdir Algo1/logs/oldlogs
+rmdir: failed to remove ‘Algo1/logs/oldlogs’: Directory not empty
+[ec2-user@ip-172-31-25-170 ~]$ rm -rf Algo1/logs/oldlogs
+[ec2-user@ip-172-31-25-170 ~]$ find -name *.sh
+./Algo1/scripts/start.sh
+./Algo1/scripts/stop.sh
+./Algo1/scripts/admin.sh
+[ec2-user@ip-172-31-25-170 ~]$ cd Algo1/scripts
+[ec2-user@ip-172-31-25-170 scripts]$ rm s*.sh
+[ec2-user@ip-172-31-25-170 scripts]$ ls
+admin.sh
+[ec2-user@ip-172-31-25-170 scripts]$ history > ~/Paul.110522.module3
+[ec2-user@ip-172-31-25-170 scripts]$ cd~
+-bash: cd~: command not found
+[ec2-user@ip-172-31-25-170 scripts]$ cd ~
+[ec2-user@ip-172-31-25-170 ~]$ ls
+Algo1  Paul.110522.module3
+[ec2-user@ip-172-31-25-170 ~]$ cat Paul.110522.module3
+    1  clear
+    2  cd ~
+    3  pwd
+    4  mkdir Algo1
+    5  mkdir Algo1/config Algo1/bin Algo1/logs Algo1/scripts
+    6  ls
+    7  cd Algo1
+    8  ls
+    9  cd config
+   10  touch config.config variables
+   11  cd ../scripts
+   12  touch start.sh stop.sh admin.sh
+   13  cd ../logs
+   14  touch today.log
+   15  cd ~
+   16  ls -Rl
+   17  rm Algo1/config/variables
+   18  rmdir Algo1/bin
+   19  mkdir Algo1/bin
+   20  mkdir Algo1/logs/oldlogs
+   21  cd Algo1/logs/oldlogs
+   22  mkdir 2019 2018 2017
+   23  touch 2017/2017.log
+   24  touch 2018/2018.log
+   25  touch 2019/2019.log
+   26  cd ~
+   27  find -name oldlogs
+   28  rmdir Algo1/logs/oldlogs
+   29  rm -rf Algo1/logs/oldlogs
+   30  find -name *.sh
+   31  cd Algo1/scripts
+   32  rm s*.sh
+   33  ls
+   34  history > ~/Paul.110522.module3
+
+HISTORY
+    1  clear
+    2  cd ~
+    3  pwd
+    4  mkdir Algo1
+    5  mkdir Algo1/config Algo1/bin Algo1/logs Algo1/scripts
+    6  ls
+    7  cd Algo1
+    8  ls
+    9  cd config
+   10  touch config.config variables
+   11  cd ../scripts
+   12  touch start.sh stop.sh admin.sh
+   13  cd ../logs
+   14  touch today.log
+   15  cd ~
+   16  ls -Rl
+   17  rm Algo1/config/variables
+   18  rmdir Algo1/bin
+   19  mkdir Algo1/bin
+   20  mkdir Algo1/logs/oldlogs
+   21  cd Algo1/logs/oldlogs
+   22  mkdir 2019 2018 2017
+   23  touch 2017/2017.log
+   24  touch 2018/2018.log
+   25  touch 2019/2019.log
+   26  cd ~
+   27  find -name oldlogs
+   28  rmdir Algo1/logs/oldlogs
+   29  rm -rf Algo1/logs/oldlogs
+   30  find -name *.sh
+   31  cd Algo1/scripts
+   32  rm s*.sh
+   33  ls
+   34  history > ~/Paul.110522.module3
